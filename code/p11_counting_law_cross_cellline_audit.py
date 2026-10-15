@@ -8,7 +8,7 @@
 #   the mechanism stated in the source paper (high ATM -> broad peak). The frozen card
 #   had the direction written backwards.
 # Data: digitised from Stewart-Ornstein & Lahav 2017 (Sci Signal 10:eaah6671, PMC5504473)
-#   Figs 3F/3G/5F/6B, and Finzel dissertation (FU Berlin 2021) Fig. 30.
+#   Figs 3F/3G/5F/6B, and Finzel Pérez dissertation (FU Berlin 2016, refubium fub188/7115) Fig. 30.
 # Digitisation uncertainty: Fig3G +-0.005; IC50 +-0.07 dex; Fig5F +-0.02; Fig30 +-5%.
 
 import csv, os

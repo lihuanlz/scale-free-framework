@@ -26,7 +26,8 @@
 | Keshelava et al., *Nat. Commun.* 9, 876 (2018) Suppl. Data 3 | cascade instance (`cascade_audit_gpcr_ca.py`) | Mirrored in the companion repo [gpcr-field-audit](https://github.com/lihuanlz/gpcr-field-audit) (`data_external/keshelava2018/`) |
 | TCGA PanCanAtlas 2018 (via cBioPortal) | P15 tissue-level decoupling | cBioPortal public export |
 | GSE305057 (EGFR saturation mutagenesis) | P12b A5 arm | GEO |
-| Gillies et al., *Cell Syst.* 11, 445–460 (2020) supplements | P12b ABL catalytic axis | Publisher supplementary |
-| Finzel dissertation (2016, FU Berlin) | P11 digitised counting-law arms | Institutional repository (refubium fub188/7115) |
+| Gillies et al., *Mol. Syst. Biol.* 16, e9518 (2020), Source Data Figs 2 and 6 (PMC7569415) | P13 channel-capacity audit | Publisher supplementary |
+| Liu et al. (EVER), *Commun. Biol.* 3, 30 (2020), Supplementary Data 1 (PMC6952392) | P12b ABL catalytic axis | Publisher supplementary |
+| Finzel Pérez, A., PhD thesis, Freie Universität Berlin (2016), Fig. 30 | P11 digitised counting-law arms | Institutional repository (refubium fub188/7115) |
 
 All verdicts in `results/` are our own derived work product.
