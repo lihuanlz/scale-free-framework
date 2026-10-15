@@ -1,0 +1,354 @@
+\documentclass[11pt]{article}
+\usepackage[margin=2.2cm]{geometry}
+\usepackage{booktabs,longtable,array}
+\usepackage{amsmath,amssymb}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.14}
+
+\title{\bfseries Supporting Information\\[4pt]
+\large The price of absolute scale: degeneracy groups, surviving\\
+statistics, and the reference economics of cellular signalling}
+\author{Huan Li\\ \small Shanghai Liangta Biotech Co., Ltd., Shanghai 201899, P.\ R.\ China}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\noindent This Supporting Information documents the complete computational
+output of the accompanying repository (\texttt{scale-free-framework},
+release v1.0.0): the full analysis-script roster, every archived verdict
+table with its frozen decision lines, and the provenance of all
+third-party data. Numbers are transcribed verbatim from
+\texttt{results/}. Scripts are plain Python~3
+(numpy/scipy/matplotlib/pandas); most are self-contained against
+\texttt{results/} and \texttt{data\_external/}, except the per-embryo
+Bicoid anchor audit which requires the Nikoli\'c et al.\ repository data
+(download instructions in \texttt{data\_external/PROVENANCE.md}).
+
+\tableofcontents
+\newpage
+
+\section{Pipeline map: scripts and outputs}
+
+\begin{longtable}{p{5.6cm} p{6.6cm} p{3.6cm}}
+\toprule
+Script & Computes & Archived output \\
+\midrule
+\endhead
+\multicolumn{3}{l}{\emph{PdPC instance}}\\
+\texttt{code04\_pdpc\_identifiability\_ audit} & identifiability audit of the PdPC circuit & figures/tables \\
+\texttt{code10\_asymmetric\_Km\_ degeneracy\_group} & asymmetric-$K_m$ degeneracy group & figures/tables \\
+\texttt{code11\_discrimination\_map\_v09} & discrimination map & figures \\
+\multicolumn{3}{l}{\emph{Census systems (NF-$\kappa$B, Msn2)}}\\
+\texttt{code06\_nfkB\_negative\_feedback\_ oscillator\_audit} & NF-$\kappa$B oscillator audit & figures/tables \\
+\texttt{code08\_msn2\_excitable\_frequency\_ encoding} & Msn2 excitable frequency encoding & figures/tables \\
+\texttt{code09\_nfkB\_spike\_mode\_audit} & NF-$\kappa$B spike-mode audit & figures/tables \\
+\texttt{code12\_nfkB\_GLM\_prediction\_test\_ switchlike\_IkB} & GLM prediction test, switch-like I$\kappa$B & figures/tables \\
+\texttt{code15\_nfkB\_saturation\_transient\_ test} & saturation transient test & figures/tables \\
+\multicolumn{3}{l}{\emph{Blind adjudications}}\\
+\texttt{code44/44b} & P2 amplitude-stratification adjudication (Msn2) + CI recompute & \texttt{P2\_verdict\_summary.csv}, \texttt{P2\_msn2\_stratification\_units.csv} \\
+\texttt{code45} & P3 free-statistic sufficiency (NF-$\kappa$B spatial gradient) & \texttt{P3\_verdict\_summary.csv} \\
+\texttt{code46} & P4 ERK re-adjudication (GPCR-KTR, trajectory level) & \texttt{P4\_verdict\_summary.csv} \\
+\texttt{code48} & P6 FCD attribution (NF-$\kappa$B sequential grid) & \texttt{P6\_verdict\_summary.csv} \\
+\multicolumn{3}{l}{\emph{Morphogen instance}}\\
+\texttt{p9\_bcd\_anchor\_audit.py} & P9: absolute-anchor test of the Bcd profile (581 embryos) & \texttt{p9\_bcd\_anchor\_results.json}, \texttt{p9\_2\_upgrade\_results.json} \\
+\texttt{audit\_bergmann2010\_axis12.py} & Bergmann 2010 axes-1/2 audit & console/tables \\
+\multicolumn{3}{l}{\emph{Yeast positive control}}\\
+\texttt{score\_markers\_v2\_authordata.py} & Hog1 osmotic set-point markers from author data & console/tables \\
+\multicolumn{3}{l}{\emph{Cascade instance}}\\
+\texttt{cascade\_audit\_gpcr\_ca.py} & GPCR$\to$Ca cascade audit; per-experiment Hill fits & \texttt{cascade\_audit\_results.json}, \texttt{cascade\_hill\_fits\_methods\_ladder.json} \\
+\texttt{p10\_gain\_confinement\_audit.py} & P10: gain-distribution confinement across systems & \texttt{p10\_gain\_confinement\_results.json}, \texttt{p10\_supplementary\_arms\_results.json} \\
+\multicolumn{3}{l}{\emph{Tumour chain P11--P16}}\\
+\texttt{p11\_counting\_law\_cross\_cellline\_ audit.py} & P11 counting-law cross-cell-line audit & digitised arms CSVs \\
+\texttt{p12a\_*.py} & ERK violin / Gerosa A375 digitisation & \texttt{P12a\_erk\_baseline\_cv.csv} \\
+\texttt{p12b\_*.py} (5 scripts) & P12b resistance zero-direction: EGFR DMS, ABL catalytic axis, extensions & \texttt{p12b\_*.json}, \texttt{p12b\_egfr\_dms\_variants.csv}, \texttt{P12b\_*.csv} \\
+\texttt{p13\_mutual\_info\_audit.py}, \texttt{p13\_robustness\_recheck.py} & P13 channel capacity (mutual information) & \texttt{p13\_mi\_results.json}, \texttt{p13\_robustness.json}, \texttt{p13\_fig6\_decay.json} \\
+\texttt{p14\_shape\_decoding\_audit.py} & P14 downstream mis-reading / shape decoding & \texttt{p14\_results.json}, \texttt{p14\_pergene\_log2R.csv} \\
+\texttt{p15\_tcga\_decoupling\_audit.py} & P15 TCGA tissue-level decoupling & \texttt{p15\_tcga\_results.json}, four per-sample CSVs \\
+\texttt{make\_fig1.py}, \texttt{make\_fig2.py}, \texttt{make\_fig3.py}, \texttt{make\_fig4.py} & manuscript figures & manuscript PNGs \\
+\bottomrule
+\end{longtable}
+
+\section{Blind adjudication campaign: verdicts against frozen lines}
+
+\subsection{P2 --- amplitude stratification (Msn2, 7 promoters)}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{1.2cm} p{6.8cm} p{6.8cm}}
+\toprule
+Clause & Frozen line & Verdict \\
+\midrule
+P2-1 & $\Delta_{\rm mol} \ge +0.03$ in $\ge 6/7$ promoters & \textbf{Falsified} (0/7) \\
+P2-2 & $\Delta_{\rm AU} \le 0.01$ and $< \Delta_{\rm mol}$ in $\ge 6/7$ & \textbf{Falsified} (0/7) \\
+P2-3 & $|\Delta_{\rm time}| \le 0.01$ ($k{=}3$) in $\ge 6/7$ & \textbf{Hit} (6/7; 7/7 at $k{=}2$; 6/7 at $k{=}4$, DCS2 $= -0.0102$) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Per-promoter unit statistics (183 KB) in
+\texttt{P2\_msn2\_stratification\_units.csv}; per-promoter clause values in
+\texttt{P2\_verdict\_summary.csv} (e.g.\ ALD3: $\Delta_{\rm mol}=-0.0006$,
+$\Delta_{\rm AU}=+0.0013$, $\Delta_{\rm time}(k{=}3)=-0.0046$).
+
+\subsection{P3 --- free-statistic sufficiency (NF-$\kappa$B spatial gradient)}
+
+P3-1: intermediate (1/2 units pass the $\tau(3)$-AUC $\ge 0.60$ line);
+P3-2: \textbf{hit} (2/2 units $\ge 0.55$); P3-3: \textbf{falsified}
+(0/2 units, both below line). Frozen lines and per-unit values in
+\texttt{P3\_verdict\_summary.csv}.
+
+\subsection{P4 --- ERK re-adjudication at trajectory level (GPCR-KTR)}
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{p{1.2cm} p{4.6cm} p{3.4cm} p{4.6cm}}
+\toprule
+Clause & Frozen line & Value & Verdict \\
+\midrule
+P4-1 & 4 units $\tau(3)$ AUC $\ge 0.60$; all below $\to$ falsified & all 8 AUCs $<0.60$ (max 0.5819; one 0.4695) & \textbf{Falsified} \\
+P4-2 & hit iff AUC$_H<0.60$ and $D\ge 0.05$ & $D = 0.0468$, 95\% CI (0.0316, 0.0622); AUC$_L=0.567$, AUC$_H=0.520$ & Intermediate \\
+P4-3 & hit iff $\ge 8/10$ units $|\delta|\le 0.01$; falsified iff $\ge 3/10$ $\ge 0.03$ & 5/10 units $|\delta|\ge 0.03$ & \textbf{Falsified} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All 25 per-unit rows (Histamine and UK ladders, low/mid/high/full bands)
+with CIs are in \texttt{P4\_verdict\_summary.csv}.
+
+\subsection{P6 --- FCD attribution (NF-$\kappa$B sequential grid)}
+
+$\Delta R^2 = R^2_{\rm fold} - R^2_{\rm abs1} = -0.0014$, 95\% CI
+$(-0.252, 0.153)$, 18 units: \textbf{intermediate}
+($R^2_{\rm fold}=0.0063$, $R^2_{\rm abs1}=0.0078$, fold slope $-0.0086$).
+The self-built arm ($\Delta R^2 = -0.178$) is a non-scoring control under
+the pre-registered divergence rule. Verbatim in
+\texttt{P6\_verdict\_summary.csv}.
+
+\subsection{P7 --- FCD--Weber adjudication (archived copy)}
+
+First pass (25 units): $\Delta R^2 = +0.118$, CI $(-0.296, 0.468)$,
+intermediate; erratum re-adjudication (30 units): $\Delta R^2 = -0.091$,
+CI $(-0.445, 0.277)$, intermediate. The chemotaxis companion repository
+holds the full P7 pipeline and unit tables.
+
+\section{Morphogen instance: the Bcd absolute anchor (P9)}
+
+Per-embryo Bicoid profiles (Nikoli\'c et al.\ repository; Liu et al.\
+PNAS 2013 data), $n=581$ embryos:
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcc}
+\toprule
+Quantity & Value & 95\% CI \\
+\midrule
+Profile-length scaling exponent $\alpha$ (P9-1) & $-0.182$ (s.e.\ 0.143) & archived in JSON \\
+Theil--Sen slope & $-0.199$ & --- \\
+Median $\lambda$ ($\mu$m) & $87.6$ & --- \\
+Boundary exponent $\alpha_{\rm boundary}$ (P9-2, $n=609$) & $-0.644$ (s.e.\ 0.505) & archived in JSON \\
+$\gamma_{B0}$ (P9-3) & $0.379$ & archived in JSON \\
+Upgrade arm $\alpha_b$ ($n=301$) & $1.942$ (s.e.\ 0.755) & archived in JSON \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Embryo-length range archived in \texttt{p9\_bcd\_anchor\_results.json}.
+Axes-1/2 of the Bergmann 2010 Dataset-S1 audit are computed by
+\texttt{audit\_bergmann2010\_axis12.py} (tables printed to console).
+
+\section{Cascade instance: per-experiment Hill fits (GPCR$\to$Ca)}
+
+Fits of the per-experiment dose--response (top, EC$_{50}$, Hill $n$) on
+the Keshelava 2018 per-cell peak tables, two fitting ladders (default and
+Methods) archived in \texttt{cascade\_audit\_results.json} and
+\texttt{cascade\_hill\_fits\_methods\_ladder.json}; the two agree to
+$\lesssim 10^{-3}$ throughout (Table~\ref{tab:hill}).
+
+\begin{table}[h]
+\centering\small
+\caption{Per-experiment Hill fits (Methods ladder), verbatim.}
+\label{tab:hill}
+\begin{tabular}{lcccc}
+\toprule
+Experiment & top & EC$_{50}$ ($\mu$M) & Hill $n$ & $n_{\rm cells}$ \\
+\midrule
+01 & 0.199 & 0.368 & 1.47 & 9 \\
+02 & 0.193 & 0.317 & 1.91 & 26 \\
+03 & 0.254 & 0.447 & 1.51 & 14 \\
+04 & 0.276 & 0.376 & 2.65 & 12 \\
+05 & 0.195 & 0.402 & 1.41 & 10 \\
+06 & 0.182 & 0.637 & 1.34 & 17 \\
+07 & 0.193 & 0.317 & 1.91 & 26 \\
+09 & 0.330 & 0.323 & 2.98 & 12 \\
+10 & 0.258 & 0.693 & 2.14 & 12 \\
+11 & 0.204 & 0.869 & 1.41 & 11 \\
+13 & 0.182 & 0.627 & 1.29 & 16 \\
+14 & 0.227 & 1.227 & 1.83 & 3 \\
+15 & 0.278 & 0.388 & 2.61 & 11 \\
+16 & 0.293 & 1.678 & 3.82 & 10 \\
+17 & 0.266 & 0.758 & 2.73 & 9 \\
+18 & 0.169 & 0.775 & 1.77 & 14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{P10: gain-distribution confinement across systems}
+
+Confinement ratio $R$ = within-cell CV (median) / across-cell CV,
+per condition (KTR archive of Chavez-Abiega et al.\ 2022; NF-$\kappa$B
+archive of Wang et al.\ 2022):
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{llccc}
+\toprule
+System & Condition & $n$ cells & within-CV med. & $R$ \\
+\midrule
+ERK & Histamine 2.33 $\mu$M & 41 & 0.565 & 0.775 \\
+ERK & Histamine 100 $\mu$M & 35 & 0.700 & 0.410 \\
+ERK & UK 33.3 $\mu$M & 39 & 0.278 & 1.000 \\
+ERK & UK 100 $\mu$M & 59 & 0.250 & 1.160 \\
+NF-$\kappa$B & pooled & 11{,}265 & 2.520 & 1.203 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Split-half rank correlations and 95\% CIs per condition are archived in
+\texttt{p10\_gain\_confinement\_results.json}. Supplementary arms
+(\texttt{p10\_supplementary\_arms\_results.json}): S1P/CN ERK median
+$R=2.17$ (2 conditions); Histamine/UK Akt-RB arms have no qualifying
+conditions ($n=0$).
+
+\section{Tumour chain (P11--P16)}
+
+\subsection{P11: counting law across cell lines}
+
+Digitised arms archived in
+\texttt{tumour\_chain\_P11\_P16/P11\_digitized\_*.csv}: Finzel
+dissertation Fig.~30 (per-line FWHM medians and quartiles at 2.5/5/10
+Gy; e.g.\ A549 107 min at 2.5 and 5 Gy, 122 min at 10 Gy) and
+Stewart-Ornstein et al.\ 2017 (per-line periodicity at 1 vs 8 Gy, ATM
+IC$_{50}$, $\gamma$H2AX fraction remaining at 8 h; 12 lines).
+
+\subsection{P12b: resistance mutations and the zero direction}
+
+EGFR saturation-mutagenesis audit (GSE305057, 1380 missense variants
+tested; full per-variant table
+\texttt{p12b\_egfr\_dms\_variants.csv}, 93 KB):
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcccc}
+\toprule
+Arm & $n$ & median activity & ratio vs all missense & one-sided MW $p$ \\
+\midrule
+Curated resistance & 17 & 0.01609 & 2.22 & 0.0022 \\
+Clinical resistance & 6 & 0.01614 & 2.23 & 0.096 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Drug-specific arms (\texttt{p12b\_egfr\_dms\_results.json}): osimertinib
+479 vs 901 variants; BLU-945 128 vs 1252 (median ratio 0.122).
+ABL catalytic axis (\texttt{P12b\_abl\_catalytic\_efficacy.csv}): WT
+$k_{\rm cat}/K_M = 495.4$; L248R fold 0.05 ($|\Delta\log_{10}|=1.30$,
+ambiguous-sensitivity class); Y253H fold 2.46 (clinical class); extended
+clinical expansion in \texttt{P12b\_extended\_clinical\_expansion.csv}
+and \texttt{P12b\_final\_expansion.csv} (incl.\ E255V, T315I gatekeeper
+excluded).
+
+\subsection{P13: channel capacity across Ras/RAF genotypes}
+
+Mutual information $I$(input; ERK output), Miller--Madow corrected, per
+ligand $\times$ genotype (bits; $\Delta$ vs KrasWT):
+
+\begin{table}[h]
+\centering\small
+\begin{tabular}{lcccccc}
+\toprule
+Ligand & KrasWT & G12C & G12D & G12V & Q61R & BRaf-V600E \\
+\midrule
+EGF & 0.434 & $-0.201$ & $-0.228$ & $-0.050$ & $-0.335$ & $-0.413$ \\
+AREG & 0.089 & $-0.078$ & $-0.073$ & $+0.004^*$ & \multicolumn{2}{c}{archived in JSON} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+($^*$G12V AREG $I=0.093$.) Per-genotype $n$ (1116--2522 cells) and 95\%
+bootstrap CIs in \texttt{p13\_mi\_results.json} (six ligands).
+Robustness (\texttt{p13\_robustness.json}): the ordering is stable across
+4/6/8/12/16 histogram bins and under the KSG estimator (e.g.\ BRaf-V600E
+$\Delta$: $-0.397$ to $-0.423$ across bins; KSG $-0.421$).
+Response-decay times (\texttt{p13\_fig6\_decay.json}): median $t_0$ per
+genotype $2.76$--$6.23$ h (KrasWT 6.23, HRasWT 2.95, NrasWT 5.14, G12C
+5.19, G12D 4.65, G12V 2.76, Q61R 2.85, BRaf-V600E 5.32).
+
+\subsection{P14: downstream shape decoding}
+
+9{,}103 induced genes; per-gene pulse-vs-sustained log-ratio table
+\texttt{p14\_pergene\_log2R.csv} (671 KB). Fraction of genes with
+sustained $>$ 2$\times$ pulsed: $29.0\%$; pulsed $>$ 2$\times$
+sustained: $11.1\%$; within 2$\times$: $49.3\%$. Median onset-time CV
+$0.88$. p53-protein AUC per trace: Pulse A 20.78, Pulse B 19.12, Sustain
+C 36.7, Sustain D 29.18. The 23 fate-gene list is archived in
+\texttt{p14\_results.json}.
+
+\subsection{P15: TCGA tissue-level decoupling}
+
+pERK-vs-ligand-receptor slopes per mutation group, four PanCanAtlas 2018
+studies (verbatim from \texttt{p15\_tcga\_results.json}):
+
+\begin{table}[h]
+\centering\footnotesize
+\begin{tabular}{llcccc}
+\toprule
+Study & Group & $n$ & slope & s.e. & $p$ \\
+\midrule
+COADREAD ($n{=}464$) & WT & 218 & $-0.124$ & 0.152 & 0.416 \\
+ & KRAS-G12 & 115 & $-0.464$ & 0.246 & 0.062 \\
+ & strong & 57 & $-0.578$ & 0.333 & 0.089 \\
+ & other-mut & 74 & $+0.062$ & 0.361 & 0.863 \\
+LUAD ($n{=}360$) & WT & 232 & $-0.255$ & 0.092 & 0.006 \\
+ & KRAS-G12 & 92 & $-0.445$ & 0.211 & 0.038 \\
+SKCM ($n{=}329$) & WT & 70 & $+0.031$ & 0.313 & 0.923 \\
+ & strong & 198 & $-0.055$ & 0.174 & 0.752 \\
+PAAD ($n{=}122$) & WT & 43 & $-0.274$ & 0.562 & 0.629 \\
+ & KRAS-G12 & 71 & $-0.310$ & 0.353 & 0.382 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Slope ratios (mutant vs WT): COADREAD $4.67\times$ (strong), $3.75\times$
+(G12); LUAD $1.75\times$; PAAD $1.13\times$; SKCM $-1.81\times$.
+Interaction terms: COADREAD $\beta=-0.454$ ($p=0.205$), SKCM
+$\beta=-0.086$ ($p=0.802$). Per-sample tables (sample-level $g$-scores,
+pEGFR, EGFR, pERK, group) archived as \texttt{p15\_<study>\_persample.csv}.
+
+\section{Wnt digitisation and yeast positive control}
+
+\texttt{fig4F\_digitized.csv}: our digitisation of Goentoro \& Kirschner
+(2009) Fig.~4F (7.2 mM: 0.964; 20.8 mM: 1.040; 41.3 mM: 1.021
+fold-change; registered precision $\pm 0.05$ fold-change, $\pm 2$ mM).
+The Hog1 osmotic set-point positive control
+(\texttt{score\_markers\_v2\_authordata.py}) runs against the author
+numerical table \texttt{data\_external/muzzey2009/mmc2.xls}; only the
+glycerol arms rely on figure digitisation (Methods).
+
+\section{Third-party data provenance}
+
+Shipped here (small, license-clear): Bergmann 2010 Datasets S1/S2
+(PMC2858443, CC BY); Muzzey et al.\ 2009 \texttt{mmc2.xls}
+(PMC3109981). Referenced but not re-hosted (exact access notes in
+\texttt{data\_external/PROVENANCE.md}): Nikoli\'c et al.\ repository
+(arXiv:2312.17684) / Liu et al.\ PNAS 2013; Gregor et al.\ 2005, 2007;
+Petkova et al.\ 2019; Cheung et al.\ 2014; Chavez-Abiega et al.\ 2022
+KTR archive ($\sim$786 MB); Wang et al.\ 2022 NF-$\kappa$B archive
+($\sim$54 MB); Keshelava et al.\ 2018 Suppl.\ Data 3 (mirrored in the
+companion repository \texttt{gpcr-field-audit}); TCGA PanCanAtlas 2018
+via cBioPortal; GSE305057; Gillies et al.\ 2020 supplements; Finzel
+dissertation 2016 (refubium fub188/7115).
+
+\end{document}
