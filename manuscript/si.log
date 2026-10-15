@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.15)  16 OCT 2026 01:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.15)  16 OCT 2026 03:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,28 +430,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--42
  []
 
 
-Overfull \hbox (2.54744pt too wide) in paragraph at lines 43--43
-[]|\OT1/cmtt/m/n/10.95 code11[]discrimination[]map[]v09| 
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]|\OT1/cmtt/m/n/10.95 code11[]discrimination[]map[]
  []
 
 
-Overfull \hbox (6.6865pt too wide) in paragraph at lines 45--45
-[]|\OT1/cmtt/m/n/10.95 code06[]nfkB[]negative[]feedback[]
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]|\OT1/cmtt/m/n/10.95 code06[]nfkB[]negative[]
  []
 
 
-Overfull \hbox (18.18387pt too wide) in paragraph at lines 46--46
-[]|\OT1/cmtt/m/n/10.95 code08[]msn2[]excitable[]frequency[]
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
+[]|\OT1/cmtt/m/n/10.95 code08[]msn2[]excitable[]
  []
 
 
-Overfull \hbox (16.57423pt too wide) in paragraph at lines 48--48
-[]|\OT1/cmtt/m/n/10.95 code12[]nfkB[]GLM[]prediction[]test[]
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
+[]|\OT1/cmtt/m/n/10.95 code12[]nfkB[]GLM[]prediction[]
  []
 
 
-Overfull \hbox (23.93256pt too wide) in paragraph at lines 49--49
-[]|\OT1/cmtt/m/n/10.95 code15[]nfkB[]saturation[]transient[]
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
+[]|\OT1/cmtt/m/n/10.95 code15[]nfkB[]saturation[]
  []
 
 
@@ -460,13 +460,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--51
  []
 
 
-Overfull \hbox (23.86345pt too wide) in paragraph at lines 51--52
-[]|\OT1/cmtt/m/n/10.95 P2[]verdict[]summary.csv\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[]|\OT1/cmtt/m/n/10.95 P2[]verdict[]
  []
 
 
-Overfull \hbox (76.69902pt too wide) in paragraph at lines 51--52
-\OT1/cmtt/m/n/10.95 P2[]msn2[]stratification[]units.csv| 
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+\OT1/cmtt/m/n/10.95 summary.csv\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+\OT1/cmtt/m/n/10.95 P2[]msn2[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--52
+\OT1/cmtt/m/n/10.95 stratification[]
  []
 
 
@@ -476,33 +486,38 @@ T$\OT1/cmr/m/n/10.95 B
  []
 
 
-Overfull \hbox (20.82178pt too wide) in paragraph at lines 52--53
-[]|\OT1/cmtt/m/n/10.95 P3[]verdict[]summary.csv| 
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
+[]|\OT1/cmtt/m/n/10.95 P3[]verdict[]
  []
 
 
-Overfull \hbox (20.82178pt too wide) in paragraph at lines 53--54
-[]|\OT1/cmtt/m/n/10.95 P4[]verdict[]summary.csv| 
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
+[]|\OT1/cmtt/m/n/10.95 P4[]verdict[]
  []
 
 
-Overfull \hbox (20.82178pt too wide) in paragraph at lines 54--55
-[]|\OT1/cmtt/m/n/10.95 P6[]verdict[]summary.csv| 
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
+[]|\OT1/cmtt/m/n/10.95 P6[]verdict[]
  []
 
 
-Overfull \hbox (45.24857pt too wide) in paragraph at lines 56--57
-[]|\OT1/cmtt/m/n/10.95 p9[]bcd[]anchor[]results.json\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+[]|\OT1/cmtt/m/n/10.95 p9[]bcd[]anchor[]
  []
 
 
-Overfull \hbox (36.4582pt too wide) in paragraph at lines 56--57
-\OT1/cmtt/m/n/10.95 p9[]2[]upgrade[]results.json| 
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+\OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Overfull \hbox (8.29613pt too wide) in paragraph at lines 59--59
-[]|\OT1/cmtt/m/n/10.95 score[]markers[]v2[]authordata.py| 
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+\OT1/cmtt/m/n/10.95 p9[]2[]upgrade[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--59
+[]|\OT1/cmtt/m/n/10.95 score[]markers[]v2[]
  []
 
 
@@ -512,18 +527,28 @@ audit; per-
  []
 
 
-Overfull \hbox (46.8582pt too wide) in paragraph at lines 61--62
-[]|\OT1/cmtt/m/n/10.95 cascade[]audit[]results.json\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+[]|\OT1/cmtt/m/n/10.95 cascade[]audit[]
  []
 
 
-Overfull \hbox (103.83282pt too wide) in paragraph at lines 61--62
-\OT1/cmtt/m/n/10.95 cascade[]hill[]fits[]methods[]ladder.json| 
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+\OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Overfull \hbox (2.54744pt too wide) in paragraph at lines 62--62
-[]|\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]audit.py| 
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+\OT1/cmtt/m/n/10.95 cascade[]hill[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--62
+\OT1/cmtt/m/n/10.95 fits[]methods[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
+[]|\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]
  []
 
 
@@ -532,24 +557,33 @@ Underfull \hbox (badness 5288) in paragraph at lines 62--62
  []
 
 
-Overfull \hbox (85.48938pt too wide) in paragraph at lines 62--63
-[]|\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]results.json\OT1/cmr/m/n/10.95 ,
-
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+[]|\OT1/cmtt/m/n/10.95 p10[]gain[]
  []
 
 
-Overfull \hbox (93.94508pt too wide) in paragraph at lines 62--63
-\OT1/cmtt/m/n/10.95 p10[]supplementary[]arms[]results.json| 
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+\OT1/cmtt/m/n/10.95 confinement[]
  []
 
 
-Overfull \hbox (16.57423pt too wide) in paragraph at lines 64--64
-[]|\OT1/cmtt/m/n/10.95 p11[]counting[]law[]cross[]cellline[]
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+\OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Overfull \hbox (30.70952pt too wide) in paragraph at lines 65--66
-[]|\OT1/cmtt/m/n/10.95 P12a[]erk[]baseline[]cv.csv| 
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+\OT1/cmtt/m/n/10.95 p10[]supplementary[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--64
+[]|\OT1/cmtt/m/n/10.95 p11[]counting[]law[]cross[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
+[]|\OT1/cmtt/m/n/10.95 P12a[]erk[]baseline[]
  []
 
 
@@ -558,8 +592,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--67
  []
 
 
-Overfull \hbox (45.24857pt too wide) in paragraph at lines 66--67
-\OT1/cmtt/m/n/10.95 p12b[]egfr[]dms[]variants.csv\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+\OT1/cmtt/m/n/10.95 p12b[]egfr[]dms[]
  []
 
 
@@ -573,18 +607,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--67
  []
 
 
-Overfull \hbox (6.61739pt too wide) in paragraph at lines 67--68
-[]|\OT1/cmtt/m/n/10.95 p13[]mi[]results.json\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+[]|\OT1/cmtt/m/n/10.95 p13[]mi[]
  []
 
 
-Overfull \hbox (8.22702pt too wide) in paragraph at lines 67--68
-\OT1/cmtt/m/n/10.95 p13[]robustness.json\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 1303) in paragraph at lines 67--68
+\OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 p13[]
  []
 
 
-Overfull \hbox (3.57571pt too wide) in paragraph at lines 67--68
-\OT1/cmtt/m/n/10.95 p13[]fig6[]decay.json| 
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+\OT1/cmtt/m/n/10.95 robustness.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
+\OT1/cmtt/m/n/10.95 p13[]fig6[]
  []
 
 
@@ -593,31 +632,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--69
  []
 
 
-Overfull \hbox (15.07309pt too wide) in paragraph at lines 68--69
-\OT1/cmtt/m/n/10.95 p14[]pergene[]log2R.csv| 
- []
-
-
-Overfull \hbox (18.11476pt too wide) in paragraph at lines 69--70
-[]|\OT1/cmtt/m/n/10.95 p15[]tcga[]results.json\OT1/cmr/m/n/10.95 ,
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+\OT1/cmtt/m/n/10.95 p14[]pergene[]
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 69--70
-\OT1/cmr/m/n/10.95 four per-sample
+[]|\OT1/cmtt/m/n/10.95 p15[]tcga[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
-[]|\OT1/cmr/m/n/10.95 Fig. 1 framework schematic
+Underfull \hbox (badness 3635) in paragraph at lines 69--70
+\OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 , four
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 71--71
-\OT1/cmr/m/n/10.95 (derived from the umbrella edition
+Underfull \hbox (badness 1603) in paragraph at lines 71--71
+\OT1/cmr/m/n/10.95 from the umbrella edition \OT1/cmtt/m/n/10.95 draw[]ed[]
  []
 
-[3]
+[3] [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 101.
@@ -658,16 +692,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 117--117
  []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Overfull \hbox (61.86728pt too wide) in paragraph at lines 123--125
-\OT1/cmr/m/n/10.95 All 25 per-unit rows (Histamine and UK ladders, low/mid/high
-/full bands) with CIs are in \OT1/cmtt/m/n/10.95 P4[]verdict[]summary.csv\OT1/c
-mr/m/n/10.95 . 
+[]\OT1/cmr/m/n/10.95 All 25 per-unit rows (Histamine and UK ladders, low/mid/hi
+gh/full bands) with CIs are in \OT1/cmtt/m/n/10.95 P4[]verdict[]summary.csv\OT1
+/cmr/m/n/10.95 . 
  []
 
-[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 126.
@@ -680,6 +710,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 126.
 
+[5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 167.
@@ -699,7 +730,10 @@ mtt/m/n/10.95 cascade[]audit[]results.json \OT1/cmr/m/n/10.95 and \OT1/cmtt/m/n
 /10.95 cascade[]hill[]fits[]methods[]ladder.json\OT1/cmr/m/n/10.95 ;
  []
 
-[5]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (24.27513pt too wide) in paragraph at lines 224--229
 []\OT1/cmr/m/n/10.95 Split-half rank correlations and 95% CIs per condition are
  archived in \OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]results.json\OT1/cmr/m
@@ -721,9 +755,6 @@ Overfull \hbox (26.41295pt too wide) in paragraph at lines 289--297
 /m/n/10.95 p13[]mi[]results.json
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 [7]
 Overfull \hbox (2.62373pt too wide) in paragraph at lines 344--351
 \OT1/cmr/m/n/10.95 numerical table \OT1/cmtt/m/n/10.95 data[]external/muzzey200
@@ -732,13 +763,13 @@ on
  []
 
 
-Overfull \hbox (78.4321pt too wide) in paragraph at lines 354--369
+Overfull \hbox (78.4321pt too wide) in paragraph at lines 354--370
 \OT1/cmr/m/n/10.95 al. 2009 \OT1/cmtt/m/n/10.95 mmc2.xls \OT1/cmr/m/n/10.95 (PM
 C3109981). Referenced but not re-hosted (exact access notes in \OT1/cmtt/m/n/10
 .95 data[]external/PROVENANCE.md\OT1/cmr/m/n/10.95 ):
  []
 
-[8] (si.aux)
+[8] [9] (si.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
@@ -747,9 +778,9 @@ Package rerunfilecheck Info: File `si.out' has not changed.
 (rerunfilecheck)             Checksum: 58331A4DE6CF2F2B4DEAF1363E0CB8F3;5095.
  ) 
 Here is how much of TeX's memory you used:
- 10230 strings out of 469327
- 156636 string characters out of 5456969
- 597043 words of memory out of 5000000
+ 10231 strings out of 469327
+ 156642 string characters out of 5456969
+ 599043 words of memory out of 5000000
  39200 multiletter control sequences out of 15000+600000
  641989 words of font info for 93 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -776,10 +807,10 @@ m/cmsy9.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/
 public/amsfonts/symbols/msam10.pfb>
-Output written on si.pdf (8 pages, 270192 bytes).
+Output written on si.pdf (9 pages, 270331 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 192 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
+ 249 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 31 named destinations out of 1000 (max. 500000)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

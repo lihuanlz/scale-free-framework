@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Code 48 · P6 blind ruling: FCD attribution — NF-κB sequential grid fold vs absolute dose
-Pre-registration: 预注册_P6_FCD归属裁决_NFkB序贯网格_v01.md (registration no. 95, frozen)
+Code 48 · P6 blind ruling: FCD attribution  -  NF-κB sequential grid fold vs absolute dose
+Pre-registration: prereg_P6_FCD_attribution_NFkB_sequential_grid_v01.md (registration no. 95, frozen)
 Data: Wang AG, Son M, et al. 2022 Cell Rep 40:111159
      GitHub tay-lab/Sequential_NF-kB_stim
      scmat_sequentialstim.mat + featmat_sequentialstim.mat
@@ -13,7 +13,7 @@ Criterion (pre-registration §3, frozen): on the 36-unit S2 decay A_c
   Additional: the fold slope must be positive (higher preceding dose → stronger decay); if reversed, downgrade to intermediate state.
 Guardrails (pre-registration §5): schema core check / cells per condition >= 50 / naive response rate <20% removed /
   <24 units power limitation / <18 abort / A<=0 removed.
-Run: python3 代码48.py [DATA_DIR]
+Run: python3 code48_P6_blind_adjudication_FCD_attribution.py [DATA_DIR]
 """
 import os, sys, json, hashlib, datetime
 import numpy as np
@@ -59,15 +59,15 @@ def main():
     global LOG_PATH
     root = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__))
     outdir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
-    LOG_PATH = os.path.join(outdir, "代码48_判定日志.txt")
+    LOG_PATH = os.path.join(outdir, "code48_judgment_log.txt")
     if os.path.exists(LOG_PATH):
         os.remove(LOG_PATH)
 
     log("=" * 74)
-    log("Code 48 · P6 blind ruling: FCD attribution — NF-κB sequential grid fold vs absolute dose  v0.1.1")
+    log("Code 48 · P6 blind ruling: FCD attribution  -  NF-κB sequential grid fold vs absolute dose  v0.1.1")
     log(f"Run time: {datetime.datetime.now():%Y-%m-%d %H:%M:%S}")
     log(f"seed={SEED}  bootstrap={N_BOOT}  criterion ΔR2=±{DELTA_LINE}")
-    log(f"Pre-registration: 预注册_P6_FCD归属裁决_NFkB序贯网格_v01.md (registration no. 95, frozen)")
+    log(f"Pre-registration: prereg_P6_FCD_attribution_NFkB_sequential_grid_v01.md (registration no. 95, frozen)")
     log(f"Data root directory: {root}")
     log("=" * 74)
 
@@ -76,7 +76,7 @@ def main():
     p_feat  = os.path.join(root, "featmat_sequentialstim.mat")
     for p in (p_scmat, p_feat):
         if not os.path.isfile(p):
-            log(f"[ABORT] missing file {p} — empty run, does not constitute a ruling"); sys.exit(2)
+            log(f"[ABORT] missing file {p}  -  empty run, does not constitute a ruling"); sys.exit(2)
     scmat = sio.loadmat(p_scmat)["scmatcomb_norm"]
     feat  = sio.loadmat(p_feat)
     fkeys = [k for k in feat if not k.startswith("__")]
@@ -87,18 +87,18 @@ def main():
     # ---------- §5-1 schema core check ----------
     # v0.1.1: featmat rows are aligned to scmat after removing NaN rows (same filter as the authors' script)
     if scmat.shape[1] != 172 or feat.shape[1] < 28:
-        log("[ABORT] schema mismatch (column count) — empty run"); sys.exit(2)
+        log("[ABORT] schema mismatch (column count)  -  empty run"); sys.exit(2)
     nanrows = np.isnan(scmat).any(axis=1)   # authors' definition: a row is dropped if any of the 172 columns is NaN
     log(f"[schema] scmat contains {int(nanrows.sum())} NaN rows, removed per the authors' definition to align with featmat")
     scmat = scmat[~nanrows]
     if feat.shape[0] != scmat.shape[0]:
-        log(f"[ABORT] row counts still mismatch scmat{scmat.shape[0]} vs feat{feat.shape[0]} — empty run"); sys.exit(2)
+        log(f"[ABORT] row counts still mismatch scmat{scmat.shape[0]} vs feat{feat.shape[0]}  -  empty run"); sys.exit(2)
     log(f"[schema] cell count after alignment {scmat.shape[0]}")
     grp = scmat[:, 171].astype(int)
     codes = scmat[:, 167:171].astype(int)     # S1..S4 dose codes
     ngrp = sorted(set(grp.tolist()))
     if ngrp != [1, 2, 3]:
-        log(f"[ABORT] dose groups {ngrp} are not [1,2,3] — empty run"); sys.exit(2)
+        log(f"[ABORT] dose groups {ngrp} are not [1,2,3]  -  empty run"); sys.exit(2)
     # dose code → (ligand, group): within-group codes 0-3/4-7/8-11 map to T/I/L/P
     def code2lg(cd, g):
         base = (g - 1) * 4
@@ -109,12 +109,12 @@ def main():
     for g in (1, 2, 3):
         cs = set(codes[grp == g].ravel().tolist())
         if not cs.issubset(set(range((g-1)*4, (g-1)*4+4)) | {12}):
-            log(f"[ABORT] group {g} dose codes out of range {sorted(cs)} — empty run"); sys.exit(2)
+            log(f"[ABORT] group {g} dose codes out of range {sorted(cs)}  -  empty run"); sys.exit(2)
         for cd in cs:
             if cd != 12 and code2lg(cd, g) not in (0, 1, 2, 3):
                 bad += 1
     if bad:
-        log("[ABORT] dose-code mapping failure — empty run"); sys.exit(2)
+        log("[ABORT] dose-code mapping failure  -  empty run"); sys.exit(2)
     log("[schema] dose-group and dose-code mapping core check passed (within-group 0-3/4-7/8-11 → T/I/L/P)")
 
     # main condition = (S1,S2,S3,S4,group); conditions containing 12 are excluded (same-ligand quadruple stimulation/control → descriptive arm)
@@ -179,10 +179,10 @@ def main():
                                   d1=d1, d2=d2, fold=d2/d1))
     log(f"\n[units] valid {len(units)}/36; removed {len(drop_log)}: {drop_log}")
     if len(units) < MIN_UNITS_ABORT:
-        log("[ABORT] valid units <18 — empty run"); sys.exit(2)
+        log("[ABORT] valid units <18  -  empty run"); sys.exit(2)
     power_note = len(units) < MIN_UNITS_PWR
     if power_note:
-        log(f"[LIMITATION] valid units {len(units)} < {MIN_UNITS_PWR} — reduced-power limitation recorded")
+        log(f"[LIMITATION] valid units {len(units)} < {MIN_UNITS_PWR}  -  reduced-power limitation recorded")
 
     lgfold = np.array([np.log10(u["fold"]) for u in units])
     lgabs1 = np.array([np.log10(u["d1"]) for u in units])
@@ -204,13 +204,13 @@ def main():
 
     sign_ok = b_fold > 0
     if dR2 >= DELTA_LINE and sign_ok:
-        verdict = "P6 hit（fold 载波）"
+        verdict = "P6 hit (fold carrier)"
     elif dR2 >= DELTA_LINE and not sign_ok:
-        verdict = "P6 中间态（ΔR2 达标但 fold slopereverse，按pre-registration降级）"
+        verdict = "P6 intermediate (delta_R2 met but fold slope reversed; downgraded per pre-registration)"
     elif dR2 <= -DELTA_LINE:
-        verdict = "P6 证伪（绝对dose载波）"
+        verdict = "P6 falsified (absolute-dose carrier)"
     else:
-        verdict = "P6 中间态"
+        verdict = "P6 intermediate"
     log(f"  Ruling: {verdict}")
     log("=" * 74)
 
@@ -228,10 +228,10 @@ def main():
 
     # ---------- §4 robust arm ----------
     rob = []
-    # ① self-built features (local baseline)
+    # (1) self-built features (local baseline)
     fr = [t // INTERVAL_MIN for t in STIM_MIN]   # onset frames 20/40/60/80
     if scmat.shape[1] < 83:
-        log("[robust arm ①] insufficient trajectory columns — skip"); selfbuilt = None
+        log("[robust arm (1)] insufficient trajectory columns  -  skip"); selfbuilt = None
     else:
         tr = scmat[:, :83]
         sb_peak = np.full((tr.shape[0], 4), np.nan)
@@ -258,19 +258,19 @@ def main():
             r2f_sb, bf_sb = linfit_r2(lgfold[keep], A_sb)
             r2a_sb, ba_sb = linfit_r2(lgabs1[keep], A_sb)
             d_sb = r2f_sb - r2a_sb
-            rob.append(("自建特征(局部baseline)", int(keep.sum()), r2f_sb, r2a_sb, d_sb))
-            log(f"[robust①] self-built features n={keep.sum()}: R2fold={r2f_sb:.4f} R2abs1={r2a_sb:.4f} ΔR2={d_sb:+.4f} (slope {bf_sb:+.4f})")
+            rob.append(("self-built features (local baseline)", int(keep.sum()), r2f_sb, r2a_sb, d_sb))
+            log(f"[robust(1)] self-built features n={keep.sum()}: R2fold={r2f_sb:.4f} R2abs1={r2a_sb:.4f} ΔR2={d_sb:+.4f} (slope {bf_sb:+.4f})")
             selfbuilt = dict(r2f=r2f_sb, r2a=r2a_sb, d=d_sb, n=int(keep.sum()))
         else:
-            log(f"[robust①] self-built features: too few valid units ({keep.sum()}) — skip"); selfbuilt = None
-    # ② dual-predictor increment
+            log(f"[robust(1)] self-built features: too few valid units ({keep.sum()})  -  skip"); selfbuilt = None
+    # (2) dual-predictor increment
     X2 = np.column_stack([np.ones(nU), lgfold, lgabs1])
     beta, *_ = np.linalg.lstsq(X2, A, rcond=None)
     resid = A - X2 @ beta
     r2_both = 1 - float(resid @ resid) / float(((A-A.mean())**2).sum())
-    log(f"[robust②] dual predictors R2={r2_both:.4f} (fold increment {r2_both-r2_abs1:+.4f}; abs1 increment {r2_both-r2_fold:+.4f})")
-    rob.append(("双prediction子", nU, r2_fold, r2_abs1, r2_both))
-    # ③ cell-count weighting
+    log(f"[robust(2)] dual predictors R2={r2_both:.4f} (fold increment {r2_both-r2_abs1:+.4f}; abs1 increment {r2_both-r2_fold:+.4f})")
+    rob.append(("dual predictors", nU, r2_fold, r2_abs1, r2_both))
+    # (3) cell-count weighting
     w = np.sqrt(np.array([u["n"] for u in units], float))
     def wlin_r2(x, y, w):
         X = np.column_stack([np.ones_like(x), x]) * w[:, None]
@@ -278,13 +278,13 @@ def main():
         r = y - np.column_stack([np.ones_like(x), x]) @ beta
         return 1 - float((w*r) @ (w*r)) / float(((w*(y - np.average(y, weights=w**2)))**2).sum())
     r2f_w = wlin_r2(lgfold, A, w); r2a_w = wlin_r2(lgabs1, A, w)
-    log(f"[robust③] weighted: ΔR2={r2f_w-r2a_w:+.4f}")
-    rob.append(("cell数加权", nU, r2f_w, r2a_w, r2f_w-r2a_w))
-    # ④ Spearman
+    log(f"[robust(3)] weighted: ΔR2={r2f_w-r2a_w:+.4f}")
+    rob.append(("cell-count weighted", nU, r2f_w, r2a_w, r2f_w-r2a_w))
+    # (4) Spearman
     from scipy import stats as sst
     rho_f = sst.spearmanr(lgfold, A).statistic
     rho_a = sst.spearmanr(lgabs1, A).statistic
-    log(f"[robust④] Spearman: ρ_fold={rho_f:+.4f} ρ_abs1={rho_a:+.4f} (Δρ={rho_f-rho_a:+.4f})")
+    log(f"[robust(4)] Spearman: ρ_fold={rho_f:+.4f} ρ_abs1={rho_a:+.4f} (Δρ={rho_f-rho_a:+.4f})")
     rob.append(("Spearman", nU, rho_f**2, rho_a**2, rho_f-rho_a))
 
     # ---------- §6 descriptive arm ----------
@@ -319,19 +319,19 @@ def main():
 
     # ---------- output ----------
     import csv
-    with open(os.path.join(outdir, "代码48_单元table.csv"), "w", newline="", encoding="utf-8") as f:
+    with open(os.path.join(outdir, "code48_unit_table.csv"), "w", newline="", encoding="utf-8") as f:
         wcsv = csv.writer(f)
-        wcsv.writerow(["S1ligand","S2ligand","组","d1_ngml","d2_ngml","fold","log10fold","log10abs1","n","A_作者特征"])
+        wcsv.writerow(["S1ligand","S2ligand","group","d1_ngml","d2_ngml","fold","log10fold","log10abs1","n","A_author_features"])
         for u in units:
             wcsv.writerow([LIGANDS[u["i"]], LIGANDS[u["j"]], u["g"], u["d1"], u["d2"],
                            f"{u['fold']:.4f}", f"{np.log10(u['fold']):.4f}",
                            f"{np.log10(u['d1']):.4f}", u["n"], f"{u['A']:.6f}"])
-    with open(os.path.join(outdir, "代码48_robust臂.csv"), "w", newline="", encoding="utf-8") as f:
-        wcsv = csv.writer(f); wcsv.writerow(["臂","n","R2fold_or_rho2","R2abs1_or_rho2","delta"])
+    with open(os.path.join(outdir, "code48_robust_arm.csv"), "w", newline="", encoding="utf-8") as f:
+        wcsv = csv.writer(f); wcsv.writerow(["arm","n","R2fold_or_rho2","R2abs1_or_rho2","delta"])
         for r in rob:
             wcsv.writerow([r[0], r[1], f"{r[2]:.4f}", f"{r[3]:.4f}", f"{r[4]:+.4f}"])
     verdict_json = {
-        "code": "代码48 v0.1.0", "prereg": "P6 v0.1（注册·九十五）", "seed": SEED,
+        "code": "code48 v0.1.0", "prereg": "P6 v0.1 (registry No. 95) ", "seed": SEED,
         "n_units": len(units), "power_note": bool(power_note),
         "excluded_jg": [[LIGANDS[j], g] for j, g in excl_jg],
         "r2_fold": round(r2_fold, 4), "r2_abs1": round(r2_abs1, 4),
@@ -340,9 +340,9 @@ def main():
         "verdict": verdict,
         "selfbuilt_arm": selfbuilt,
     }
-    with open(os.path.join(outdir, "代码48_ruling.json"), "w", encoding="utf-8") as f:
+    with open(os.path.join(outdir, "code48_ruling.json"), "w", encoding="utf-8") as f:
         json.dump(verdict_json, f, ensure_ascii=False, indent=2)
-    log(f"\nOutput: {outdir}/代码48_{{判定日志.txt, 单元table.csv, robust臂.csv, ruling.json}}")
+    log(f"\nOutput: {outdir}/code48_{{judgment_log.txt, unit_table.csv, robust_arm.csv, ruling.json}}")
 
 if __name__ == "__main__":
     main()

@@ -7,7 +7,7 @@ v0.1.1 (2026-08-14): first empty-run fix - actual files have no Experiment colum
   plasma-membrane centroid coordinates, excluded from the key design; the batch-purity arm uses Date.
 v0.1.2 (2026-08-14, never delivered, i.e. void, registered as-is): after the second empty run it was misjudged as
   "six wells with 0.5 min phase staggering, field-of-view-level anchor" - schema validation found it would anchor t0 wrongly to
-  5.5 min，void。
+  5.5 min, void. 
 v0.1.3 (2026-08-14, anchor fixed): schema validation confirmed the authors had linearly interpolated the raw acquisition (3.5 min/frame,
   six well positions staggered by 0.5 min delay) onto a **globally uniform 0.5 min grid** - all
   7,393 cells have full 162 frames, 2.5-83.0 min; t = Time_in_min - 23.5 (time point 7 =
@@ -25,7 +25,7 @@ v0.1.5 (2026-08-14): the formal ruling was produced (the verdict printed complet
   numpy types propagated via sum/abs) cannot be JSON-serialized directly; a default converter +
   explicit int() was added. Adjudication logic, seed, and rng call order unchanged -> main analysis reproduces bit-for-bit.
 =================================================================
-Pre-registration: 预注册_P4_ERK重裁_GPCR-KTR轨迹级_v01.md (ledger entry 81)
+Pre-registration: prereg_P4_ERK_readjudication_GPCR_KTR_trajectory_v01.md (ledger entry 81)
 Dataset  : Chavez-Abiega & Goedhart (2022) J Cell Sci 135(6):jcs259685
           Zenodo doi:10.5281/zenodo.5836623
 Run: user machine Spyder  %runfile this file   (CPU-light, no GPU needed)
@@ -33,7 +33,7 @@ Run: user machine Spyder  %runfile this file   (CPU-light, no GPU needed)
 Frozen decisions (pinned before opening the data, verbatim from the pre-registration section 2):
   D1 time benchmark (anchored in v0.1.3): the authors linearly interpolated the raw acquisition (3.5 min/frame, six well positions
      staggered by 0.5 min delay) onto a globally uniform 0.5 min grid (all cells full 162 frames,
-     2.5–83.0 min）；t = Time_in_min − 23.5 min（time point 7 = 2.5+6×3.5 =
+     2.5–83.0 min) ; t = Time_in_min − 23.5 min (time point 7 = 2.5+6×3.5 =
      23.5 = sample-addition point t=0; authors' AUC window tp9-18 <-> 7-38.5 min post-stimulus validated verbatim).
      baseline = t<0 frames (expected 42); tp7 (t=0, ambiguous ownership of the addition frame) discarded -
      neither into baseline nor into the response window. Guardrail: global grid start 2.5+/-0.1, step median
@@ -42,7 +42,7 @@ Frozen decisions (pinned before opening the data, verbatim from the pre-registra
   D3 window: tau/count/duration window = (0, 38.5] min post-stim; censoring recorded as +inf, Mann-Whitney average ranks.
   D4 include/remove: frames with non-finite or <0 C/N are removed frame-wise (counted missing); cells with missing >10% removed;
      trace end must reach >=38.5 min post-stim. Main-analysis inhibitor = DMSO.
-  D5 nonesmoothed。
+  D5 nonesmoothed. 
   D6 meanArea three-stratum boundaries = 33.33/66.67 percentiles of the adjudication-unit merged cells; labels follow the bootstrap.
   D7 AUC direction frozen: tau-unit AUC = P(tau_low-dose > tau_high-dose) + 0.5*ties (earlier at higher dose is the predicted direction);
      P4-3 stratification penalty delta = AUC_pooled - mean(AUC_within-strata).
@@ -105,7 +105,7 @@ def abort(msg):
     sys.exit(2)
 
 def flush_log():
-    with open(os.path.join(OUT_DIR, "代码46_判定日志.txt"), "w", encoding="utf-8") as f:
+    with open(os.path.join(OUT_DIR, "code46_judgment_log.txt"), "w", encoding="utf-8") as f:
         f.write("\n".join(LOG_LINES) + "\n")
 
 # ---------------- loading and guardrails ----------------
@@ -305,7 +305,7 @@ def main():
         mid_pair   = (doses[2], doses[3])
 
         # ---- P4-1 / P4-2 units ----
-        for zone, pairs in (("低区", low_pairs), ("高区", high_pairs)):
+        for zone, pairs in (("low zone", low_pairs), ("high zone", high_pairs)):
             for pi, (dl, dh) in enumerate(pairs):
                 low, high = pair_unit(by_d, dl, dh)
                 suff = len(low) >= N_MIN and len(high) >= N_MIN
@@ -316,7 +316,7 @@ def main():
                     pt = lo = hi = float("nan"); hit = False
                 store[(lig, zone, pi, "low")] = np.asarray(low, float)
                 store[(lig, zone, pi, "high")] = np.asarray(high, float)
-                unit_rows.append({"clause": "P4-1" if zone == "低区" else "P4-2",
+                unit_rows.append({"clause": "P4-1" if zone == "low zone" else "P4-2",
                                   "ligand": lig, "zone": zone,
                                   "pair": f"{dl:g}↔{dh:g}", "n_low": len(low), "n_high": len(high),
                                   "auc": pt, "ci_lo": lo, "ci_hi": hi,
@@ -327,7 +327,7 @@ def main():
         for kk in K_ROB:
             feats_k = [featurize(c, k=kk) for c in cells]
             by_k = cells_by_dose(cells, feats_k)
-            for zone, pairs in (("低区", low_pairs), ("高区", high_pairs)):
+            for zone, pairs in (("low zone", low_pairs), ("high zone", high_pairs)):
                 for dl, dh in pairs:
                     low, high = pair_unit(by_k, dl, dh)
                     if len(low) >= N_MIN and len(high) >= N_MIN:
@@ -340,11 +340,11 @@ def main():
         sub_cells = [c for c in cells if c["batch"] == big]
         sub = [featurize(c) for c in sub_cells]
         by_b = cells_by_dose(sub_cells, sub)
-        for zone, pairs in (("低区", low_pairs), ("高区", high_pairs)):
+        for zone, pairs in (("low zone", low_pairs), ("high zone", high_pairs)):
             for dl, dh in pairs:
                 low, high = pair_unit(by_b, dl, dh)
                 if len(low) >= N_MIN and len(high) >= N_MIN:
-                    rob_rows.append({"arm": f"batch纯净({big})", "ligand": lig, "zone": zone,
+                    rob_rows.append({"arm": f"batch-clean({big})", "ligand": lig, "zone": zone,
                                      "pair": f"{dl:g}↔{dh:g}", "auc": auc_mw(low, high)})
 
         # ---- P4-3: meanArea three-stratum penalty (all 5 pairs, including the middle transition-band pair) ----
@@ -352,7 +352,7 @@ def main():
         for dl, dh in all_pairs:
             pool = [(f["tau"], f["area"]) for d in (dl, dh) for f in by_d.get(d, [])]
             if len(pool) < 2 * N_MIN:
-                unit_rows.append({"clause": "P4-3", "ligand": lig, "zone": "全",
+                unit_rows.append({"clause": "P4-3", "ligand": lig, "zone": "full",
                                   "pair": f"{dl:g}↔{dh:g}", "n_low": len(pool), "n_high": 0,
                                   "auc": float("nan"), "ci_lo": float("nan"), "ci_hi": float("nan"),
                                   "line": P43_HI, "pass": False, "sufficient": False})
@@ -371,7 +371,7 @@ def main():
                     layer_aucs.append(auc_mw(taus[m & is_low], taus[m & ~is_low]))
                     layer_ns.append(int(m.sum()))
             delta = auc_pool - float(np.mean(layer_aucs)) if layer_aucs else float("nan")
-            unit_rows.append({"clause": "P4-3", "ligand": lig, "zone": "全",
+            unit_rows.append({"clause": "P4-3", "ligand": lig, "zone": "full",
                               "pair": f"{dl:g}↔{dh:g}", "n_low": n_dl, "n_high": len(pool) - n_dl,
                               "auc": delta, "ci_lo": float("nan"), "ci_hi": float("nan"),
                               "line": P43_HI, "pass": abs(delta) <= P43_LO if np.isfinite(delta) else False,
@@ -390,12 +390,12 @@ def main():
         for d in doses:
             fs = by_d.get(d, [])
             if fs:
-                desc_rows.append({"arm": "响应率", "ligand": lig, "pair": f"档{d:g}",
+                desc_rows.append({"arm": "response rate", "ligand": lig, "pair": f"level {d:g}",
                                   "auc": float(np.mean([f["resp"] for f in fs]))})
         # middle-pair (half-saturation transition band) tau readings: excluded from adjudication, into the descriptive arm
         low, high = pair_unit(by_d, mid_pair[0], mid_pair[1])
         if len(low) >= N_MIN and len(high) >= N_MIN:
-            desc_rows.append({"arm": "中间对τ(过渡带)", "ligand": lig,
+            desc_rows.append({"arm": "mid-pair tau (transition band)", "ligand": lig,
                               "pair": f"{mid_pair[0]:g}↔{mid_pair[1]:g}", "auc": auc_mw(low, high)})
 
     # ---------------- P4-2 aggregate adjudication statistic ----------------
@@ -403,10 +403,10 @@ def main():
     aucL_list, aucH_list = [], []
     for lig in LIG_MAIN:
         for pi in range(2):
-            low = store[(lig, "低区", pi, "low")]; high = store[(lig, "低区", pi, "high")]
+            low = store[(lig, "low zone", pi, "low")]; high = store[(lig, "low zone", pi, "high")]
             if len(low) >= N_MIN and len(high) >= N_MIN:
                 aucL_list.append(auc_mw(low, high))
-            low = store[(lig, "高区", pi, "low")]; high = store[(lig, "高区", pi, "high")]
+            low = store[(lig, "high zone", pi, "low")]; high = store[(lig, "high zone", pi, "high")]
             if len(low) >= N_MIN and len(high) >= N_MIN:
                 aucH_list.append(auc_mw(low, high))
     AUC_L = float(np.mean(aucL_list)); AUC_H = float(np.mean(aucH_list))
@@ -417,7 +417,7 @@ def main():
         ls, hs = [], []
         for lig in LIG_MAIN:
             for pi in range(2):
-                for zone, acc in (("低区", ls), ("高区", hs)):
+                for zone, acc in (("low zone", ls), ("high zone", hs)):
                     low = store[(lig, zone, pi, "low")]; high = store[(lig, zone, pi, "high")]
                     if len(low) >= N_MIN and len(high) >= N_MIN:
                         acc.append(auc_mw(low[rng.integers(0, len(low), len(low))],
@@ -432,50 +432,50 @@ def main():
 
     p41 = [r for r in unit_rows if r["clause"] == "P4-1"]
     if any(not r["sufficient"] for r in p41):
-        verdicts["P4-1"] = "数据不足"
+        verdicts["P4-1"] = "insufficient data"
     elif all(r["pass"] for r in p41):
         verdicts["P4-1"] = "hit"
     elif any(np.isfinite(r["auc"]) and r["auc"] < 0.5 for r in p41) or not any(r["pass"] for r in p41):
-        verdicts["P4-1"] = "证伪"
+        verdicts["P4-1"] = "falsified"
     else:
-        verdicts["P4-1"] = "miss-中间态"
+        verdicts["P4-1"] = "miss-intermediate"
 
     if len(aucH_list) < 4 or len(aucL_list) < 4:
-        verdicts["P4-2"] = "数据不足"
+        verdicts["P4-2"] = "insufficient data"
     elif AUC_H < M42_H and D_pt >= M42_D:
         verdicts["P4-2"] = "hit"
     elif AUC_H >= M42_H or D_pt <= 0:
-        verdicts["P4-2"] = "证伪"
+        verdicts["P4-2"] = "falsified"
     else:
-        verdicts["P4-2"] = "miss-中间态"
+        verdicts["P4-2"] = "miss-intermediate"
 
     p43 = [r for r in unit_rows if r["clause"] == "P4-3" and r["sufficient"]]
     n43_lo = sum(abs(r["auc"]) <= P43_LO for r in p43)
     n43_hi = sum(abs(r["auc"]) >= P43_HI for r in p43)
     if len(p43) < 10:
-        verdicts["P4-3"] = "数据不足"
+        verdicts["P4-3"] = "insufficient data"
     elif n43_hi >= P43_KILL:
-        verdicts["P4-3"] = "证伪"
+        verdicts["P4-3"] = "falsified"
     elif n43_lo >= P43_HIT:
         verdicts["P4-3"] = "hit"
     else:
-        verdicts["P4-3"] = "miss-中间态"
+        verdicts["P4-3"] = "miss-intermediate"
 
-    overall = "P4 证伪（exists证伪条款）" if any(v == "证伪" for v in verdicts.values()) else \
-              ("P4 hit（none证伪条款且existshit条款）" if any(v == "hit" for v in verdicts.values())
-               else "P4 miss-中间态")
+    overall = "P4 falsified (a falsified clause exists)" if any(v == "falsified" for v in verdicts.values()) else \
+              ("P4 hit (no falsified clause and at least one hit clause)" if any(v == "hit" for v in verdicts.values())
+               else "P4 miss-intermediate")
     for k, v in verdicts.items():
-        log(f"  {k}：{v}")
+        log(f"  {k}: {v}")
     log(f"  overall ruling: {overall}")
-    log(f"  P4-3 count：|Δ|≤0.01 → {n43_lo}/10；|Δ|≥0.03 → {n43_hi}/10")
+    log(f"  P4-3 count: |Δ|≤0.01 → {n43_lo}/10; |Δ|≥0.03 → {n43_hi}/10")
 
     # ---------------- main output (saved before the descriptive arm: the main ruling archive is unaffected by descriptive-arm exceptions) ----------------
-    pd.DataFrame(unit_rows).to_csv(os.path.join(OUT_DIR, "代码46_单元table.csv"),
+    pd.DataFrame(unit_rows).to_csv(os.path.join(OUT_DIR, "code46_unit_table.csv"),
                                    index=False, encoding="utf-8-sig")
-    pd.DataFrame(rob_rows).to_csv(os.path.join(OUT_DIR, "代码46_robust臂.csv"),
+    pd.DataFrame(rob_rows).to_csv(os.path.join(OUT_DIR, "code46_robust_arm.csv"),
                                   index=False, encoding="utf-8-sig")
-    with open(os.path.join(OUT_DIR, "代码46_ruling.json"), "w", encoding="utf-8") as f:
-        json.dump({"script": "代码46 v0.1.5", "seed": int(SEED), "n_boot": int(N_BOOT),
+    with open(os.path.join(OUT_DIR, "code46_ruling.json"), "w", encoding="utf-8") as f:
+        json.dump({"script": "code46 v0.1.5", "seed": int(SEED), "n_boot": int(N_BOOT),
                    "verdicts": {k: str(v) for k, v in verdicts.items()}, "overall": str(overall),
                    "P4-2": {"AUC_L": float(AUC_L), "AUC_H": float(AUC_H),
                             "D": float(D_pt), "D_ci": [float(D_lo), float(D_hi)]},
@@ -484,7 +484,7 @@ def main():
                   f, ensure_ascii=False, indent=2,
                   default=lambda o: int(o) if isinstance(o, np.integer)
                          else float(o) if isinstance(o, np.floating) else str(o))
-    log("\nmain output saved: 代码46_单元table.csv / 代码46_robust臂.csv / 代码46_ruling.json")
+    log("\nmain output saved: code46_unit_table.csv / code46_robust_arm.csv / code46_ruling.json")
     flush_log()
 
     # ---------------- descriptive arm (not adjudicated; any exception only warns and skips) ----------------
@@ -502,7 +502,7 @@ def main():
         for d in doses:
             fs = by_d.get(d, [])
             if fs:
-                desc_rows.append({"arm": "S1P-响应率", "ligand": "S1P", "pair": f"档{d:g}",
+                desc_rows.append({"arm": "S1P response rate", "ligand": "S1P", "pair": f"level {d:g}",
                                   "auc": float(np.mean([f["resp"] for f in fs]))})
         log(f"  S1P descriptive arm done ({len([r for r in desc_rows if r['ligand']=='S1P'])} rows)")
     except Exception as e:
@@ -553,7 +553,7 @@ def main():
             ok_grid = len(tgi) >= 2 and abs(tgi.min() - T_START) <= 0.1 and tgi.max() >= T_END_MIN and \
                       (abs(sti - DT_GLOB) <= 0.05 or abs(sti - 3.5) <= 0.2)
             if not ok_grid:
-                log(f"  [warning] {os.path.basename(p3)} gridexception（{tgi.min() if len(tgi) else float('nan'):.1f}–"
+                log(f"  [warning] {os.path.basename(p3)} gridexception ({tgi.min() if len(tgi) else float('nan'):.1f}–"
                     f"{tgi.max() if len(tgi) else float('nan'):.1f}, step median {sti:.3f}), inhibitor arm skipped")
                 continue
             df["DoseV"] = df["Dose"].apply(parse_dose)
@@ -580,16 +580,16 @@ def main():
                 for j in range(len(doses_i) - 1):
                     low, high = pair_unit(by_i, doses_i[j], doses_i[j + 1])
                     if len(low) >= N_MIN and len(high) >= N_MIN:
-                        desc_rows.append({"arm": f"inhibition剂-{inh}", "ligand": lig,
+                        desc_rows.append({"arm": f"inhibitor-{inh}", "ligand": lig,
                                           "pair": f"{doses_i[j]:g}↔{doses_i[j+1]:g}",
                                           "auc": auc_mw(low, high)})
             log(f"  inhibitor arm done ({lig})")
         except Exception as e:
             log(f"  [warning] inhibitor arm {lig} exception, skipped: {e}")
 
-    pd.DataFrame(desc_rows).to_csv(os.path.join(OUT_DIR, "代码46_描述臂.csv"),
+    pd.DataFrame(desc_rows).to_csv(os.path.join(OUT_DIR, "code46_descriptive_arm.csv"),
                                    index=False, encoding="utf-8-sig")
-    log("\noutput: 代码46_单元table.csv / 代码46_robust臂.csv / 代码46_描述臂.csv / 代码46_ruling.json / 代码46_判定日志.txt")
+    log("\noutput: code46_unit_table.csv / code46_robust_arm.csv / code46_descriptive_arm.csv / code46_ruling.json / code46_judgment_log.txt")
     log("- recorded either way: please return the five outputs; they enter the ledger as-is regardless of outcome. -")
     flush_log()
 

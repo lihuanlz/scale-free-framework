@@ -4,7 +4,7 @@ P14 audit: do downstream decoders read p53 pulse vs sustained shape differently
 at matched total exposure (AUC)?
 Data: Jimenez-Asins et al. 2022, Mol Syst Biol 18:e10588 (Lahav lab),
 GitHub albajimenezasins/Proteomics_MSB_2022 (RNA-seq TPM + TMT proteomics).
-Pre-registered: 预注册卡_P14_p53下游误读_2026-09-28.md (amendment A1).
+Pre-registered: prereg_card_P14_p53_downstream_misreading_2026-09-28.md (amendment A1).
 """
 import os, json, warnings
 import numpy as np

@@ -14,7 +14,7 @@ Equations (Krishna 2006; the GLM modification acts only on the degradation term 
   dN_n/dt = A(1−N_n)/(ε+I) − B·I·N_n/(δ+N_n)
   dI_m/dt = N_n² − I_m
   dI/dt   = I_m − C(1−N_n)·degr(I)
-  degr: n=1 → I/(ε+I)；n=4 → I⁴/(ε⁴+I⁴)
+  degr: n=1 → I/(ε+I); n=4 → I⁴/(ε⁴+I⁴)
 
 Steady-state reduction: I_m=N²; I*(N) = ε·(N²/(C(1−N)−N²))^{1/n} (requires C(1−N)>N²);
 substituted back into dN_n=0 for 1-D root-finding (dense N grid 2×10⁵, vectorized).

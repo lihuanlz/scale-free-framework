@@ -1,5 +1,5 @@
 # P11 audit: p53 counting law across cell lines (normal vs cancer)
-# Preregistration card: 预注册卡_P11_p53计数律跨细胞系_2026-09-28.md (FROZEN before data)
+# Preregistration card: prereg_card_P11_p53_counting_law_cross_cellline_2026-09-28.md (FROZEN before data)
 # Amendment A1 (2026-09-28, before any value extraction): no per-line pulse counts are
 #   published; persistence metric = average periodicity at 8 Gy (Fig. 3G y-axis),
 #   repair metric = gammaH2AX fraction remaining at 8 h (Fig. 5F mean over doses).

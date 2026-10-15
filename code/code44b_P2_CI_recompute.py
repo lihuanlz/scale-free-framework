@@ -4,7 +4,7 @@ Code 44b · P2 supplementary computation: bootstrap CI (v0.1.2)
 ================================================
 Nature: supplementary computation script. **The adjudication is frozen at registry No. 72 (2026-08-14); this script
 contains, prints, and changes no adjudication logic.** Sole task: deliver the bootstrap 2000x (per-cell resampling)
-confidence interval promised by pre-registration v0.1 — a deliverable that was not produced because of a typo in
+confidence interval promised by pre-registration v0.1  -  a deliverable that was not produced because of a typo in
 code 44's CI trigger condition (strat_key/strat_tag mix-up).
 
 Scope (per pre-registration): 7 wild-type promoters x 3 dose pairs x 3 main channels
@@ -12,11 +12,11 @@ Scope (per pre-registration): 7 wild-type promoters x 3 dose pairs x 3 main chan
 Seed remains 20260814 (locked).
 
 Reproducibility check: before writing the CI, this script recomputes the point estimates of all 63 rows and compares
-them cell by cell (tolerance 1e-12) against "代码44_单元table.csv" (saved by the formal ruling run) in the same directory.
-Any mismatch triggers a loud alarm — it would mean the supplementary environment deviates from the formal run and the CI cannot be entered into the record.
+them cell by cell (tolerance 1e-12) against "code44_unit_table.csv" (saved by the formal ruling run) in the same directory.
+Any mismatch triggers a loud alarm  -  it would mean the supplementary environment deviates from the formal run and the CI cannot be entered into the record.
 If that CSV is absent from the same directory, skip the comparison and note it (the CI is still computed, but the point estimates must be manually cross-checked).
 
-Output: 代码44b_日志.txt, 代码44b_CI单元table.csv (written to the directory of this script).
+Output: code44b_log.txt, code44b_CI_unit_table.csv (written to the directory of this script).
 Run: same as code 44 (ROOT points to the level directly containing the promoter folders such as ALD3); pure CPU, approx 1-3 min.
 """
 import os
@@ -141,13 +141,13 @@ def main():
     t_start = _time.time()
     global _log_fh
     outdir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
-    _log_fh = open(os.path.join(outdir, "代码44b_日志.txt"), "w", encoding="utf-8")
+    _log_fh = open(os.path.join(outdir, "code44b_log.txt"), "w", encoding="utf-8")
 
     rng = np.random.default_rng(SEED)
     log("=" * 72)
     log("Code 44b · P2 supplementary computation: bootstrap CI (v0.1.2)")
     log("Adjudication frozen at registry No. 72; this script prints and changes no adjudication.")
-    log(f"seed {SEED} ｜ bootstrap {N_BOOT} ｜ scope 7 promoters x 3 dose pairs x 3 main channels @ {MAIN_DUR} size-stratified")
+    log(f"seed {SEED}  |  bootstrap {N_BOOT}  |  scope 7 promoters x 3 dose pairs x 3 main channels @ {MAIN_DUR} size-stratified")
     log(f"data root directory: {ROOT}")
     log("=" * 72)
 
@@ -187,7 +187,7 @@ def main():
         return
 
     # ---------------- reproducibility check (against the formal run's unit table) ----------------
-    ref_path = os.path.join(outdir, "代码44_单元table.csv")
+    ref_path = os.path.join(outdir, "code44_unit_table.csv")
     if os.path.isfile(ref_path):
         ref = {}
         with open(ref_path, encoding="utf-8-sig") as fh:
@@ -204,15 +204,15 @@ def main():
                 for a, b in zip((r["auc_pool"], r["auc_terc"], r["delta"]), ref[key]):
                     maxdiff = max(maxdiff, abs(a - b))
         verdict = "pass (point estimates match the formal run cell by cell)" if (nchk == 63 and maxdiff < 1e-12) \
-            else f"**MISMATCH** (compared {nchk}/63 rows, max diff {maxdiff:.2e}) — CI cannot be entered into the record; investigate"
+            else f"**MISMATCH** (compared {nchk}/63 rows, max diff {maxdiff:.2e})  -  CI cannot be entered into the record; investigate"
         log("")
         log(f"Reproducibility check: compared {nchk}/63 rows, max deviation {maxdiff:.2e} -> {verdict}")
     else:
         log("")
-        log("Reproducibility check: 代码44_单元table.csv not found in the same directory; comparison skipped (please cross-check the point estimates manually).")
+        log("Reproducibility check: code44_unit_table.csv not found in the same directory; comparison skipped (please cross-check the point estimates manually).")
 
     # ---------------- save and print ----------------
-    csv_path = os.path.join(outdir, "代码44b_CI单元table.csv")
+    csv_path = os.path.join(outdir, "code44b_CI_unit_table.csv")
     with open(csv_path, "w", newline="", encoding="utf-8-sig") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader()

@@ -18,7 +18,7 @@ statistics, and the reference economics of cellular signalling}
 
 \noindent This Supporting Information documents the complete computational
 output of the accompanying repository (\texttt{scale-free-framework},
-release v1.0.0): the full analysis-script roster, every archived verdict
+release v1.0.1): the full analysis-script roster, every archived verdict
 table with its frozen decision lines, and the provenance of all
 third-party data. Numbers are transcribed verbatim from
 \texttt{results/}. Scripts are plain Python~3
@@ -38,41 +38,41 @@ Script & Computes & Archived output \\
 \midrule
 \endhead
 \multicolumn{3}{l}{\emph{PdPC instance}}\\
-\texttt{code04\_pdpc\_identifiability\_ audit} & identifiability audit of the PdPC circuit & figures/tables \\
-\texttt{code10\_asymmetric\_Km\_ degeneracy\_group} & asymmetric-$K_m$ degeneracy group & figures/tables \\
-\texttt{code11\_discrimination\_map\_v09} & discrimination map & figures \\
+\texttt{code04\_\allowbreak{}pdpc\_\allowbreak{}identifiability\_\allowbreak{} audit} & identifiability audit of the PdPC circuit & figures/tables \\
+\texttt{code10\_\allowbreak{}asymmetric\_\allowbreak{}Km\_\allowbreak{} degeneracy\_\allowbreak{}group} & asymmetric-$K_m$ degeneracy group & figures/tables \\
+\texttt{code11\_\allowbreak{}discrimination\_\allowbreak{}map\_\allowbreak{}v09} & discrimination map & figures \\
 \multicolumn{3}{l}{\emph{Census systems (NF-$\kappa$B, Msn2)}}\\
-\texttt{code06\_nfkB\_negative\_feedback\_ oscillator\_audit} & NF-$\kappa$B oscillator audit & figures/tables \\
-\texttt{code08\_msn2\_excitable\_frequency\_ encoding} & Msn2 excitable frequency encoding & figures/tables \\
-\texttt{code09\_nfkB\_spike\_mode\_audit} & NF-$\kappa$B spike-mode audit & figures/tables \\
-\texttt{code12\_nfkB\_GLM\_prediction\_test\_ switchlike\_IkB} & GLM prediction test, switch-like I$\kappa$B & figures/tables \\
-\texttt{code15\_nfkB\_saturation\_transient\_ test} & saturation transient test & figures/tables \\
+\texttt{code06\_\allowbreak{}nfkB\_\allowbreak{}negative\_\allowbreak{}feedback\_\allowbreak{} oscillator\_\allowbreak{}audit} & NF-$\kappa$B oscillator audit & figures/tables \\
+\texttt{code08\_\allowbreak{}msn2\_\allowbreak{}excitable\_\allowbreak{}frequency\_\allowbreak{} encoding} & Msn2 excitable frequency encoding & figures/tables \\
+\texttt{code09\_\allowbreak{}nfkB\_\allowbreak{}spike\_\allowbreak{}mode\_\allowbreak{}audit} & NF-$\kappa$B spike-mode audit & figures/tables \\
+\texttt{code12\_\allowbreak{}nfkB\_\allowbreak{}GLM\_\allowbreak{}prediction\_\allowbreak{}test\_\allowbreak{} switchlike\_\allowbreak{}IkB} & GLM prediction test, switch-like I$\kappa$B & figures/tables \\
+\texttt{code15\_\allowbreak{}nfkB\_\allowbreak{}saturation\_\allowbreak{}transient\_\allowbreak{} test} & saturation transient test & figures/tables \\
 \multicolumn{3}{l}{\emph{Blind adjudications}}\\
-\texttt{code44/44b} & P2 amplitude-stratification adjudication (Msn2) + CI recompute & \texttt{P2\_verdict\_summary.csv}, \texttt{P2\_msn2\_stratification\_units.csv} \\
-\texttt{code45} & P3 free-statistic sufficiency (NF-$\kappa$B spatial gradient) & \texttt{P3\_verdict\_summary.csv} \\
-\texttt{code46} & P4 ERK re-adjudication (GPCR-KTR, trajectory level) & \texttt{P4\_verdict\_summary.csv} \\
-\texttt{code48} & P6 FCD attribution (NF-$\kappa$B sequential grid) & \texttt{P6\_verdict\_summary.csv} \\
+\texttt{code44/44b} & P2 amplitude-stratification adjudication (Msn2) + CI recompute & \texttt{P2\_\allowbreak{}verdict\_\allowbreak{}summary.csv}, \texttt{P2\_\allowbreak{}msn2\_\allowbreak{}stratification\_\allowbreak{}units.csv} \\
+\texttt{code45} & P3 free-statistic sufficiency (NF-$\kappa$B spatial gradient) & \texttt{P3\_\allowbreak{}verdict\_\allowbreak{}summary.csv} \\
+\texttt{code46} & P4 ERK re-adjudication (GPCR-KTR, trajectory level) & \texttt{P4\_\allowbreak{}verdict\_\allowbreak{}summary.csv} \\
+\texttt{code48} & P6 FCD attribution (NF-$\kappa$B sequential grid) & \texttt{P6\_\allowbreak{}verdict\_\allowbreak{}summary.csv} \\
 \multicolumn{3}{l}{\emph{Morphogen instance}}\\
-\texttt{p9\_bcd\_anchor\_audit.py} & P9: absolute-anchor test of the Bcd profile (581 embryos) & \texttt{p9\_bcd\_anchor\_results.json}, \texttt{p9\_2\_upgrade\_results.json} \\
-\texttt{audit\_bergmann2010\_axis12.py} & Bergmann 2010 axes-1/2 audit & console/tables \\
+\texttt{p9\_\allowbreak{}bcd\_\allowbreak{}anchor\_\allowbreak{}audit.py} & P9: absolute-anchor test of the Bcd profile (581 embryos) & \texttt{p9\_\allowbreak{}bcd\_\allowbreak{}anchor\_\allowbreak{}results.json}, \texttt{p9\_\allowbreak{}2\_\allowbreak{}upgrade\_\allowbreak{}results.json} \\
+\texttt{audit\_\allowbreak{}bergmann2010\_\allowbreak{}axis12.py} & Bergmann 2010 axes-1/2 audit & console/tables \\
 \multicolumn{3}{l}{\emph{Yeast positive control}}\\
-\texttt{score\_markers\_v2\_authordata.py} & Hog1 osmotic set-point markers from author data & console/tables \\
+\texttt{score\_\allowbreak{}markers\_\allowbreak{}v2\_\allowbreak{}authordata.py} & Hog1 osmotic set-point markers from author data & console/tables \\
 \multicolumn{3}{l}{\emph{Cascade instance}}\\
-\texttt{cascade\_audit\_gpcr\_ca.py} & GPCR$\to$Ca cascade audit; per-experiment Hill fits & \texttt{cascade\_audit\_results.json}, \texttt{cascade\_hill\_fits\_methods\_ladder.json} \\
-\texttt{p10\_gain\_confinement\_audit.py} & P10: gain-distribution confinement across systems & \texttt{p10\_gain\_confinement\_results.json}, \texttt{p10\_supplementary\_arms\_results.json} \\
+\texttt{cascade\_\allowbreak{}audit\_\allowbreak{}gpcr\_\allowbreak{}ca.py} & GPCR$\to$Ca cascade audit; per-experiment Hill fits & \texttt{cascade\_\allowbreak{}audit\_\allowbreak{}results.json}, \texttt{cascade\_\allowbreak{}hill\_\allowbreak{}fits\_\allowbreak{}methods\_\allowbreak{}ladder.json} \\
+\texttt{p10\_\allowbreak{}gain\_\allowbreak{}confinement\_\allowbreak{}audit.py} & P10: gain-distribution confinement across systems & \texttt{p10\_\allowbreak{}gain\_\allowbreak{}confinement\_\allowbreak{}results.json}, \texttt{p10\_\allowbreak{}supplementary\_\allowbreak{}arms\_\allowbreak{}results.json} \\
 \multicolumn{3}{l}{\emph{Tumour chain P11--P16}}\\
-\texttt{p11\_counting\_law\_cross\_cellline\_ audit.py} & P11 counting-law cross-cell-line audit & digitised arms CSVs \\
-\texttt{p12a\_*.py} & ERK violin / Gerosa A375 digitisation & \texttt{P12a\_erk\_baseline\_cv.csv} \\
-\texttt{p12b\_*.py} (5 scripts) & P12b resistance zero-direction: EGFR DMS, ABL catalytic axis, extensions & \texttt{p12b\_*.json}, \texttt{p12b\_egfr\_dms\_variants.csv}, \texttt{P12b\_*.csv} \\
-\texttt{p13\_mutual\_info\_audit.py}, \texttt{p13\_robustness\_recheck.py} & P13 channel capacity (mutual information) & \texttt{p13\_mi\_results.json}, \texttt{p13\_robustness.json}, \texttt{p13\_fig6\_decay.json} \\
-\texttt{p14\_shape\_decoding\_audit.py} & P14 downstream mis-reading / shape decoding & \texttt{p14\_results.json}, \texttt{p14\_pergene\_log2R.csv} \\
-\texttt{p15\_tcga\_decoupling\_audit.py} & P15 TCGA tissue-level decoupling & \texttt{p15\_tcga\_results.json}, four per-sample CSVs \\
+\texttt{p11\_\allowbreak{}counting\_\allowbreak{}law\_\allowbreak{}cross\_\allowbreak{}cellline\_\allowbreak{} audit.py} & P11 counting-law cross-cell-line audit & digitised arms CSVs \\
+\texttt{p12a\_\allowbreak{}*.py} & ERK violin / Gerosa A375 digitisation & \texttt{P12a\_\allowbreak{}erk\_\allowbreak{}baseline\_\allowbreak{}cv.csv} \\
+\texttt{p12b\_\allowbreak{}*.py} (5 scripts) & P12b resistance zero-direction: EGFR DMS, ABL catalytic axis, extensions & \texttt{p12b\_\allowbreak{}*.json}, \texttt{p12b\_\allowbreak{}egfr\_\allowbreak{}dms\_\allowbreak{}variants.csv}, \texttt{P12b\_\allowbreak{}*.csv} \\
+\texttt{p13\_\allowbreak{}mutual\_\allowbreak{}info\_\allowbreak{}audit.py}, \texttt{p13\_\allowbreak{}robustness\_\allowbreak{}recheck.py} & P13 channel capacity (mutual information) & \texttt{p13\_\allowbreak{}mi\_\allowbreak{}results.json}, \texttt{p13\_\allowbreak{}robustness.json}, \texttt{p13\_\allowbreak{}fig6\_\allowbreak{}decay.json} \\
+\texttt{p14\_\allowbreak{}shape\_\allowbreak{}decoding\_\allowbreak{}audit.py} & P14 downstream mis-reading / shape decoding & \texttt{p14\_\allowbreak{}results.json}, \texttt{p14\_\allowbreak{}pergene\_\allowbreak{}log2R.csv} \\
+\texttt{p15\_\allowbreak{}tcga\_\allowbreak{}decoupling\_\allowbreak{}audit.py} & P15 TCGA tissue-level decoupling & \texttt{p15\_\allowbreak{}tcga\_\allowbreak{}results.json}, four per-sample CSVs \\
 \multicolumn{3}{l}{\emph{Manuscript figures (all in \texttt{manuscript/})}}\\
-\texttt{make\_fig1\_schematic.py} & Fig.~1 framework schematic (derived from the umbrella edition \texttt{draw\_ed\_figures.py}, EDFig1 section) & \texttt{fig1\_schematic.png} \\
-\texttt{make\_fig2\_pdpc.py} & Fig.~2 PdPC static sensor (renamed copy of \texttt{code/make\_fig2.py}) & \texttt{fig2\_pdpc.png} \\
-\texttt{make\_fig3.py} & Fig.~3 PdPC full audit panels & \texttt{fig3\_pdpc\_full.png} \\
-\texttt{make\_fig4.py} & Fig.~4 instance atlas & \texttt{fig4\_instances.png} \\
-\texttt{make\_fig5\_ledger.py} & Fig.~5 confirmation/falsification ledger (renamed copy of \texttt{code/make\_fig1.py}) & \texttt{fig5\_ledger.png} \\
+\texttt{make\_\allowbreak{}fig1\_\allowbreak{}schematic.py} & Fig.~1 framework schematic (derived from the umbrella edition \texttt{draw\_\allowbreak{}ed\_\allowbreak{}figures.py}, EDFig1 section) & \texttt{fig1\_\allowbreak{}schematic.png} \\
+\texttt{make\_\allowbreak{}fig2\_\allowbreak{}pdpc.py} & Fig.~2 PdPC static sensor (renamed copy of \texttt{code/make\_\allowbreak{}fig2.py}) & \texttt{fig2\_\allowbreak{}pdpc.png} \\
+\texttt{make\_\allowbreak{}fig3.py} & Fig.~3 PdPC full audit panels & \texttt{fig3\_\allowbreak{}pdpc\_\allowbreak{}full.png} \\
+\texttt{make\_\allowbreak{}fig4.py} & Fig.~4 instance atlas & \texttt{fig4\_\allowbreak{}instances.png} \\
+\texttt{make\_\allowbreak{}fig5\_\allowbreak{}ledger.py} & Fig.~5 confirmation/falsification ledger (renamed copy of \texttt{code/make\_\allowbreak{}fig1.py}) & \texttt{fig5\_\allowbreak{}ledger.png} \\
 \bottomrule
 \end{longtable}
 

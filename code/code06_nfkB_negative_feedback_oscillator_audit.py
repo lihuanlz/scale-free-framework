@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Code 6: NF-κB negative feedback oscillator audit (cross-pathway instance 1 — third independent-system validation of the Lemma 1 prediction)
+Code 6: NF-κB negative feedback oscillator audit (cross-pathway instance 1  -  third independent-system validation of the Lemma 1 prediction)
 ==========================================================================
 Objective: validate the prediction of Lemma 1 of the topology-selection theorem for pure negative feedback (NF family) oscillators:
-  a pure negative feedback oscillator can only use analog encoding — amplitude grows with dose, period stays ~constant, no digital pulse-count channel capacity.
+  a pure negative feedback oscillator can only use analog encoding  -  amplitude grows with dose, period stays ~constant, no digital pulse-count channel capacity.
 
 [Model source]
 Krishna, Jensen & Sneppen 2006, PNAS 103:10840
@@ -19,10 +19,10 @@ Network topology: N_n → I_m → I ⊣ N_n, a single negative loop with no posi
 [Parameter note (important)]
 Original standard (spiky mode) parameters: A=0.007, B=954.5, C=0.035, δ=0.029, ε=2×10⁻⁵.
 Early exploration of this audit tentatively suggested that this parameter set exhibits limit-cycle folding and bistability for C∈(0.011, 0.095).
-★ Erratum (v0.6, see 代码9): via 110-point bidirectional adiabatic continuation (up/down sweeps coincide point by point) and
+★ Erratum (v0.6, see code9): via 110-point bidirectional adiabatic continuation (up/down sweeps coincide point by point) and
   8 pairs of dual-initial-value probes (8/8 converge to the same attractor), the above "folding/bistability" is confirmed to be a
   long-transient artifact of the stiff system; the spiky mode is actually a single continuous branch, allowing a single-branch dose audit, and its three signatures
-  fall in the same region as the soft mode (NF analog region). The full audit of this parameter set is in 代码9.
+  fall in the same region as the soft mode (NF analog region). The full audit of this parameter set is in code9.
 Krishna et al. explicitly state in the original paper that the model can show spiky or soft oscillation depending on parameters;
 this audit uses the soft-mode parameters of the same equations and the same negative feedback topology:
   A=0.007 (as in the original), B=3, δ=0.005, ε=2×10⁻⁵ (as in the original).
@@ -36,7 +36,7 @@ In this regime the destabilization window is single (unique Hopf) and the cycle 
 3. Same scan measuring period T(C): predicted change < ±15% (NF-κB literature signature)
 4. No pulse-count channel capacity adjudication: three signatures (onset continuity v, hysteresis=0, α>0.3) → NF analog region
 5. Literature consistency check (Tay 2010 Nature; Nelson 2004 Science)
-Run: python3 代码6_NFκBnegative feedback振子audit.py (approx 2–4 min, outputs a three-panel PNG)
+Run: python3 code6_NFkB_negative_feedback_oscillator_audit.py (approx 2–4 min, outputs a three-panel PNG)
 """
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -89,7 +89,7 @@ def jac(N, Im, I, C):
         [C*I/(e_+I), 1.0, -C*(1-N)*e_/(e_+I)**2]])
 
 # ============================================================
-# Part 1: destabilization-mode confirmation — scan Jacobian eigenvalues along the equilibrium branch
+# Part 1: destabilization-mode confirmation  -  scan Jacobian eigenvalues along the equilibrium branch
 # ============================================================
 print('='*72)
 print('Part 1: destabilization-mode confirmation (third independent-system validation of Lemma 1(i)(ii))')
@@ -140,12 +140,12 @@ def run_limit_cycle(C, y0, tmax):
     return Amp, T, Ns.max(), Ns.min(), sol.y[:, -1]
 
 # ============================================================
-# Part 2: analog signatures — dose scan measuring the amplitude branch (≥10-fold range)
+# Part 2: analog signatures  -  dose scan measuring the amplitude branch (≥10-fold range)
 # ============================================================
 print('='*72)
-print('Part 2: analog signatures (core acceptance) — amplitude A(C) along the dose scan')
+print('Part 2: analog signatures (core acceptance)  -  amplitude A(C) along the dose scan')
 print('='*72)
-# —— Wide-range scan: 1.08× → 12× above C_H (adiabatic continuation, longer integration at the first point against critical slowing) ——
+#  -  Wide-range scan: 1.08× → 12× above C_H (adiabatic continuation, longer integration at the first point against critical slowing)  - 
 CsW = C_H*np.logspace(np.log10(1.08), np.log10(12), 12)
 AW, TW, Nmx, Nmn = [], [], [], []
 y = np.array([N_H+1e-3, Im_H, I_H])
@@ -182,7 +182,7 @@ print(f'        A     = {np.round(AW,4)}\n')
 # Part 3: period invariance (NF-κB literature signature)
 # ============================================================
 print('='*72)
-print('Part 3: period invariance — T(C) along the same scan')
+print('Part 3: period invariance  -  T(C) along the same scan')
 print('='*72)
 Tvar = (TW.max()-TW.min())/TW.mean()*100
 print(f'  Per-point period T = {np.round(TW,3)}')
@@ -192,10 +192,10 @@ print(f'  unchanged with TNF dose; this model period stays within {TW.mean():.1f
 print(f'  time units, ~constant over a 12-fold dose range → period-robustness signature reproduced v\n')
 
 # ============================================================
-# Part 4: no pulse-count channel capacity — hysteresis test + three-signature adjudication
+# Part 4: no pulse-count channel capacity  -  hysteresis test + three-signature adjudication
 # ============================================================
 print('='*72)
-print('Part 4: no pulse-count channel capacity — three-signature adjudication')
+print('Part 4: no pulse-count channel capacity  -  three-signature adjudication')
 print('='*72)
 # Hysteresis: reverse adiabatic sweep back from the high-dose final state, compared with up-sweep amplitudes
 Ne, Ime, Ie = equilibrium(CsW[-1])
@@ -211,7 +211,7 @@ print(f'  Up-sweep amplitude = {np.round(AW,4)}')
 print(f'  Down-sweep amplitude = {np.round(AD,4)}')
 print(f'  Hysteresis width = max|A_up−A_down|/A_up = {hys.max()*100:.3f}% ≈ 0 (no bistability/no jumps)')
 print(f'  Pulse-count test: at every dose there is 1 N_n peak per period; the pulse count does not grow with dose;')
-print(f'  amplitude (not count) is the main encoding axis — the digital pattern of "fixed amplitude + growing count" is absent.')
+print(f'  amplitude (not count) is the main encoding axis  -  the digital pattern of "fixed amplitude + growing count" is absent.')
 verdict = (R2 > 0.99) and (hys.max() < 0.02) and (alpha > 0.3)
 print(f'  Three signatures of the discrimination theorem: onset continuity v (R²={R2:.4f}), hysteresis=0 ({hys.max()*100:.3f}%),'
       f'α={alpha:.3f}>0.3')
@@ -311,6 +311,6 @@ ax.set_xlabel('time (dimensionless)'); ax.set_ylabel('nuclear NF-κB $N_n$')
 ax.legend(fontsize=9); ax.set_title('(c) representative trajectories: amplitude encodes dose, period ~constant')
 
 plt.tight_layout()
-out_png = '/mnt/agents/output/NFκBaudit图.png'
+out_png = '/mnt/agents/output/NFkB_audit_fig.png'
 plt.savefig(out_png, dpi=200)
 print(f'Saved {out_png}')

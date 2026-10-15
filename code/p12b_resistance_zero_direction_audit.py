@@ -2,7 +2,7 @@
 # (output-preserving direction) better than predicted-but-not-clinical mutations?
 # Data: EVER paper (Liu/Pei/Lai, Commun Biol 2019, PMC6952392) Supplementary Data 1,
 # sheet 'KM&Kcat' (absolute) and 'IC50_normalization' (WT=1).
-# Pre-registered card: 预注册卡_P12_增益分布与耐药零方向_2026-09-28.md (FROZEN before values taken).
+# Pre-registered card: prereg_card_P12_gain_distribution_resistance_zero_direction_2026-09-28.md (FROZEN before values taken).
 import math
 from itertools import combinations
 import csv, os

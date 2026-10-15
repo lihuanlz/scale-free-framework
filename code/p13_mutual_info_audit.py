@@ -3,7 +3,7 @@
 P13 audit: does oncogenic Ras/Raf mutation reduce mutual information
 I(ligand dose; single-cell ERK output)?
 Data: Gillies et al. 2020, Mol Syst Biol 16:e9518 (PMC7569415), Source Data Fig2.
-Pre-registered: 预注册卡_P13_信道容量互信息_2026-09-28.md (amendment A1).
+Pre-registered: prereg_card_P13_channel_capacity_mutual_information_2026-09-28.md (amendment A1).
 Output metric (locked): per-cell response = max(EKAR3, 0<t<=30min) - median(EKAR3, t<0).
 MI: equiprobable 8-bin discretization per cell line, plug-in + Miller-Madow.
 Uncertainty: cell-level bootstrap (2000), paired for delta-I vs KrasWT.

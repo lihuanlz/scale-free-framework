@@ -13,15 +13,15 @@ Sources of the placement values:
     p53/NCS (Batchelor 2011, source figure) α=0.00±0.28 (plotted at 0.008 on the log axis), ν≈2 (count increases with DSB)
     p53/UV  (Batchelor 2011, source figure) α=+0.99±0.32, ν≈0 (single pulse)
     ERK     (Albeck 2013, source figure)    |α|≲0.05 (plotted at 0.02), ν≈+10/decade (over the 10→50 pg/ml range,
-                                    example trajectory 8→15 pulses/24h; saturation at 200 pg/ml) — count is the main channel capacity
+                                    example trajectory 8→15 pulses/24h; saturation at 200 pg/ml)  -  count is the main channel capacity
     NF-κB   (Tay 2010, main-text sentence+SI)  α=0.151, ν≈+0.6/decade (1.7→4.0 events / 0.01→100 ng/ml)
   Model side (square/circle/triangle markers):
     NF model near onset (8.76, 0.02); NF model far from onset (0.7, 0.05)
-    NF-κB Krishna soft mode (0.714, 0.05) — arrow to the Tay experimental point = model-experiment gap (pending)
+    NF-κB Krishna soft mode (0.714, 0.05)  -  arrow to the Tay experimental point = model-experiment gap (pending)
     FHN slow drive (0.014, 4.05); Morris–Lecar fast drive (0.26, 2.0)
     PdPC positive-feedback switch (bistable static decision element, ν=0) placed at the right edge
 
-Run: python3 代码11_判别图_v09.py
+Run: python3 code11_discrimination_map_v09.py
 """
 import numpy as np
 import matplotlib.pyplot as plt
@@ -64,7 +64,7 @@ ax.errorbar([0.151], [0.6], xerr=[0.05], yerr=[0.3], fmt='*', color='teal',
 # ---------- model-experiment gap arrow ----------
 ax.annotate('', xy=(0.20, 0.55), xytext=(0.66, 0.08),
             arrowprops=dict(arrowstyle='->', color='darkred', lw=1.8, ls='-'))
-ax.text(0.42, 0.9, 'NF-κB model-experiment gap\n(structural: parameter unreachable — code 12)', color='darkred', fontsize=8.5, ha='center')
+ax.text(0.42, 0.9, 'NF-κB model-experiment gap\n(structural: parameter unreachable  -  code 12)', color='darkred', fontsize=8.5, ha='center')
 
 ax.annotate('built-in control: same protein, same cell line\nα covaries strictly from 0 to 1', (0.35, 1.5), fontsize=8.5, color='darkorange')
 ax.annotate('v0.8 prediction α≳0.5 falsified:\nERK is actually fixed-amplitude + frequency-modulated (digital side)', (0.06, 7.6), fontsize=8.5, color='royalblue')
@@ -75,5 +75,5 @@ ax.set_ylabel('$\\nu$ (pulse-count increment per tenfold dose)')
 ax.set_title('Discrimination map v0.9: model-side + experiment-side placements (public source figures / main-text quantification)', fontsize=11)
 ax.legend(fontsize=7.8, loc='center right', framealpha=0.95)
 plt.tight_layout()
-plt.savefig('判别图_v09_实验落点.png', dpi=200)
-print('Saved 判别图_v09_实验落点.png')
+plt.savefig('discrimination_map_v09_experimental_points.png', dpi=200)
+print('Saved discrimination_map_v09_experimental_points.png')

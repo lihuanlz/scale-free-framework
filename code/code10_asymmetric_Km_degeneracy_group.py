@@ -3,7 +3,7 @@
 Code 10: PdPC audit under asymmetric Michaelis constants (K_m,1 ≠ K_m,2)
 ==========================================================================
 Background: Theorems 1–3 are stated under the symmetric K_m hypothesis (manuscript §3 scope note: "asymmetric case see SI").
-An external reviewer asserted that "the degeneracy group drops to 2 dimensions in the asymmetric case" — this script validates before writing; conclusion:
+An external reviewer asserted that "the degeneracy group drops to 2 dimensions in the asymmetric case"  -  this script validates before writing; conclusion:
   ★ The reviewer's assertion does not hold. In the asymmetric case the parameter space goes 6→7 dimensions (Km1, Km2 split into separate columns),
     identifiable combinations 2→3 dimensions (ξ, κ1, κ2), and the degeneracy group dimension stays 4 (7−3).
   ★ n_H admits an exact closed-form generalization (not an approximation):
@@ -21,8 +21,8 @@ P1 degeneracy group dimension: 7 parameters (k1,E1T,k2,E2T,Km1,Km2,ST) → 3 ide
    → 4 independent exact group actions (numeric validation max|Δu| = 0) + 1 counterexample (Km1 varied alone)
 P2 n_H closed-form generalization: numeric Hill coefficient vs closed form, across asymmetry r = κ1/κ2
 P3 Fisher barrier: shape block (ln c, ln κ1, ln κ2) vs absolute block (ln c, ln Km1, ln Km2, ln ST)
-output: 非symmetryKm分析图.png (four panels) + SI-ready table
-run: python3 代码10_非symmetryKmdegenerate群分析.py (approximately 1 minute)
+output: asymmetric_Km_analysis_fig.png (four panels) + SI-ready table
+run: python3 code10_asymmetric_Km_degeneracy_group.py (approximately 1 minute)
 """
 import numpy as np
 from scipy.optimize import brentq
@@ -199,7 +199,7 @@ ax[1,1].set_ylabel('max|Δu|')
 ax[1,1].set_title('(d) group-action exactness (4 exact + 1 breaking) → group dimension 4')
 ax[1,1].grid(alpha=0.3, axis='y')
 fig.tight_layout()
-out = os.path.join(OUTDIR, '非symmetryKm分析图.png')
+out = os.path.join(OUTDIR, 'asymmetric_Km_analysis_fig.png')
 fig.savefig(out, dpi=160)
 print(f'\nFigure saved: {out}')
 

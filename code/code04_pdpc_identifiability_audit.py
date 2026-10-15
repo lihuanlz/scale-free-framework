@@ -13,7 +13,7 @@ T3a  Theorem 3  Hill closed form: n_H ≡ 4ξ·du/dξ|_{u=1/2} = 1 + 1/(2κ)
 T3b  Theorem 3  CI table: 400 synthetic curves, Monte Carlo refit of ln κ (ln c fixed)
 T4   Information critical point κ*: steady-state channel capacity / mutual information I(ξ; u), narrow/wide log-normal inputs
 
-Run: python3 代码4_PdPC可辨识性audit.py   (approx. 2–3 min, outputs a six-panel PNG)
+Run: python3 code4_PdPC_identifiability_audit.py   (approx. 2–3 min, outputs a six-panel PNG)
 """
 import os
 import numpy as np
@@ -66,7 +66,7 @@ print('Code 4: PdPC (Goldbeter–Koshland cycle) identifiability audit')
 print('='*72)
 
 # ============================================================
-# T1 (Theorem 1): degenerate group invariance — curves coincide pointwise under three group actions
+# T1 (Theorem 1): degenerate group invariance  -  curves coincide pointwise under three group actions
 # ============================================================
 # baseline parameter set (k1, E1T, k2, E2T, Km, ST); ξ = k1·E1T·x/(k2·E2T), κ = Km/ST
 base = dict(k1=1.0, E1T=1.0, k2=1.0, E2T=1.0, Km=0.1, ST=1.0)
@@ -90,7 +90,7 @@ for name, g in group.items():
     print(f'     group action {name:<24} max|Δu| = {dmax:.3e}  (machine precision v)')
 
 # ============================================================
-# T2 (Theorem 2): Fisher barrier — shape identifiable, absolute parameters degenerate
+# T2 (Theorem 2): Fisher barrier  -  shape identifiable, absolute parameters degenerate
 # ============================================================
 def jac_shape(kappa):
     """Design Jacobian (analytic) for the shape parameterization θ=(ln c, ln κ)."""
@@ -140,7 +140,7 @@ for k in kap_h:
           f'rel_dev={abs(nH_num[-1]-nH_cl[-1])/nH_cl[-1]:.2e}')
 
 # ============================================================
-# T3b (Theorem 3): CI table — 400 synthetic curves, Monte Carlo refit of ln κ
+# T3b (Theorem 3): CI table  -  400 synthetic curves, Monte Carlo refit of ln κ
 # ============================================================
 # Scheme (note): ln c fixed (ground truth 0); only ln κ is refit. For each κ, generate 400 noisy
 # (σ=0.03) synthetic curves and perform two re-estimations:
@@ -148,7 +148,7 @@ for k in kap_h:
 #        Same distribution as MLE in large samples; its std over 400 realizations is the MC version of the Fisher standard error.
 #        95% confidence width ratio = exp(1.96·std) (log-space Wald half-width ratio, manuscript-table convention).
 #   (ii) Full nonlinear least_squares refit (bounds ground truth ±8): shows the sampling-level consequence of the
-#        barrier — for small κ the likelihood is nearly flat along lnκ, so refits escape with appreciable probability (drift>1).
+#        barrier  -  for small κ the likelihood is nearly flat along lnκ, so refits escape with appreciable probability (drift>1).
 def mc_refit_lnk(kappa, nmc=400, seed=RNG_SEED, halfwidth=8.0):
     rng = np.random.default_rng(seed)
     u_true = solve_u(XI_D, kappa)
@@ -186,11 +186,11 @@ for k in kap_ci:
     print(f'     {k:<8}{s:<14.4f}×{ratio:<11.2f}{ci_target[k]:<10}{esc:<15.2f}'
           f'{"v" if ok else "deviation>20%"}')
 print('     Note: nonlinear refits escape in large numbers for κ≤0.01 (likelihood plateau); the raw 95% percentile'
-      f' width reaches ×{ci_raw[0]:.3g} at κ=0.001 — the confidence-width catastrophe is worse than the Fisher'
+      f' width reaches ×{ci_raw[0]:.3g} at κ=0.001  -  the confidence-width catastrophe is worse than the Fisher'
       ' prediction, so the Fisher barrier holds at the sampling level.')
 
 # ============================================================
-# T4: information critical point κ* — steady-state channel capacity / mutual information I(ξ; u)
+# T4: information critical point κ*  -  steady-state channel capacity / mutual information I(ξ; u)
 # ============================================================
 def mutual_info(kappa, sig_xi, sig=SIG, nxi=600, nu=600):
     """Estimate I(lnξ; u) by histogram/binning. Input lnξ~N(0,σ_ξ²) (median 1);
@@ -273,7 +273,7 @@ ax.semilogx(kap_ci, [ci_target[k] for k in kap_ci], 'kx', ms=9, mew=2,
             label='manuscript-table target')
 ax.set_yscale('log')
 ax.set_xlabel('κ'); ax.set_ylabel('95% CI width ratio (upper/lower)')
-ax.set_title('(e) Theorem 3: confidence width ratio of κ — catastrophic blow-up as κ→0')
+ax.set_title('(e) Theorem 3: confidence width ratio of κ  -  catastrophic blow-up as κ→0')
 ax.legend(fontsize=9)
 
 ax = axes[1, 2]                                        # (f) I(ξ;u) vs κ and κ*
@@ -293,6 +293,6 @@ for a in axes.flat:                                    # uniformly apply the log
     if a.get_yscale() == 'log': a.yaxis.set_major_formatter(logfmt)
 
 plt.tight_layout()
-png_path = os.path.join(OUTDIR, 'PdPCaudit图.png')
+png_path = os.path.join(OUTDIR, 'PdPC_audit_fig.png')
 plt.savefig(png_path, dpi=200)
 print(f'\nSaved {png_path}')

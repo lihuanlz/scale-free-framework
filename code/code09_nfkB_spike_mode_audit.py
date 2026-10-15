@@ -21,7 +21,7 @@ dose = C (IKK strength). Spiky parameter set (paper standard): A=0.007, B=954.5,
    ★ erratum: the code-6 header-note observation of "limit-cycle folding and bistability at C∈(0.011,0.095)" was a long-transient
      artifact (stiff systems decay extremely slowly near branch transitions); this script's bidirectional adiabatic continuation and
      dual-initial-condition tests refute that observation. A single-branch dose audit is therefore possible.
-3. Onset is continuous (supercritical), but the amplitude grows near-vertically within the window [0.0059, 0.009] —
+3. Onset is continuous (supercritical), but the amplitude grows near-vertically within the window [0.0059, 0.009]  - 
    a canard-explosion onset, qualitatively identical to the onset structure of the FHN excitable system (code 8).
 4. Three signatures: continuous onset v; hysteresis = 0 v; rising-limb α=+0.56 (window [0.009,0.032],
    +0.80 including the canard window) → falls in the NF-simulated region, same region as the soft mode (α=0.714).
@@ -29,7 +29,7 @@ dose = C (IKK strength). Spiky parameter set (paper standard): A=0.007, B=954.5,
 5. The period is not invariant: approximately 8-fold across the range (1.5→3.1→0.38); the high-frequency band has a frequency-encoding character.
    Spikiness: at C=0.035 the fraction of time at half-peak and above is 10.7% (a genuine spike waveform).
 
-run: python3 代码9_NFκBspike模式audit.py (approximately 2–4 minutes, outputs NFκBspike模式audit图.png)
+run: python3 code9_NFkB_spike_mode_audit.py (approximately 2–4 minutes, outputs NFkB_spike_mode_audit_fig.png)
 """
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -148,8 +148,8 @@ for C in [0.008, 0.02, 0.035, 0.05, 0.07, 0.095, 0.12, 0.15]:
     a1, _, _ = measure_cycle(C, np.array([Nn*1.02, Nn*Nn, Ie]))
     a2, _, _ = measure_cycle(C, y_spiky.copy())
     coexist.append(abs(a1-a2) < 0.02)
-    print(f'     C={C:.3f}  A(init①)={a1:.4f}  A(init②)={a2:.4f}  → {"same attractor" if abs(a1-a2)<0.02 else "★ bistable"}')
-print(f'     conclusion: {"8/8 same attractor — no coexistence (erratum to the code-6 header-note folding/bistability observation)" if all(coexist) else "coexistence found"}')
+    print(f'     C={C:.3f}  A(init(1))={a1:.4f}  A(init(2))={a2:.4f}  → {"same attractor" if abs(a1-a2)<0.02 else "★ bistable"}')
+print(f'     conclusion: {"8/8 same attractor  -  no coexistence (erratum to the code-6 header-note folding/bistability observation)" if all(coexist) else "coexistence found"}')
 
 # ---------- 4. Fine onset scan (canard detection) ----------
 print('\n[4] Fine low-onset scan (canard-explosion detection)')
@@ -176,7 +176,7 @@ a_rise = alpha(0.009, 0.032); a_wide = alpha(0.0064, 0.032); a_fall = alpha(0.05
 print(f'     (iii) α: rising limb = {a_rise:+.3f} (window [0.009,0.032]); incl. canard window = {a_wide:+.3f}; decaying limb = {a_fall:+.3f}')
 osc = np.isfinite(ut) & (ua > 0.01)
 T_ = ut[osc]
-print(f'     period: range {np.nanmin(T_):.2f}–{np.nanmax(T_):.2f} (approximately {np.nanmax(T_)/np.nanmin(T_):.1f}-fold — not invariant; high-frequency band has frequency-encoding character)')
+print(f'     period: range {np.nanmin(T_):.2f}–{np.nanmax(T_):.2f} (approximately {np.nanmax(T_)/np.nanmin(T_):.1f}-fold  -  not invariant; high-frequency band has frequency-encoding character)')
 # spike duty cycle
 sol = solve_ivp(rhs, (0, 300), y_spiky, args=(0.035, A_, B_, D_, E_), method='LSODA', rtol=1e-9, atol=1e-12)
 sol2 = solve_ivp(rhs, (0, 60), sol.y[:, -1], args=(0.035, A_, B_, D_, E_), method='LSODA',
@@ -187,7 +187,7 @@ amp035 = Nn_tr[pk].mean() - Nn_tr.min()
 duty = (Nn_tr > Nn_tr.min()+amp035/2).mean()
 print(f'     spikiness: C=0.035 fraction of time at half-peak and above = {duty*100:.1f}% (genuine spike waveform)')
 print('\n     ★ placement verdict: three signatures (continuous onset; zero hysteresis; α=+0.56>0.3) → NF-simulated region,')
-print('        same region as the soft mode (code 6, α=0.714) — the §4 placement is robust to the parameter regime.')
+print('        same region as the soft mode (code 6, α=0.714)  -  the §4 placement is robust to the parameter regime.')
 
 # ---------- 6. Figure ----------
 fig, ax = plt.subplots(2, 2, figsize=(13, 9))
@@ -218,7 +218,7 @@ ax[1,1].set_xlabel('t'); ax[1,1].set_ylabel('N_n')
 ax[1,1].set_title(f'(d) waveform control (C=0.035; spiky duty cycle {duty*100:.1f}%)')
 ax[1,1].legend(); ax[1,1].grid(alpha=0.3)
 fig.tight_layout()
-out = os.path.join(OUTDIR, 'NFκBspike模式audit图.png')
+out = os.path.join(OUTDIR, 'NFkB_spike_mode_audit_fig.png')
 fig.savefig(out, dpi=160)
 print(f'\nFigure saved: {out}')
 print('\nDone. All results are reported faithfully; the single-branch audit is valid, and the code-6 header-note folding observation is erratumed as a long-transient artifact.')

@@ -2,7 +2,7 @@
 """
 P15 audit: does oncogenic Ras/Raf mutation decouple pERK from upstream EGFR
 in patient tumors (TCGA RPPA, cBioPortal pancan atlas)?
-Pre-registered: 预注册卡_P15_TCGA信道解耦_2026-09-28.md
+Pre-registered: prereg_card_P15_TCGA_channel_decoupling_2026-09-28.md
 """
 import os, json, time
 import numpy as np

@@ -5,8 +5,8 @@ Code 15: quantitative test of the NF-κB saturation-transient hypothesis (collis
 Background: the external hard-nucleus audit (flaw 2) noted that the step-perturbation test of code 12 only excluded
 "threshold amplification" (the defining feature of excitability); it did not exclude "observation-level mimicry of the
 EXC signature by saturation transients": the (1−N_n) store-depletion term of the Krishna model is itself a saturation
-mechanism — under strong drive the whole NF-κB store is released before feedback catches up, the first peak is set by
-the total store and decouples from dose — pure negative feedback without positive feedback can still yield a stereotyped
+mechanism  -  under strong drive the whole NF-κB store is released before feedback catches up, the first peak is set by
+the total store and decouples from dose  -  pure negative feedback without positive feedback can still yield a stereotyped
 first peak. If this hypothesis holds, §4's "experimental-side EXC as the unique reading after excluding alternatives" is too strong.
 
 [Test design] Give the saturation hypothesis its best chance: Krishna model in the damped regime (spiky parameter
@@ -34,11 +34,11 @@ Observation window: T_obs=20 dimensionless units (calibrated by inter-peak inter
 matching Tay's imaging duration). α and ν are dimensionless and unaffected by time calibration.
 
 v2 fixes (first-round implementation errors, on record): (1) the Michaelis large-K_T approximation for the
-"no-compression" case crushed the drive to 1e-12 — replaced with an explicit linear mapping; (2) the resting-state
-long-time integration did not converge (small-C relaxation ~1/C≈1e4 units) — replaced with fixed-point root finding.
+"no-compression" case crushed the drive to 1e-12  -  replaced with an explicit linear mapping; (2) the resting-state
+long-time integration did not converge (small-C relaxation ~1/C≈1e4 units)  -  replaced with fixed-point root finding.
 
-Run: python3 代码15_NFκBsaturationtransienttest.py (approx. 2–5 min)
-Output: 代码15_saturationtransienttest.png (4 panels); console verdict table.
+Run: python3 code15_NFkB_saturation_transient_test.py (approx. 2–5 min)
+Output: code15_saturation_transient_test.png (4 panels); console verdict table.
 """
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -145,8 +145,8 @@ hits = []
 for r in rows:
     ints = [x for x in r['ints'] if not np.isnan(x)]
     rats = [x for x in r['rats'] if not np.isnan(x)]
-    i_str = f"{min(ints):.2f}–{max(ints):.2f}" if ints else "—"
-    r_str = f"{np.mean(rats):.2f}" if rats else "—"
+    i_str = f"{min(ints):.2f}–{max(ints):.2f}" if ints else " - "
+    r_str = f"{np.mean(rats):.2f}" if rats else " - "
     kt_str = 'linear' if r['KT'] is None else f"{r['KT']:g}"
     ok_a = not np.isnan(r['alpha']) and abs(r['alpha']-TAY['alpha']) <= 0.07
     ok_n = abs(r['nu']-TAY['nu']) <= 0.25
@@ -154,7 +154,7 @@ for r in rows:
     ok_all = ok_a and ok_n and ok_r and r['nvis'] == 5
     if ok_all:
         hits.append(r)
-    a_str = f"{r['alpha']:.3f}" if not np.isnan(r['alpha']) else "—"
+    a_str = f"{r['alpha']:.3f}" if not np.isnan(r['alpha']) else " - "
     print(f"{r['Cmax']:>6.3f} {kt_str:>6} {a_str:>8} {r['nu']:>7.3f} {r_str:>6}"
           f" {r['nvis']:>10}  {i_str}{'  ★ joint reproduction' if ok_all else ''}")
 
@@ -169,7 +169,7 @@ if fit_a:
 if not fit_n:
     print(f"    None of the 24 grid combos fits ν (lowest {min(r['nu'] for r in rows):.3f}"
           f" vs Tay 0.58±0.25)")
-print("    Note: deterministic integer counts are inherently too steep — Tay's ν is a population mean, and threshold heterogeneity")
+print("    Note: deterministic integer counts are inherently too steep  -  Tay's ν is a population mean, and threshold heterogeneity")
 print("    flattens the count slope. So [4b] re-checks the closest combos at the population level before the verdict.")
 
 # ---- [4b] population-level re-check: smoothing by parameter heterogeneity ----
@@ -211,7 +211,7 @@ for r0 in cands:
           f"population counts={np.round(m_cnt,2)}")
     print(f"      secondary criteria: monotonic {'v' if mono else 'x (count non-monotonic; Tay rises monotonically)'}; "
           f"absolute count {'v' if abs_ok else 'x (outside the Tay 1.7–4.0 range)'}; "
-          f"C_max>{C_H:.2e}⇒sustained high-dose oscillation {'yes (Tay high-dose still decays — contradiction)' if r0['Cmax'] > C_H else 'no'}")
+          f"C_max>{C_H:.2e}⇒sustained high-dose oscillation {'yes (Tay high-dose still decays  -  contradiction)' if r0['Cmax'] > C_H else 'no'}")
 
 print("\n[5] Conclusion")
 pop_ok = [p for p in pop_results
@@ -223,7 +223,7 @@ pop_nominal = [p for p in pop_results
 if pop_nominal and not pop_ok:
     print("    Note: one nominal hit appeared at the population level (ν and α both matched), but it failed the secondary criteria")
     print("    (non-monotonic count / absolute count ≈7 exceeds the Tay 4.0 / C_max>C_H sustained high-dose oscillation")
-    print("    contradicting the Tay decay observation) — not counted as a reproduction, but honestly recorded in the ledger.")
+    print("    contradicting the Tay decay observation)  -  not counted as a reproduction, but honestly recorded in the ledger.")
 if hits or pop_ok:
     print(f"    {len(hits)} deterministic + {len(pop_ok)} population combos jointly reproduce all three metrics → GLM flaw 2 holds;")
     print("    the §4 'unique reading' must be downgraded to 'EXC as best reading, saturation NF as competing reading'.")
@@ -231,7 +231,7 @@ else:
     print("    Neither the deterministic grid (24 combos) nor the population re-check (best combos with heterogeneity)")
     print("    has any combo jointly reproducing α, ν and the decay ratio → the saturation-transient hypothesis fails")
     print("    quantitatively at both levels: the GLM flaw-2 mechanism (store-depletion saturation) is real and can make")
-    print("    the first peak stereotyped, but its quantitative predictions cannot match all three Tay numbers — the 'unique")
+    print("    the first peak stereotyped, but its quantitative predictions cannot match all three Tay numbers  -  the 'unique")
     print("    reading' is quantitatively supported by this test (§4 and SI must write: mechanism acknowledged + quantitatively excluded, not simple denial).")
 
 all_ints = [x for r in rows for x in r['ints'] if not np.isnan(x)]
@@ -281,11 +281,11 @@ for Cmax in CMAX_GRID:
 axs.axhspan(0.33, 0.83, color='green', alpha=0.2, label='Tay ν=0.58±0.25')
 axs.set_xticks(xt); axs.set_xticklabels(xl, fontsize=8)
 axs.set_xlabel('KT (left = no compression, right = strong compression)'); axs.set_ylabel('ν (pulses/decade)')
-axs.set_title('(d) Count slope ν vs compression strength — the key tension', fontsize=11)
+axs.set_title('(d) Count slope ν vs compression strength  -  the key tension', fontsize=11)
 axs.legend(fontsize=8); axs.grid(alpha=0.3)
 
 fig.suptitle('Code 15: NF-κB saturation-transient hypothesis vs three Tay 2010 observables', fontsize=13)
 fig.tight_layout(rect=[0, 0, 1, 0.96])
-out = os.path.join(OUTDIR, '代码15_saturationtransienttest.png')
+out = os.path.join(OUTDIR, 'code15_saturation_transient_test.png')
 fig.savefig(out, dpi=150)
 print(f"\nFigure saved: {out}")

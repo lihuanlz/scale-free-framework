@@ -3,7 +3,7 @@
 P12b EGFR arm: do drug-enriched (resistant) variants preserve EGFR signaling activity?
 Data: Wang et al. 2025 npj Precis Oncol (PMC12368022; GEO GSE305057),
 EGFR-L858R kinase domain saturation mutagenesis in Ba/F3, codon counts.
-Pre-registered: 预注册卡_P12 amendment A4.
+Pre-registered: preregistration card_P12 amendment A4.
 Activity proxy = DMSO relative frequency / synonymous mean frequency.
 Resistance = log2(drug/DMSO) concordant across 2 replicates.
 """

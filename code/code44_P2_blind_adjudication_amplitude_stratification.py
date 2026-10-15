@@ -2,14 +2,14 @@
 """
 Code 44 · P2 blind ruling: amplitude-stratified decay prediction (Msn2, Hansen & Zechner 2021)
 ====================================================================
-Pre-registration document: 05_主线纲领与设计/预注册_P2_幅度分层衰减预言_v01.md (registered 2026-08-14)
+Pre-registration document: 05_main_program/prereg_P2_amplitude_stratified_decay_v01.md (registered 2026-08-14)
 Dataset  : Hansen & Zechner 2021 (MSB), Zenodo doi:10.5281/zenodo.2755026
 
 Criteria (locked at registration; no post-hoc modification allowed):
   P2-1  Δ_mol  = AUC_pooled − mean(AUC_within size terciles) ≥ +0.03, ≥6/7 wild-type promoters
   P2-2  Δ_AU   ≤ 0.01 and per-promoter Δ_AU < Δ_mol, ≥6/7 wild-type promoters
   P2-3  |Δ_time| ≤ 0.01 (k=3 main analysis; k∈{2,4} robust arm), ≥6/7 wild-type promoters
-  P2-F  any direction reversal → the corresponding clause is recorded as 证伪, double-recorded in the ledger either way
+  P2-F  any direction reversal → the corresponding clause is recorded as falsified, double-recorded in the ledger either way
 
 Implementation conventions not detailed in the pre-registration, fixed by this script before unblinding (equally blind-locked, entered in the ledger registry):
   · Promoter-level Δ = arithmetic mean of the Δ of three adjacent dose pairs (100↔275, 275↔690, 690nM↔3µM);
@@ -30,7 +30,7 @@ How to run (user machine, Windows + Spyder):
   2) Point ROOT below to the unzipped 2018_DataForPaper directory
   3) %runfile this script in Spyder; pure CPU, approx. 5–15 min
 Dependencies: numpy, scipy. Random seed 20260814 (locked).
-Outputs: 代码44_判定日志.txt, 代码44_单元table.csv, 代码44_ruling.json (written next to this script)
+Outputs: code44_judgment_log.txt, code44_unit_table.csv, code44_ruling.json (written next to this script)
 """
 import os
 import re
@@ -293,7 +293,7 @@ def main():
     t_start = _time.time()
     global LOG_PATH, _log_fh
     outdir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
-    LOG_PATH = os.path.join(outdir, "代码44_判定日志.txt")
+    LOG_PATH = os.path.join(outdir, "code44_judgment_log.txt")
     _log_fh = open(LOG_PATH, "w", encoding="utf-8")
 
     rng = np.random.default_rng(SEED)
@@ -387,10 +387,10 @@ def main():
     overall = bool(c1 and c2 and c3)
     verdict["overall"] = overall
     log("-" * 72)
-    log(f"P2-1 (amplitude paid)   :{n1}/7 promoters pass → {'hit' if c1 else '证伪'}")
-    log(f"P2-2 (normalized redeem):{n2}/7 promoters pass → {'hit' if c2 else '证伪'}")
-    log(f"P2-3 (event timing free):{n3}/7 promoters pass → {'hit' if c3 else '证伪'}")
-    log(f"P2-F overall: {'prediction holds (all three clauses hit)' if overall else 'corresponding clause(s) 证伪, double-recorded in the ledger as-is'}")
+    log(f"P2-1 (amplitude paid)   :{n1}/7 promoters pass → {'hit' if c1 else 'falsified'}")
+    log(f"P2-2 (normalized redeem):{n2}/7 promoters pass → {'hit' if c2 else 'falsified'}")
+    log(f"P2-3 (event timing free):{n3}/7 promoters pass → {'hit' if c3 else 'falsified'}")
+    log(f"P2-F overall: {'prediction holds (all three clauses hit)' if overall else 'corresponding clause(s) falsified, double-recorded in the ledger as-is'}")
     log("")
 
     # ---------------- details of the 21 adjudication units (main channels) ----------------
@@ -444,13 +444,13 @@ def main():
 
     # ---------------- save outputs ----------------
     import csv
-    csv_path = os.path.join(outdir, "代码44_单元table.csv")
+    csv_path = os.path.join(outdir, "code44_unit_table.csv")
     with open(csv_path, "w", newline="", encoding="utf-8-sig") as fh:
         w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
         w.writeheader()
         for r in rows:
             w.writerow(r)
-    json_path = os.path.join(outdir, "代码44_ruling.json")
+    json_path = os.path.join(outdir, "code44_ruling.json")
     with open(json_path, "w", encoding="utf-8") as fh:
         json.dump(sanitize(verdict), fh, ensure_ascii=False, indent=2)
     log("")

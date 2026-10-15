@@ -2,7 +2,7 @@
 """Manuscript figure script (paper_framework). Derived from the umbrella-repo producer listed below; only the output file name changed."""
 # source: scale-free-framework/code/make_fig2.py
 """Fig. 2 | The static sensor (PdPC). (Nature-style, SVG + PNG twin)
-Numbers transcribed from _archive_旧版本/Nature_SI_v04_2026-09-23.md S2 (tables in S2.3, S2.6)
+Numbers transcribed from _archive_old_versions/Nature_SI_v04_2026-09-23.md S2 (tables in S2.3, S2.6)
 and verified against code 4 functional forms. ASCII-only labels, no em-dashes.
 """
 import os

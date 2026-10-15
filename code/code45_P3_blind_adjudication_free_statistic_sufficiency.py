@@ -6,10 +6,10 @@ version v0.1.1 | 2026-08-14 | run on the user machine
 v0.1.1 (ledger entry 78): first-run guardrail interception - R measured as (5, n_chambers) (MATLAB 24x5, only the first 2 rows enter the analysis),
   get_R relaxed from "exactly 2 rows" to ">=2 rows", value-taking logic unchanged. An empty run constitutes no ruling; adjudication logic untouched.
 ================================================================================
-pre-registration: 预注册_P3_免费统计量充分性_NFkB空间梯度_v01.md (ledger entry 75, criteria already pinned)
+pre-registration: prereg_P3_free_statistic_sufficiency_NFkB_spatial_gradient_v01.md (ledger entry 75, criteria already pinned)
 theory: theorem T' survivor class - free statistics (event times/ordinals/counts/durations) need no cross-cell calibration to suffice for decoding.
 blind state: no adjudication statistic was computed before this script was written. Field semantics come entirely from the authors' public MATLAB script comments;
-      （DeepAnalysisForFig4.m / HeatMap&Traces_Dose.m / HeatMap&Traces_Duration.m），
+       (DeepAnalysisForFig4.m / HeatMap&Traces_Dose.m / HeatMap&Traces_Duration.m) , 
   trace values were never touched. The first formal run of this script is the ruling run, recorded in the ledger either way.
 
 implementation decisions (all pinned before opening the data; basis = authors' script comments and the pre-registration, not results):
@@ -49,8 +49,8 @@ input (located recursively under ROOT by filename, tolerant of intermediate dire
     FixedSource_TNF100_DC3.mat / FixedSource_TNF30_DC3.mat / FixedSource_TNF10_DC3.mat
     DifferentDuration_TNF100_DC2.mat
 output (written to the script's own directory):
-    代码45_判定日志.txt / 代码45_单元table.csv / 代码45_robust臂.csv /
-    代码45_描述臂.csv / 代码45_ruling.json
+    code45_judgment_log.txt / code45_unit_table.csv / code45_robust_arm.csv /
+    code45_descriptive_arm.csv / code45_ruling.json
 ================================================================================
 """
 import os, sys, json, csv, time, datetime
@@ -114,13 +114,13 @@ def abort(msg):
     log("[ABORT] " + msg)
     log("This run is an empty run; it constitutes no ruling and produces no ruling table. Please send this log back.")
     try:
-        with open(os.path.join(OUT_DIR, "代码45_判定日志.txt"), "w", encoding="utf-8") as fh:
+        with open(os.path.join(OUT_DIR, "code45_judgment_log.txt"), "w", encoding="utf-8") as fh:
             fh.write("\n".join(_LOG_LINES))
     except Exception:
         pass
     raise SystemExit(2)
 
-# ------------------------- v7.3 .mat load（h5py） ---------------------------
+# ------------------------- v7.3 .mat load (h5py)  ---------------------------
 def find_file(name):
     hits = []
     for dp, _dn, fn in os.walk(ROOT):
@@ -210,7 +210,7 @@ def featurize(frames, values, dist, interval, offset):
     v = values.astype(float)
     valid = np.isfinite(v) & (v >= 0) & np.isfinite(x)   # missing frame numbers count toward the missing rate as well
     if v.size == 0:
-        return "empty轨迹", None
+        return "empty trajectory", None
     miss = 1.0 - float(valid.mean())
     if miss > MISS_MAX:
         return f"missing>{int(MISS_MAX*100)}%", None
@@ -219,9 +219,9 @@ def featurize(frames, values, dist, interval, offset):
     xv, vv = x[valid], v[valid]
     base = vv[xv <= 0.0]
     if base.size < 2:
-        return "baseline帧<2", None
+        return "baseline frames < 2", None
     if xv.size == 0 or xv[-1] < EXTENT_MIN:
-        return "末端<120min", None
+        return "end < 120 min", None
     mu0 = float(base.mean())
     sd0 = float(base.std(ddof=1))
     if sd0 == 0.0:
@@ -273,15 +273,15 @@ def clause_verdict(clause, units):
     """units: list of dict(n1, n2, auc, margin). Returns (verdict, note)."""
     margin = MARGIN[clause]
     if any(u["n1"] < N_MIN or u["n2"] < N_MIN for u in units):
-        return "数据不足", "至少一单元 n<%d，不构成hit也不构成证伪" % N_MIN
+        return "insufficient data", "at least one unit has n<%d: neither hit nor falsified" % N_MIN
     aucs = [u["auc"] for u in units]
     if all(a >= margin for a in aucs):
-        return "hit", f"全部单元 ≥ {margin}"
+        return "hit", f"all units >= {margin}"
     if any(a < 0.5 for a in aucs):
-        return "证伪", "existsdirection反转单元（AUC<0.5）"
+        return "falsified", "a direction-reversed unit exists (AUC<0.5)"
     if all(a < margin for a in aucs):
-        return "证伪", f"全单元不达线（均 < {margin}，P3-F 字面）"
-    return "miss-中间态", "部分达线但未全达线；按pre-registration字面不记证伪，如实入账"
+        return "falsified", f"all units below threshold (all < {margin}, P3-F literal)"
+    return "miss-intermediate", "thresholds partially met but not all; per the pre-registration letter this is not recorded as falsified - recorded as-is"
 
 # ------------------------- assemble condition groups --------------------------------------
 def collect_group(path, tag, chambers, offset_fn, log_head=True):
@@ -332,7 +332,7 @@ def main():
     log("run time: " + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     log(f"seed={SEED}  bootstrap={N_BOOT}  adjudication margins={MARGIN}  analysis window={WINDOW} min")
     log(f"numpy={np.__version__}  scipy loaded  h5py={h5py.__version__}")
-    log("pre-registration: 预注册_P3_免费统计量充分性_NFkB空间梯度_v01.md (entry 75)")
+    log("pre-registration: prereg_P3_free_statistic_sufficiency_NFkB_spatial_gradient_v01.md (entry 75)")
     log("=" * 74)
 
     # ---- guardrail 1: all files present ----
@@ -396,13 +396,13 @@ def main():
          "a": col(dose["10"], f"tau{K_MAIN}"),  "b": col(dose["30"], f"tau{K_MAIN}")},
         {"clause": "P3-1", "unit": "P3-1b", "contrast": "τ(3): TNF30 > TNF100",
          "a": col(dose["30"], f"tau{K_MAIN}"),  "b": col(dose["100"], f"tau{K_MAIN}")},
-        {"clause": "P3-2", "unit": "P3-2a", "contrast": "τ(3): 中带 > 近带",
+        {"clause": "P3-2", "unit": "P3-2a", "contrast": "τ(3): mid band > near band",
          "a": col(band["mid"], f"tau{K_MAIN}"), "b": col(band["near"], f"tau{K_MAIN}")},
-        {"clause": "P3-2", "unit": "P3-2b", "contrast": "τ(3): 远带 > 中带",
+        {"clause": "P3-2", "unit": "P3-2b", "contrast": "τ(3): far band > mid band",
          "a": col(band["far"], f"tau{K_MAIN}"), "b": col(band["mid"], f"tau{K_MAIN}")},
-        {"clause": "P3-3", "unit": "P3-3a", "contrast": "越threshold时程: 30min > 15min",
+        {"clause": "P3-3", "unit": "P3-3a", "contrast": "above-threshold duration: 30min > 15min",
          "a": col(dur["30min"], "dur3"),        "b": col(dur["15min"], "dur3")},
-        {"clause": "P3-3", "unit": "P3-3b", "contrast": "越threshold时程: 60min > 30min",
+        {"clause": "P3-3", "unit": "P3-3b", "contrast": "above-threshold duration: 60min > 30min",
          "a": col(dur["60min"], "dur3"),        "b": col(dur["30min"], "dur3")},
     ]
 
@@ -438,14 +438,14 @@ def main():
         v, why = clause_verdict(clause, us)
         verdicts[clause] = {"verdict": v, "reason": why,
                             "units": [u["unit"] for u in us]}
-        log(f"  {clause}: {v} —— {why}")
-    any_fals = any(v["verdict"] == "证伪" for v in verdicts.values())
+        log(f"  {clause}: {v}  -  {why}")
+    any_fals = any(v["verdict"] == "falsified" for v in verdicts.values())
     all_hit = all(v["verdict"] == "hit" for v in verdicts.values())
     log("\n[P3-F overall falsification] " + ("triggered: at least one clause falsified" if any_fals else
                               ("not triggered; all three clauses hit" if all_hit else "not triggered; miss/insufficient-data clauses exist")))
-    overall = ("P3 hit（三条款全达线）" if all_hit else
-               "P3 证伪（exists证伪条款）" if any_fals else
-               "P3 miss-中间态/数据不足（按判定table如实入账）")
+    overall = ("P3 hit (all three clauses met)" if all_hit else
+               "P3 falsified (a falsified clause exists)" if any_fals else
+               "P3 miss-intermediate/insufficient-data (recorded as-is per the decision table)")
     log("[overall ruling] " + overall)
 
     # ---- robust arms (point estimates, not adjudicated) ----
@@ -471,14 +471,14 @@ def main():
         rob(f"overlap-band P3-1b tau(3): TNF30>TNF100", col(ov["30"], f"tau{K_MAIN}"), col(ov["100"], f"tau{K_MAIN}"))
     else:
         log("  some group in the overlap band has n<30; overlap-band arm skipped (recorded as-is)")
-        rob_rows.append({"arm": "重叠带 P3-1", "n_a": "", "n_b": "", "auc": "SKIPPED_n<30"})
+        rob_rows.append({"arm": "overlap band P3-1", "n_a": "", "n_b": "", "auc": "SKIPPED_n<30"})
     # Option B alignment robust arm (P3-1 only, point estimate)
     log("  [Option B] TNF10 re-aligned with the overridden block [39,148]+osI_30 (robust arm only)")
     dose10B = collect_group(paths["10"], "TNF10-OptB",
                             CHAMBERS["10"], dose_offset_fn(OSD_10_ALT, OSI_10_ALT))
     if len(dose10B) >= N_MIN:
         rob(f"OptB P3-1a τ(3): TNF10>TNF30", col(dose10B, f"tau{K_MAIN}"), col(dose["30"], f"tau{K_MAIN}"))
-        rob(f"OptB P3-1b τ(3): TNF30>TNF100（control）", col(dose["30"], f"tau{K_MAIN}"), col(dose["100"], f"tau{K_MAIN}"))
+        rob(f"OptB P3-1b τ(3): TNF30>TNF100 (control) ", col(dose["30"], f"tau{K_MAIN}"), col(dose["100"], f"tau{K_MAIN}"))
     else:
         log("  Option B group n<30, skipped (recorded as-is)")
         rob_rows.append({"arm": "OptB P3-1a", "n_a": "", "n_b": "", "auc": "SKIPPED_n<30"})
@@ -500,11 +500,11 @@ def main():
     desc("count P3-1b: TNF100>TNF30", col(dose["100"], "count3"), col(dose["30"], "count3"))
     log("  response rate (uncensored fraction of tau(3)):")
     for name, g in [("TNF10", dose["10"]), ("TNF30", dose["30"]), ("TNF100", dose["100"]),
-                    ("近带", band["near"]), ("中带", band["mid"]), ("远带", band["far"]),
+                    ("near band", band["near"]), ("mid band", band["mid"]), ("far band", band["far"]),
                     ("15min", dur["15min"]), ("30min", dur["30min"]), ("60min", dur["60min"])]:
         rr = np.mean([c["responded"] for c in g]) if g else np.nan
         log(f"    {name:<8} n={len(g):<5} response rate={rr:.3f}")
-        desc_rows.append({"arm": f"响应率 {name}", "n_a": len(g), "n_b": "", "auc": rr})
+        desc_rows.append({"arm": f"response rate {name}", "n_a": len(g), "n_b": "", "auc": rr})
 
     # ---- write output ----
     def write_csv(path, rows_, fields):
@@ -514,11 +514,11 @@ def main():
             for r in rows_:
                 w.writerow(r)
 
-    p_unit = os.path.join(OUT_DIR, "代码45_单元table.csv")
-    p_rob  = os.path.join(OUT_DIR, "代码45_robust臂.csv")
-    p_desc = os.path.join(OUT_DIR, "代码45_描述臂.csv")
-    p_json = os.path.join(OUT_DIR, "代码45_ruling.json")
-    p_log  = os.path.join(OUT_DIR, "代码45_判定日志.txt")
+    p_unit = os.path.join(OUT_DIR, "code45_unit_table.csv")
+    p_rob  = os.path.join(OUT_DIR, "code45_robust_arm.csv")
+    p_desc = os.path.join(OUT_DIR, "code45_descriptive_arm.csv")
+    p_json = os.path.join(OUT_DIR, "code45_ruling.json")
+    p_log  = os.path.join(OUT_DIR, "code45_judgment_log.txt")
     write_csv(p_unit, rows, ["clause", "unit", "contrast", "n_a", "n_b", "auc",
                              "ci_lo", "ci_hi", "margin", "pass"])
     write_csv(p_rob, rob_rows, ["arm", "n_a", "n_b", "auc"])

@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-XLS = Path(r"D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\05_主线纲领与设计\渗透压线\data\muzzey2009\mmc2.xls")
+XLS = Path(r"D:\Kimi_Agent_cell_sim_toolkit_workspace\05_main_program\osmo_line\data\muzzey2009\mmc2.xls")
 
 
 def sheet(name, tcol=0):
