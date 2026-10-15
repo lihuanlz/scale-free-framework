@@ -1,0 +1,785 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.15)  16 OCT 2026 00:23
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./si.tex
+(si.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/base\size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen150
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/graphics\keyval.sty
+Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count284
+\Gm@cntv=\count285
+\c@Gm@tempcnt=\count286
+\Gm@bindingoffset=\dimen151
+\Gm@wd@mp=\dimen152
+\Gm@odd@mp=\dimen153
+\Gm@even@mp=\dimen154
+\Gm@layoutwidth=\dimen155
+\Gm@layoutheight=\dimen156
+\Gm@layouthoffset=\dimen157
+\Gm@layoutvoffset=\dimen158
+\Gm@dimlist=\toks18
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/geometry\geometry.cfg))
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen159
+\lightrulewidth=\dimen160
+\cmidrulewidth=\dimen161
+\belowrulesep=\dimen162
+\belowbottomsep=\dimen163
+\aboverulesep=\dimen164
+\abovetopsep=\dimen165
+\cmidrulesep=\dimen166
+\cmidrulekern=\dimen167
+\defaultaddspace=\dimen168
+\@cmidla=\count287
+\@cmidlb=\count288
+\@aboverulesep=\dimen169
+\@belowrulesep=\dimen170
+\@thisruleclass=\count289
+\@lastruleclass=\count290
+\@thisrulewidth=\dimen171
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\longtable.sty
+Package: longtable 2026-01-28 v4.27 Multi-page Table package (DPC)
+\LTleft=\skip51
+\LTright=\skip52
+\LTpre=\skip53
+\LTpost=\skip54
+\LTchunksize=\count291
+\LTcapwidth=\dimen172
+\LT@head=\box53
+\LT@firsthead=\box54
+\LT@foot=\box55
+\LT@lastfoot=\box56
+\LT@gbox=\box57
+\LT@cols=\count292
+\LT@rows=\count293
+\c@LT@tables=\count294
+\c@LT@chunks=\count295
+\LT@p@ftn=\toks19
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/tools\array.sty
+Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
+\col@sep=\dimen173
+\ar@mcellbox=\box58
+\extrarowheight=\dimen174
+\NC@list=\toks20
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box59
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2026/05/19 v2.18d AMS math features
+\@mathmargin=\skip57
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsmath\amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks21
+\ex@=\dimen175
+))
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen176
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count296
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count297
+\leftroot@=\count298
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count299
+\DOTSCASE@=\count300
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box60
+\strutbox@=\box61
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen177
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count301
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count302
+\dotsspace@=\muskip17
+\c@parentequation=\count303
+\dspbrk@lvl=\count304
+\tag@help=\toks22
+\row@=\count305
+\column@=\count306
+\maxfields@=\count307
+\andhelp@=\toks23
+\eqnshift@=\dimen178
+\alignsep@=\dimen179
+\tagshift@=\dimen180
+\tagwidth@=\dimen181
+\totwidth@=\dimen182
+\lineht@=\dimen183
+\@envbody=\toks24
+\multlinegap=\skip58
+\multlinetaggap=\skip59
+\mathdisplay@stack=\toks25
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/kvdefinekeys\kvdefinekey
+s.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/pdftexcmds\pdftexcmds.st
+y
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/hyperref\nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/gettitlestring\gettitles
+tring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count308
+) (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count309
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/stringenc\stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen184
+\Hy@linkcounter=\count310
+\Hy@pagecounter=\count311
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count312
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/hyperref\puenc.def
+File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4070.
+Package hyperref Info: Hyper figures OFF on input line 4199.
+Package hyperref Info: Link nesting OFF on input line 4204.
+Package hyperref Info: Hyper index ON on input line 4207.
+Package hyperref Info: Plain pages OFF on input line 4214.
+Package hyperref Info: Backreferencing OFF on input line 4219.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4466.
+\c@Hy@tempcnt=\count313
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/url\url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4805.
+\XeTeXLinkMargin=\dimen185
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/bigintcalc\bigintcalc.st
+y
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count314
+\Field@Width=\dimen186
+\Fld@charsize=\dimen187
+Package hyperref Info: Hyper figures OFF on input line 6091.
+Package hyperref Info: Link nesting OFF on input line 6096.
+Package hyperref Info: Hyper index ON on input line 6099.
+Package hyperref Info: backreferencing OFF on input line 6106.
+Package hyperref Info: Link coloring ON on input line 6109.
+Package hyperref Info: Link coloring with OCG OFF on input line 6116.
+Package hyperref Info: PDF/A mode OFF on input line 6121.
+\Hy@abspage=\count315
+\c@Item=\count316
+\c@Hfootnote=\count317
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
+\Fld@listcount=\count318
+\c@bookmark@seq@number=\count319
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/rerunfilecheck\rerunfilech
+eck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/generic/uniquecounter\uniquecoun
+ter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip60
+)
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/l3kernel\l3backend-pdftex.
+def
+File: l3backend-pdftex.def 2026-09-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count320
+) (si.aux)
+\openout1 = `si.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(62.59596pt, 489.10307pt, 62.59596pt)
+* v-part:(T,H,B)=(62.59596pt, 669.77806pt, 62.59596pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=489.10307pt
+* \textheight=669.77806pt
+* \oddsidemargin=-9.67403pt
+* \evensidemargin=-9.67403pt
+* \topmargin=-46.67403pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/graphics\color.sty
+Package: color 2026-05-17 v1.3f Standard LaTeX Color (DPC)
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count321
+\scratchdimen=\dimen188
+\scratchbox=\box62
+\nofMPsegments=\count322
+\nofMParguments=\count323
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count324
+\MPscratchDim=\dimen189
+\MPnumerator=\count325
+\makeMPintoPDFobject=\count326
+\everyMPtoPDFconversion=\toks27
+)) (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/graphics\mathcolor.ltx)
+)
+Package hyperref Info: Link coloring ON on input line 16.
+ (si.out) (si.out)
+\@outlinefile=\write3
+\openout3 = `si.out'.
+
+
+Overfull \hbox (44.49777pt too wide) in paragraph at lines 19--29
+\OT1/cmr/m/n/10.95 audit which requires the Nikoli^^Sc et al. repository data (
+download instructions in \OT1/cmtt/m/n/10.95 data[]external/PROVENANCE.md\OT1/c
+mr/m/n/10.95 ). 
+ []
+
+(si.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+ (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+
+(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+{C:/Users/lihua/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}])
+\tf@toc=\write4
+\openout4 = `si.toc'.
+
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]|\OT1/cmtt/m/n/10.95 code04[]pdpc[]identifiability[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
+[]|\OT1/cmtt/m/n/10.95 code10[]asymmetric[]Km[]
+ []
+
+
+Overfull \hbox (2.54744pt too wide) in paragraph at lines 43--43
+[]|\OT1/cmtt/m/n/10.95 code11[]discrimination[]map[]v09| 
+ []
+
+
+Overfull \hbox (6.6865pt too wide) in paragraph at lines 45--45
+[]|\OT1/cmtt/m/n/10.95 code06[]nfkB[]negative[]feedback[]
+ []
+
+
+Overfull \hbox (18.18387pt too wide) in paragraph at lines 46--46
+[]|\OT1/cmtt/m/n/10.95 code08[]msn2[]excitable[]frequency[]
+ []
+
+
+Overfull \hbox (16.57423pt too wide) in paragraph at lines 48--48
+[]|\OT1/cmtt/m/n/10.95 code12[]nfkB[]GLM[]prediction[]test[]
+ []
+
+
+Overfull \hbox (23.93256pt too wide) in paragraph at lines 49--49
+[]|\OT1/cmtt/m/n/10.95 code15[]nfkB[]saturation[]transient[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--51
+[]|\OT1/cmr/m/n/10.95 P2 amplitude-stratification
+ []
+
+
+Overfull \hbox (23.86345pt too wide) in paragraph at lines 51--52
+[]|\OT1/cmtt/m/n/10.95 P2[]verdict[]summary.csv\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (76.69902pt too wide) in paragraph at lines 51--52
+\OT1/cmtt/m/n/10.95 P2[]msn2[]stratification[]units.csv| 
+ []
+
+
+Underfull \hbox (badness 3965) in paragraph at lines 52--52
+[]|\OT1/cmr/m/n/10.95 P3 free-statistic sufficiency (NF-$\OML/cmm/m/it/10.95 ^^
+T$\OT1/cmr/m/n/10.95 B
+ []
+
+
+Overfull \hbox (20.82178pt too wide) in paragraph at lines 52--53
+[]|\OT1/cmtt/m/n/10.95 P3[]verdict[]summary.csv| 
+ []
+
+
+Overfull \hbox (20.82178pt too wide) in paragraph at lines 53--54
+[]|\OT1/cmtt/m/n/10.95 P4[]verdict[]summary.csv| 
+ []
+
+
+Overfull \hbox (20.82178pt too wide) in paragraph at lines 54--55
+[]|\OT1/cmtt/m/n/10.95 P6[]verdict[]summary.csv| 
+ []
+
+
+Overfull \hbox (45.24857pt too wide) in paragraph at lines 56--57
+[]|\OT1/cmtt/m/n/10.95 p9[]bcd[]anchor[]results.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (36.4582pt too wide) in paragraph at lines 56--57
+\OT1/cmtt/m/n/10.95 p9[]2[]upgrade[]results.json| 
+ []
+
+
+Overfull \hbox (8.29613pt too wide) in paragraph at lines 59--59
+[]|\OT1/cmtt/m/n/10.95 score[]markers[]v2[]authordata.py| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 61--61
+[]|\OT1/cmr/m/n/10.95 GPCR$\OMS/cmsy/m/n/10.95 !$\OT1/cmr/m/n/10.95 Ca cascade 
+audit; per-
+ []
+
+
+Overfull \hbox (46.8582pt too wide) in paragraph at lines 61--62
+[]|\OT1/cmtt/m/n/10.95 cascade[]audit[]results.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (103.83282pt too wide) in paragraph at lines 61--62
+\OT1/cmtt/m/n/10.95 cascade[]hill[]fits[]methods[]ladder.json| 
+ []
+
+
+Overfull \hbox (2.54744pt too wide) in paragraph at lines 62--62
+[]|\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]audit.py| 
+ []
+
+
+Underfull \hbox (badness 5288) in paragraph at lines 62--62
+[]|\OT1/cmr/m/n/10.95 P10: gain-distribution confinement
+ []
+
+
+Overfull \hbox (85.48938pt too wide) in paragraph at lines 62--63
+[]|\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]results.json\OT1/cmr/m/n/10.95 ,
+
+ []
+
+
+Overfull \hbox (93.94508pt too wide) in paragraph at lines 62--63
+\OT1/cmtt/m/n/10.95 p10[]supplementary[]arms[]results.json| 
+ []
+
+
+Overfull \hbox (16.57423pt too wide) in paragraph at lines 64--64
+[]|\OT1/cmtt/m/n/10.95 p11[]counting[]law[]cross[]cellline[]
+ []
+
+
+Overfull \hbox (30.70952pt too wide) in paragraph at lines 65--66
+[]|\OT1/cmtt/m/n/10.95 P12a[]erk[]baseline[]cv.csv| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+[]|\OT1/cmtt/m/n/10.95 p12b[]*.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (45.24857pt too wide) in paragraph at lines 66--67
+\OT1/cmtt/m/n/10.95 p12b[]egfr[]dms[]variants.csv\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\OT1/cmtt/m/n/10.95 p13[]mutual[]info[]audit.py\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]|\OT1/cmr/m/n/10.95 P13 channel capacity (mutual
+ []
+
+
+Overfull \hbox (6.61739pt too wide) in paragraph at lines 67--68
+[]|\OT1/cmtt/m/n/10.95 p13[]mi[]results.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (8.22702pt too wide) in paragraph at lines 67--68
+\OT1/cmtt/m/n/10.95 p13[]robustness.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (3.57571pt too wide) in paragraph at lines 67--68
+\OT1/cmtt/m/n/10.95 p13[]fig6[]decay.json| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+[]|\OT1/cmtt/m/n/10.95 p14[]results.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Overfull \hbox (15.07309pt too wide) in paragraph at lines 68--69
+\OT1/cmtt/m/n/10.95 p14[]pergene[]log2R.csv| 
+ []
+
+
+Overfull \hbox (18.11476pt too wide) in paragraph at lines 69--70
+[]|\OT1/cmtt/m/n/10.95 p15[]tcga[]results.json\OT1/cmr/m/n/10.95 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
+\OT1/cmr/m/n/10.95 four per-sample
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 71--71
+[]|\OT1/cmr/m/n/10.95 Fig. 1 framework schematic
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 71--71
+\OT1/cmr/m/n/10.95 (derived from the umbrella edition
+ []
+
+[3]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 101.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\kappa' on input line 101.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 101.
+
+
+Underfull \hbox (badness 1033) in paragraph at lines 116--116
+[]|\OT1/cmr/m/n/10 all 8 AUCs $\OML/cmm/m/it/10 < \OT1/cmr/m/n/10 0\OML/cmm/m/i
+t/10 :\OT1/cmr/m/n/10 60$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 116--116
+\OT1/cmr/m/n/10 (max 0.5819; one
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 117--117
+[]|$\OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 046
+8$, 95%
+ []
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 117--117
+\OT1/cmr/m/n/10 CI (0.0316, 0.0622);
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--117
+\OT1/cmr/m/n/10 AUC$[] = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 567$,
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (61.86728pt too wide) in paragraph at lines 123--125
+\OT1/cmr/m/n/10.95 All 25 per-unit rows (Histamine and UK ladders, low/mid/high
+/full bands) with CIs are in \OT1/cmtt/m/n/10.95 P4[]verdict[]summary.csv\OT1/c
+mr/m/n/10.95 . 
+ []
+
+[4]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 126.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\kappa' on input line 126.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 126.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 167.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 167.
+
+
+Overfull \hbox (138.55597pt too wide) in paragraph at lines 169--174
+\OT1/cmr/m/n/10.95 two fitting ladders (default and Methods) archived in \OT1/c
+mtt/m/n/10.95 cascade[]audit[]results.json \OT1/cmr/m/n/10.95 and \OT1/cmtt/m/n
+/10.95 cascade[]hill[]fits[]methods[]ladder.json\OT1/cmr/m/n/10.95 ;
+ []
+
+[5]
+Overfull \hbox (24.27513pt too wide) in paragraph at lines 224--229
+[]\OT1/cmr/m/n/10.95 Split-half rank correlations and 95% CIs per condition are
+ archived in \OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]results.json\OT1/cmr/m
+/n/10.95 .
+ []
+
+[6]
+Overfull \hbox (12.68942pt too wide) in paragraph at lines 259--267
+\OT1/cmr/m/n/10.95 extended clinical expansion in \OT1/cmtt/m/n/10.95 P12b[]ext
+ended[]clinical[]expansion.csv \OT1/cmr/m/n/10.95 and \OT1/cmtt/m/n/10.95 P12b[
+]final[]expansion.csv
+ []
+
+
+Overfull \hbox (26.41295pt too wide) in paragraph at lines 285--293
+[]\OT1/cmr/m/n/10.95 ($[]$G12V AREG $\OML/cmm/m/it/10.95 I \OT1/cmr/m/n/10.95 =
+ 0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 093$.) Per-genotype $\OML/cmm/m/it/10
+.95 n$ \OT1/cmr/m/n/10.95 (1116--2522 cells) and 95% bootstrap CIs in \OT1/cmtt
+/m/n/10.95 p13[]mi[]results.json
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (2.62373pt too wide) in paragraph at lines 337--344
+\OT1/cmr/m/n/10.95 numerical table \OT1/cmtt/m/n/10.95 data[]external/muzzey200
+9/mmc2.xls\OT1/cmr/m/n/10.95 ; only the glycerol arms rely on figure digitisati
+on
+ []
+
+[7]
+Overfull \hbox (78.4321pt too wide) in paragraph at lines 347--358
+\OT1/cmr/m/n/10.95 al. 2009 \OT1/cmtt/m/n/10.95 mmc2.xls \OT1/cmr/m/n/10.95 (PM
+C3109981). Referenced but not re-hosted (exact access notes in \OT1/cmtt/m/n/10
+.95 data[]external/PROVENANCE.md\OT1/cmr/m/n/10.95 ):
+ []
+
+[8] (si.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-09-09>
+ ***********
+Package rerunfilecheck Info: File `si.out' has not changed.
+(rerunfilecheck)             Checksum: 58331A4DE6CF2F2B4DEAF1363E0CB8F3;5095.
+ ) 
+Here is how much of TeX's memory you used:
+ 10229 strings out of 469327
+ 156628 string characters out of 5456969
+ 597043 words of memory out of 5000000
+ 39199 multiletter control sequences out of 15000+600000
+ 641989 words of font info for 93 fonts, out of 8000000 for 9000
+ 0 hyphenation exceptions out of 8191
+ 74i,11n,79p,406b,573s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmb
+x10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ams
+fonts/cm/cmitt10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/pub
+lic/amsfonts/cm/cmmi10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/typ
+e1/public/amsfonts/cm/cmmi12.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fon
+ts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.
+9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lihua/AppData/Roaming/MiKT
+eX/2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Users/lihua/AppData/Roaming
+/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lihua/AppData/Ro
+aming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lihua/AppDa
+ta/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lihua/A
+ppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lih
+ua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users
+/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cms
+y8.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfo
+nts/cm/cmti10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
+/amsfonts/cm/cmtt10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/
+public/amsfonts/symbols/msam10.pfb>
+Output written on si.pdf (8 pages, 268753 bytes).
+PDF statistics:
+ 244 PDF objects out of 1000 (max. 8388607)
+ 192 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
+

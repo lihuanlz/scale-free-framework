@@ -6,7 +6,7 @@ Framework-paper code, results and manuscript source for:
 
 ## Layout
 
-- `manuscript/` — LaTeX source, compiled PDF, five figure PNGs, figure-generation scripts (`make_fig3.py`, `make_fig4.py`). Figures 1/2/5 derive from the umbrella-edition scripts `code/make_fig1.py`, `code/make_fig2.py` (output names differ between editions).
+- `manuscript/` — LaTeX source, compiled PDF, five figure PNGs, and one figure-generation script per figure: `make_fig1_schematic.py` (derived from the umbrella edition `draw_ed_figures.py`, EDFig1 section), `make_fig2_pdpc.py` (renamed copy of `code/make_fig2.py`), `make_fig3.py`, `make_fig4.py`, `make_fig5_ledger.py` (renamed copy of `code/make_fig1.py`).
 - `code/` — analysis scripts (ours):
   - *PdPC instance*: code04 (identifiability audit), code10 (asymmetric-Km group), code11 (discrimination map);
   - *additional systems / census*: code06, 08, 09, 12, 15 (NF-κB, Msn2);
