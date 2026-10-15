@@ -28,6 +28,9 @@
 | GSE305057 (EGFR saturation mutagenesis) | P12b A5 arm | GEO |
 | Gillies et al., *Mol. Syst. Biol.* 16, e9518 (2020), Source Data Figs 2 and 6 (PMC7569415) | P13 channel-capacity audit | Publisher supplementary |
 | Liu et al. (EVER), *Commun. Biol.* 3, 30 (2020), Supplementary Data 1 (PMC6952392) | P12b ABL catalytic axis | Publisher supplementary |
+| Jimenez-Asins et al., *Mol. Syst. Biol.* 18, e10588 (2022), RNA-seq TPM + TMT proteomics | P14 shape decoding | Authors' public repository (`albajimenezasins/Proteomics_MSB_2022`) |
 | Finzel Pérez, A., PhD thesis, Freie Universität Berlin (2016), Fig. 30 | P11 digitised counting-law arms | Institutional repository (refubium fub188/7115) |
+| Stewart-Ornstein & Lahav, *Sci. Signal.* 10, eaah6671 (2017) (PMC5504473) | P11 per-line periodicity / ATM IC50 / γH2AX arms | Publisher site |
+| Moore et al., *Cell Syst.* 15, 628–638 (2024) FRET archive, Dryad doi:10.5061/dryad.nvx0k6dzz | P7 adjudication | Mirrored CC0 in [chemotaxis-receptor-layer](https://github.com/lihuanlz/chemotaxis-receptor-layer) |
 
 All verdicts in `results/` are our own derived work product.
