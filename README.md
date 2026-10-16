@@ -1,5 +1,7 @@
 # The price of absolute scale: degeneracy groups, surviving statistics, and the reference economics of cellular signalling
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23402838.svg)](https://doi.org/10.5281/zenodo.23402838)
+
 Framework-paper code, results and manuscript source for:
 
 > H. Li. *The price of absolute scale: degeneracy groups, surviving statistics, and the reference economics of cellular signalling.* (2026), split from the umbrella project [cell-communication-audit](https://github.com/lihuanlz/cell-communication-audit) (archived at Zenodo, doi:10.5281/zenodo.23008824).
