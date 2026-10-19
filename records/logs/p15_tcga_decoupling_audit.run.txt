@@ -1,45 +1,169 @@
 $ python p15_tcga_decoupling_audit.py
-# exit 1  wall 4.5s
+# exit 0  wall 9.5s
 
 === coadread_tcga_pan_can_atlas_2018
+{
+ "study": "coadread_tcga_pan_can_atlas_2018",
+ "n": 464,
+ "counts": {
+  "WT": 218,
+  "KRAS_G12": 115,
+  "other_mut": 74,
+  "strong": 57
+ },
+ "slopes": {
+  "WT": {
+   "n": 218,
+   "slope": -0.12385804924089708,
+   "slope_se": 0.15191378879716594,
+   "r": -0.055390197891768043,
+   "p": 0.4157883940250388,
+   "cv_perk": 1.9131647592465506,
+   "mean_perk": -0.3158133027522936
+  },
+  "KRAS_G12": {
+   "n": 115,
+   "slope": -0.4643222973593744,
+   "slope_se": 0.24641396872524887,
+   "r": -0.17454075790172355,
+   "p": 0.062091559978239855,
+   "cv_perk": 3.1818354418437997,
+   "mean_perk": -0.20480260869565214
+  },
+  "strong": {
+   "n": 57,
+   "slope": -0.5778033147820762,
+   "slope_se": 0.33330195384202127,
+   "r": -0.22761895297690513,
+   "p": 0.08859699524054533,
+   "cv_perk": 1.568831972012772,
+   "mean_perk": -0.40800701754385965
+  },
+  "other_mut": {
+   "n": 74,
+   "slope": 0.062461620858087735,
+   "slope_se": 0.3614974254563994,
+   "r": 0.020358781021545334,
+   "p": 0.8633046042405587,
+   "cv_perk": 2.0356589968486634,
+   "mean_perk": -0.311604054054054
+  }
+ },
+ "slope_ratio_strong_vs_WT": 4.665044527370851,
+ "slope_ratio_G12_vs_WT": 3.7488261780733616,
+ "interaction": {
+  "beta": 
+=== luad_tcga_pan_can_atlas_2018
+{
+ "study": "luad_tcga_pan_can_atlas_2018",
+ "n": 360,
+ "counts": {
+  "WT": 232,
+  "KRAS_G12": 92,
+  "other_mut": 29,
+  "strong": 7
+ },
+ "slopes": {
+  "WT": {
+   "n": 232,
+   "slope": -0.2547745635919806,
+   "slope_se": 0.09154923031801088,
+   "r": -0.18048702117101711,
+   "p": 0.005834772741518278,
+   "cv_perk": 9.448496451308431,
+   "mean_perk": -0.07093362068965517
+  },
+  "KRAS_G12": {
+   "n": 92,
+   "slope": -0.4447901382768753,
+   "slope_se": 0.21144674462629118,
+   "r": -0.2164765043721313,
+   "p": 0.038207187167516324,
+   "cv_perk": 2.292861893236062,
+   "mean_perk": 0.30478913043478256
+  }
+ },
+ "slope_ratio_G12_vs_WT": 1.7458184679268183
+}
+=== skcm_tcga_pan_can_atlas_2018
+{
+ "study": "skcm_tcga_pan_can_atlas_2018",
+ "n": 329,
+ "counts": {
+  "strong": 198,
+  "WT": 70,
+  "other_mut": 58,
+  "KRAS_G12": 3
+ },
+ "slopes": {
+  "WT": {
+   "n": 70,
+   "slope": 0.030552870914268258,
+   "slope_se": 0.31314244961447835,
+   "r": 0.011831102771754011,
+   "p": 0.9225618764023076,
+   "cv_perk": 2.1093485717203855,
+   "mean_perk": -0.4003885714285714
+  },
+  "strong": {
+   "n": 198,
+   "slope": -0.05522899145771409,
+   "slope_se": 0.17423484134577696,
+   "r": -0.022635640297783956,
+   "p": 0.7515960195869934,
+   "cv_perk": 2.616364554556355,
+   "mean_perk": -0.2931015151515152
+  },
+  "other_mut": {
+   "n": 58,
+   "slope": -0.04227613496267435,
+   "slope_se": 0.2655823228193632,
+   "r": -0.021266884064600183,
+   "p": 0.8740975856338968,
+   "cv_perk": 2.138135907161254,
+   "mean_perk": -0.3053689655172414
+  }
+ },
+ "slope_ratio_strong_vs_WT": -1.8076530880743527,
+ "interaction": {
+  "beta": -0.08578186237198225,
+  "t": -0.2509940546212342,
+  "p": 0.8020139489230595
+ }
+}
+=== paad_tcga_pan_can_atlas_2018
+{
+ "study": "paad_tcga_pan_can_atlas_2018",
+ "n": 122,
+ "counts": {
+  "KRAS_G12": 71,
+  "WT": 43,
+  "strong": 7,
+  "other_mut": 1
+ },
+ "slopes": {
+  "WT": {
+   "n": 43,
+   "slope": -0.2737987649776215,
+   "slope_se": 0.5622587234288431,
+   "r": -0.07583174589614583,
+   "p": 0.6288784341989488,
+   "cv_perk": 3.1619488473709687,
+   "mean_perk": 0.21572558139534886
+  },
+  "KRAS_G12": {
+   "n": 71,
+   "slope": -0.31016967344979496,
+   "slope_se": 0.35252523488827914,
+   "r": -0.1053323765559163,
+   "p": 0.38199417196508484,
+   "cv_perk": 4.465574190809346,
+   "mean_perk": 0.15237323943661973
+  }
+ },
+ "slope_ratio_G12_vs_WT": 1.1328381027399672
+}
+saved p15_tcga_results.json
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p15_tcga_decoupling_audit.py", line 126, in <module>
-    main()
-    ~~~~^^
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p15_tcga_decoupling_audit.py", line 117, in main
-    r = analyze(st)
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p15_tcga_decoupling_audit.py", line 110, in analyze
-    wide.to_csv(os.path.join(OUT, 'p15_%s_persample.csv' % study.split('_')[0]))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\core\generic.py", line 3988, in to_csv
-    return DataFrameRenderer(formatter).to_csv(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        path_or_buf,
-        ^^^^^^^^^^^^
-    ...<14 lines>...
-        storage_options=storage_options,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\formats\format.py", line 1025, in to_csv
-    csv_formatter.save()
-    ~~~~~~~~~~~~~~~~~~^^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\formats\csvs.py", line 251, in save
-    with get_handle(
-         ~~~~~~~~~~^
-        self.filepath_or_buffer,
-        ^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        storage_options=self.storage_options,
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ) as handles:
-    ^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\common.py", line 793, in get_handle
-    check_parent_directory(str(handle))
-    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\common.py", line 652, in check_parent_directory
-    raise OSError(rf"Cannot save file into a non-existent directory: '{parent}'")
-OSError: Cannot save file into a non-existent directory: 'D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\data'
+--- stderr (tail) ---
 

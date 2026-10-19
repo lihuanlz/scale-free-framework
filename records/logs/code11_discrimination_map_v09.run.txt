@@ -1,7 +1,8 @@
 $ python code11_discrimination_map_v09.py
-# exit 0  wall 1.5s
+# exit 0  wall 0.9s
 
 Saved discrimination_map_v09_experimental_points.png
 
---- stderr ---
+--- stderr (tail) ---
+qt.qpa.screen: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "Unknown error 0xe0000225."
 

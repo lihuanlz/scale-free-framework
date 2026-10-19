@@ -1,29 +1,43 @@
 $ python p14_shape_decoding_audit.py
-# exit 1  wall 0.6s
+# exit 0  wall 22.3s
 
+tpm (58735, 49) index sample: ['ENSG00000000003', 'ENSG00000000005', 'ENSG00000000419']
+genemap cols ['gene_id', 'gene_version', 'gene_name', 'gene_source', 'gene_biotype']
+pulsatile hours [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 12.0, 24.0, 48.0] sustained hours [3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 12.0, 24.0, 48.0]
+TP53 rows: 1
+p53 protein AUC (0-9h, fold-to-untreated x h): {'Pulse_A': np.float64(20.78), 'Pulse_B': np.float64(19.12), 'Sustain_C': np.float64(36.7), 'Sustain_D': np.float64(29.18)}
+induced genes (maxFC>=2 either arm, t6-9h): 9103
+fraction sustained>>pulsed (>2x): 0.290
+fraction pulsed>>sustained (>2x): 0.111
+fraction within 2x: 0.493
+t0 replicate CV median: 0.883 (null FC noise ~sqrt(2)*CV)
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p14_shape_decoding_audit.py", line 19, in <module>
-    sm = pd.read_excel(os.path.join(RAW, 'samples_summary.xlsx'), header=None)
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\excel\_base.py", line 481, in read_excel
-    io = ExcelFile(
-        io,
-    ...<2 lines>...
-        engine_kwargs=engine_kwargs,
-    )
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1604, in __init__
-    ext = inspect_excel_format(
-        content_or_path=path_or_buffer, storage_options=storage_options
-    )
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1452, in inspect_excel_format
-    with get_handle(
-         ~~~~~~~~~~^
-        content_or_path, "rb", storage_options=storage_options, is_text=False
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ) as handle:
-    ^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\common.py", line 935, in get_handle
-    handle = open(handle, ioargs.mode)
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\msb2022_repo\\Proteomics_MSB_2022-main\\Figures_1_2_4_5_6\\Raw_Data\\samples_summary.xlsx'
+gene          FCp9h    FCs9h log2R(s/p)
+CDKN1A         5.31    56.03      +3.40
+SFN            1.75     5.08      +1.54
+BBC3           4.76    14.74      +1.63
+BAX            1.79     3.34      +0.90
+FAS            6.20    25.56      +2.04
+PML            2.38     7.37      +1.63
+MDM2           2.10    20.15      +3.26
+GADD45A        2.97    16.65      +2.49
+DDB2           2.87     5.35      +0.90
+XPC            1.79     3.41      +0.93
+POLH           2.22     5.35      +1.27
+RRM2B          1.14     6.02      +2.40
+SESN1          2.84    11.03      +1.96
+SESN2          2.44     7.47      +1.61
+TIGAR          1.86     6.88      +1.89
+PTEN           0.98     1.02      +0.06
+TP53I3         3.63    54.91      +3.92
+FDXR           4.31    11.53      +1.42
+BCL2           0.33     0.14      -1.27
+MCL1           1.16     1.66      +0.52
+PMAIP1         0.59     2.05      +1.80
+ZMAT3          2.09     8.03      +1.94
+BTG2           5.73    30.43      +2.41
+
+saved p14_pergene_log2R.csv + p14_results.json
+
+--- stderr (tail) ---
 

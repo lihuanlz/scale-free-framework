@@ -1,5 +1,5 @@
 $ python p12b_final_audit.py
-# exit 1  wall 0.1s
+# exit 0  wall 0.1s
 
 T790M vs driver: folds [5.41, 4.5, 2.1] -> median 4.50, |dlog|=0.653
 C797S vs driver: folds [1.69, 1.15, 1.3] -> median 1.30, |dlog|=0.114
@@ -9,11 +9,7 @@ FINAL TEST (A1+A2): clinical n=5 [0.114, 0.162, 0.237, 0.312, 0.653]
   medians 0.237 vs 0.705 ; fold ratio 2.94
   one-sided MW U=7 exact p=0.0326
   => PASS (p<0.05 and fold>2)
+CSV saved: data/P12b_final_expansion.csv
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_final_audit.py", line 60, in <module>
-    with open(os.path.join(HERE,'data','P12b_final_expansion.csv'),'w',newline='') as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\P12b_final_expansion.csv'
+--- stderr (tail) ---
 

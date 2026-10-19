@@ -1,5 +1,5 @@
 $ python code08_msn2_excitable_frequency_encoding.py
-# exit 0  wall 69.6s
+# exit 0  wall 136.1s
 
 ========================================================================
 code 8: excitable frequency encoding (Msn2/Crz1 type) - acceptance checklist
@@ -51,5 +51,6 @@ code 8: excitable frequency encoding (Msn2/Crz1 type) - acceptance checklist
 
 saved D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\..\results\code08_msn2_frequency_fig.png
 
---- stderr ---
+--- stderr (tail) ---
+qt.qpa.screen: "Unable to open monitor interface to \\\\.\\DISPLAY1:" "Unknown error 0xe0000225."
 

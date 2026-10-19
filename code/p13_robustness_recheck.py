@@ -12,6 +12,8 @@ from sklearn.feature_selection import mutual_info_regression
 warnings.filterwarnings('ignore')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 MAT = os.path.join(HERE, 'data', 'gillies2020_suppl', 'Gillies2020_SourceData_Fig2.mat')
 m = loadmat(MAT, squeeze_me=False, struct_as_record=False)
 d = m['MEF_alldata'][0, 0]
@@ -95,6 +97,6 @@ for L in PAIRS:
                      'CI95': [round(float(ci[0]), 3), round(float(ci[1]), 3)]}
     print('%-10s I=%.3f delta=%+.3f CI[%+.3f,%+.3f]' % (L, Im, Im - Iwt_k, ci[0], ci[1]))
 
-with open(os.path.join(HERE, 'p13_robustness.json'), 'w') as f:
+with open(os.path.join(OUT, 'p13_robustness.json'), 'w') as f:
     json.dump(res, f, indent=1)
 print('\nsaved p13_robustness.json')

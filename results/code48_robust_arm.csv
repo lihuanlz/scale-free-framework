@@ -1,0 +1,5 @@
+arm,n,R2fold_or_rho2,R2abs1_or_rho2,delta
+self-built features (local baseline),18,0.0608,0.2391,-0.1783
+dual predictors,18,0.0063,0.0078,+0.0082
+cell-count weighted,18,0.0002,0.0036,-0.0033
+Spearman,18,0.0048,0.0033,-0.1264

@@ -1,5 +1,5 @@
 $ python p12b_extended_audit.py
-# exit 1  wall 0.1s
+# exit 0  wall 0.1s
 
 === ABL (all_data canonical) |dlog10 kcat/KM| ===
   Y253H  fold=  2.05  |dlog|=0.312
@@ -28,10 +28,7 @@ EXPANDED MAIN TEST (Amendment A1): clinical n=4 [0.312, 0.237, 0.162, 0.667]
 SENSITIVITY (T790M vs driver background, |dlog|=0.734): U=7 p=0.0768 fold=2.70
 DATA-QC sensitivity (KM&Kcat sheet): Y253H |dlog|=0.391 (all_data 0.312), T315I 0.707 (0.520)
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_extended_audit.py", line 99, in <module>
-    with open(os.path.join(HERE,'data','P12b_extended_clinical_expansion.csv'),'w',newline='') as f:
-         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\P12b_extended_clinical_expansion.csv'
+CSV saved: data/P12b_extended_clinical_expansion.csv
+
+--- stderr (tail) ---
 

@@ -1,5 +1,5 @@
 $ python p9_bcd_anchor_audit.py
-# exit 0  wall 2.4s
+# exit 0  wall 2.1s
 
 keys: ['L', 'profiles_bcd', 'xs']
 embryos: (90, 582) L range: 434.9189924572162 545.7711480098594

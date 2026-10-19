@@ -1,5 +1,5 @@
 $ python code44_P2_blind_adjudication_amplitude_stratification.py
-# exit 0  wall 3.1s
+# exit 0  wall 2.5s
 
 ========================================================================
 Code 44 · P2 blind ruling: amplitude-stratified decay prediction

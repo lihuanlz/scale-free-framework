@@ -1,5 +1,5 @@
 $ python code15_nfkB_saturation_transient_test.py
-# exit 0  wall 38.1s
+# exit 0  wall 78.4s
 
 ============================================================================
 Code 15: quantitative test of the NF-κB saturation-transient hypothesis (GLM flaw-2 collision)
@@ -63,9 +63,9 @@ Code 15: quantitative test of the NF-κB saturation-transient hypothesis (GLM fl
 
 [6] Time calibration: dimensionless inter-peak median 2.55 ⇒ using the Tay mid value 85 min, 1 unit ≈ 33 min; observation window 20 units ≈ 666 min
 
-Figure saved: D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code15_saturation_transient_test.png
+Figure saved: D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code15_saturation_transient_test.png
 
---- stderr ---
+--- stderr (tail) ---
 Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
 Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
 Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.

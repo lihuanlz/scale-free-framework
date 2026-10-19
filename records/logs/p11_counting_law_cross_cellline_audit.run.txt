@@ -1,11 +1,31 @@
 $ python p11_counting_law_cross_cellline_audit.py
-# exit 1  wall 1.0s
+# exit 0  wall 0.8s
 
+P11-1 lines: ['UACC62', 'UO31', 'UACC257', 'H460', 'A549', 'U2OS', 'MCF7']
+P11-1 rho(efficiency, persistence@8Gy) = 0.857, one-sided p = 0.0068
+P11-1 verdict vs frozen thresholds (negative direction): FAIL
+P11-1 note: observed sign is POSITIVE (better repair -> more sustained oscillation);
+  frozen directional prediction is falsified with magnitude |rho|=0.86.
+  UACC62    IC50=0.61 star=1 above_median=0 hit=0
+  UO31      IC50=0.61 star=1 above_median=0 hit=0
+  UACC257   IC50=1.08 star=0 above_median=1 hit=0
+  H460      IC50=0.61 star=1 above_median=0 hit=0
+  A549      IC50=1.08 star=1 above_median=1 hit=1
+  U2OS      IC50=0.61 star=1 above_median=0 hit=0
+  MCF7      IC50=0.18 star=0 above_median=0 hit=1
+  A498      IC50=0.61 star=0 above_median=0 hit=1
+  MALME3    IC50=2.01 star=0 above_median=1 hit=0
+  SKMEL5    IC50=1.08 star=1 above_median=1 hit=1
+  LOXIMV    IC50=0.61 star=0 above_median=0 hit=1
+  HCT116    IC50=0.33 star=0 above_median=0 hit=1
+P11-2 hit rate = 6/12 = 0.50
+P11-2 verdict vs frozen thresholds: INDECISIVE
+  A549     CV per dose: ['0.29', '0.29', '0.26'] mean=0.28
+  MCF10A   CV per dose: ['0.57', '0.71', '0.44'] mean=0.57
+  U2OS     CV per dose: ['0.37', '0.45', '0.68'] mean=0.50
+  MCF7     CV per dose: ['0.64', '0.65', '0.46'] mean=0.58
+P11-3 MCF10A mean CV = 0.57 vs cancer-line median CV = 0.50
+P11-3 verdict (error band +-0.05): AGAINST
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p11_counting_law_cross_cellline_audit.py", line 18, in <module>
-    rows = list(csv.DictReader(open(os.path.join(HERE, 'data', 'P11_digitized_stewart_ornstein2017.csv'), encoding='utf-8')))
-                               ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\P11_digitized_stewart_ornstein2017.csv'
+--- stderr (tail) ---
 

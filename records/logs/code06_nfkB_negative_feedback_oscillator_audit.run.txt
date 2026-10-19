@@ -1,5 +1,5 @@
 $ python code06_nfkB_negative_feedback_oscillator_audit.py
-# exit 0  wall 11.7s
+# exit 0  wall 22.9s
 
 ========================================================================
 Part 1: destabilization-mode confirmation (third independent-system validation of Lemma 1(i)(ii))
@@ -72,5 +72,5 @@ Acceptance checklist (measured value vs prediction)
 
 Saved D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\..\results\code06_nfkB_audit_fig.png
 
---- stderr ---
+--- stderr (tail) ---
 

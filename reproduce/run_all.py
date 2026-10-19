@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Run every section check of the framework paper.
 
-    python reproduce/run_all.py            # everything
+    python reproduce/run_all.py            # everything (~9 min with data)\n    python reproduce/run_all.py --quick    # skip the two slow blocks
     python reproduce/run_all.py 01 02      # selected sections
 
 Exit code 0 only if no check failed.
@@ -22,11 +22,16 @@ SECTIONS = [
     ("07", "07_figures", "Sec. 10   manuscript figures"),
     ("08", "08_figure_legibility", "Sec. 10   figures legible at print size"),
     ("09", "09_adjudications", "Sec. 8    five blind adjudications, re-run"),
+    ("10", "10_scripts", "Sec. 12   remaining analysis scripts"),
 ]
 
 
 def main(argv):
+    quick = "--quick" in argv
+    argv = [a for a in argv if a != "--quick"]
     want = set(argv) if argv else None
+    if quick and not want:
+        want = {"01", "02", "03", "04", "05", "06", "07", "08"}
     totals = [0, 0, 0]
     summary = []
     t_all = time.time()

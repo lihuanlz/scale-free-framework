@@ -11,6 +11,8 @@ import requests
 from scipy import stats
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 OUT = os.path.join(HERE, 'data')
 API = 'https://www.cbioportal.org/api'
 STUDIES = ['coadread_tcga_pan_can_atlas_2018', 'luad_tcga_pan_can_atlas_2018',
@@ -118,7 +120,7 @@ def main():
         if r:
             allres.append(r)
             print(json.dumps(r, indent=1, ensure_ascii=False)[:1200])
-    with open(os.path.join(HERE, 'p15_tcga_results.json'), 'w') as f:
+    with open(os.path.join(OUT, 'p15_tcga_results.json'), 'w') as f:
         json.dump(allres, f, indent=1)
     print('saved p15_tcga_results.json')
 

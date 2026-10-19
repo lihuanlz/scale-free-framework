@@ -4,3 +4,11 @@ pass*.log
 
 data_external/external/
 
+
+# junction to data_external/analysis_inputs (analysis inputs, not in git)
+code/data
+
+
+# working tables and digitised sources (386 MB, see the README there)
+data_external/analysis_inputs/
+

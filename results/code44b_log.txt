@@ -83,4 +83,4 @@ Reproducibility check: compared 63/63 rows, max deviation 0.00e+00 -> pass (poin
     TKL2     690-3000  Δ=+0.0026 CI=[-0.0136, +0.0202] n=134/117
 
 unit table -> D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code44b_CI_unit_table.csv
-total elapsed 36 s
+total elapsed 72 s

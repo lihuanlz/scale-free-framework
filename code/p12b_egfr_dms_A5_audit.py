@@ -7,6 +7,8 @@ import pandas as pd
 from scipy.stats import mannwhitneyu
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 v = pd.read_csv(os.path.join(HERE, 'p12b_egfr_dms_variants.csv'))
 v['residue'] = v['site'] + 711
 
@@ -34,5 +36,5 @@ for name, lst in (('curated', curated), ('clinical', clinical)):
         'percentiles': [round(float((v['activity'] < x).mean()), 3) for x in a],
     }
     print(name, json.dumps(out[name], indent=1)[:500])
-json.dump(out, open(os.path.join(HERE, 'p12b_egfr_dms_A5_results.json'), 'w'), indent=1)
+json.dump(out, open(os.path.join(OUT, 'p12b_egfr_dms_A5_results.json'), 'w'), indent=1)
 print('saved p12b_egfr_dms_A5_results.json')

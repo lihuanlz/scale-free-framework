@@ -1,5 +1,5 @@
 code 46 v0.1.5 - P4 blind ruling: ERK re-adjudication (GPCR-KTR trace level)
-run time 2026-10-19T14:16:43 | SEED=20260815 | bootstrap=2000 (first round, i.e. execute)
+run time 2026-10-19T14:51:40 | SEED=20260815 | bootstrap=2000 (first round, i.e. execute)
 ROOT=D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\ChavezAbiega2022
 
 === main-analysis ligand Histamine (DMSO) ===

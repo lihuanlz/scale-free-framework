@@ -1,29 +1,69 @@
 $ python p13_mutual_info_audit.py
-# exit 1  wall 0.4s
+# exit 0  wall 122.4s
 
+time range: -7560 to 12191 s, 100 points
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 39, in _open_file
-    return open(file_like, mode), True
-           ~~~~^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\gillies2020_suppl\\Gillies2020_SourceData_Fig2.mat'
+=== EGF ===
+KrasWT     I_mm=0.426 n=1880  I_CI=[0.396,0.476]
+HRasWT     I_mm=0.487 n=2522
+NrasWT     I_mm=0.580 n=2108
+G12C       I_mm=0.224 n=1176  delta=-0.201 CI[-0.259,-0.143]
+G12D       I_mm=0.198 n=1972  delta=-0.228 CI[-0.282,-0.184]
+G12V       I_mm=0.376 n=2001  delta=-0.050 CI[-0.109,+0.001]
+Q61R       I_mm=0.091 n=1913  delta=-0.335 CI[-0.387,-0.292]
+BRafV600E  I_mm=0.013 n=2493  delta=-0.413 CI[-0.458,-0.378]
 
-During handling of the above exception, another exception occurred:
+=== AREG ===
+KrasWT     I_mm=0.082 n=2196  I_CI=[0.069,0.111]
+HRasWT     I_mm=0.073 n=2431
+NrasWT     I_mm=0.193 n=2254
+G12C       I_mm=0.005 n=1222  delta=-0.078 CI[-0.098,-0.048]
+G12D       I_mm=0.009 n=2063  delta=-0.073 CI[-0.098,-0.049]
+G12V       I_mm=0.086 n=2112  delta=+0.004 CI[-0.026,+0.035]
+Q61R       I_mm=0.005 n=2028  delta=-0.077 CI[-0.101,-0.056]
+BRafV600E  I_mm=-0.000 n=2467  delta=-0.083 CI[-0.106,-0.061]
 
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p13_mutual_info_audit.py", line 19, in <module>
-    m = loadmat(MAT, squeeze_me=False, struct_as_record=False)
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 234, in loadmat
-    with _open_file_context(file_name, appendmat) as f:
-         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\contextlib.py", line 141, in __enter__
-    return next(self.gen)
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 17, in _open_file_context
-    f, opened = _open_file(file_like, appendmat, mode)
-                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 45, in _open_file
-    return open(file_like, mode), True
-           ~~~~^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\gillies2020_suppl\\Gillies2020_SourceData_Fig2.mat'
+=== HGF ===
+KrasWT     I_mm=0.159 n=2128  I_CI=[0.141,0.191]
+HRasWT     I_mm=0.155 n=2311
+NrasWT     I_mm=0.225 n=2447
+G12C       I_mm=0.076 n=1189  delta=-0.083 CI[-0.114,-0.036]
+G12D       I_mm=0.158 n=2045  delta=-0.002 CI[-0.039,+0.039]
+G12V       I_mm=0.080 n=2180  delta=-0.079 CI[-0.114,-0.043]
+Q61R       I_mm=0.003 n=1919  delta=-0.156 CI[-0.184,-0.125]
+BRafV600E  I_mm=0.006 n=2421  delta=-0.153 CI[-0.180,-0.122]
+
+=== PDGF ===
+KrasWT     I_mm=0.041 n=2192  I_CI=[0.034,0.066]
+HRasWT     I_mm=0.236 n=2365
+NrasWT     I_mm=0.171 n=2384
+G12C       I_mm=0.048 n=1168  delta=+0.007 CI[-0.018,+0.043]
+G12D       I_mm=0.174 n=2017  delta=+0.133 CI[+0.098,+0.166]
+G12V       I_mm=0.243 n=2160  delta=+0.201 CI[+0.169,+0.237]
+Q61R       I_mm=0.002 n=1766  delta=-0.039 CI[-0.057,-0.018]
+BRafV600E  I_mm=0.027 n=2394  delta=-0.014 CI[-0.037,+0.005]
+
+=== FGF ===
+KrasWT     I_mm=0.421 n=1905  I_CI=[0.389,0.468]
+HRasWT     I_mm=0.385 n=2441
+NrasWT     I_mm=0.379 n=2144
+G12C       I_mm=0.139 n=1085  delta=-0.281 CI[-0.329,-0.216]
+G12D       I_mm=0.418 n=1952  delta=-0.002 CI[-0.060,+0.053]
+G12V       I_mm=0.285 n=1996  delta=-0.136 CI[-0.189,-0.081]
+Q61R       I_mm=0.103 n=1674  delta=-0.318 CI[-0.363,-0.268]
+BRafV600E  I_mm=0.124 n=2240  delta=-0.297 CI[-0.348,-0.252]
+
+=== IGF ===
+KrasWT     I_mm=0.111 n=2029  I_CI=[0.097,0.143]
+HRasWT     I_mm=0.161 n=2447
+NrasWT     I_mm=0.225 n=2134
+G12C       I_mm=0.122 n=1140  delta=+0.010 CI[-0.023,+0.063]
+G12D       I_mm=0.051 n=1895  delta=-0.060 CI[-0.089,-0.027]
+G12V       I_mm=0.169 n=1918  delta=+0.058 CI[+0.020,+0.096]
+Q61R       I_mm=0.035 n=1785  delta=-0.076 CI[-0.104,-0.046]
+BRafV600E  I_mm=0.026 n=2234  delta=-0.085 CI[-0.113,-0.057]
+
+saved p13_mi_results.json
+
+--- stderr (tail) ---
 

@@ -41,7 +41,7 @@ class Report:
         return self.check(needle in text, label or f"output contains {needle!r}")
 
     # -- running archived scripts -------------------------------------------
-    def run_script(self, script, timeout=1800, tag=None):
+    def run_script(self, script, timeout=1800, tag=None, args=None):
         """Run code/<script>, archive its stdout under records/logs, return it."""
         path = CODE / script
         if not path.exists():
@@ -49,7 +49,8 @@ class Report:
             return ""
         t0 = time.time()
         env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
-        cp = subprocess.run([sys.executable, str(path)], cwd=str(CODE), env=env,
+        cmd = [sys.executable, str(path)] + [str(a) for a in (args or [])]
+        cp = subprocess.run(cmd, cwd=str(CODE), env=env,
                             capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
         dt = time.time() - t0
         out = cp.stdout or ""

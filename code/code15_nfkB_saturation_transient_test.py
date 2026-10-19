@@ -59,7 +59,9 @@ for _f in ['Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'SimHei', 'Microsoft YaHei']
         continue
 plt.rcParams['axes.unicode_minus'] = False
 
-OUTDIR = os.path.dirname(os.path.abspath(__file__))
+OUTDIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 A_, B_, D_, E_ = 0.007, 954.5, 0.029, 2e-5      # spiky (paper standard)
 C_H = 5.89e-3                                     # lower Hopf (measured in code 9)
 T_OBS = 20.0                                      # observation window (dimensionless)

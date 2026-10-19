@@ -1,29 +1,21 @@
 $ python p13_robustness_recheck.py
-# exit 1  wall 1.9s
+# exit 0  wall 23.5s
 
+nbins= 4  WT=0.405  G12C=-0.199  G12D=-0.226  G12V=-0.045  Q61R=-0.320  BRafV600E=-0.397
+nbins= 6  WT=0.420  G12C=-0.204  G12D=-0.226  G12V=-0.044  Q61R=-0.326  BRafV600E=-0.410
+nbins= 8  WT=0.426  G12C=-0.201  G12D=-0.228  G12V=-0.050  Q61R=-0.335  BRafV600E=-0.413
+nbins=12  WT=0.431  G12C=-0.207  G12D=-0.227  G12V=-0.050  Q61R=-0.336  BRafV600E=-0.417
+nbins=16  WT=0.434  G12C=-0.203  G12D=-0.230  G12V=-0.051  Q61R=-0.343  BRafV600E=-0.423
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 39, in _open_file
-    return open(file_like, mode), True
-           ~~~~^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\gillies2020_suppl\\Gillies2020_SourceData_Fig2.mat'
+KSG (bits):
+KrasWT=0.427
+G12C       I=0.243 delta=-0.183 CI[-0.247,-0.037]
+G12D       I=0.199 delta=-0.227 CI[-0.257,-0.093]
+G12V       I=0.381 delta=-0.046 CI[-0.116,+0.057]
+Q61R       I=0.119 delta=-0.308 CI[-0.324,-0.157]
+BRafV600E  I=0.006 delta=-0.421 CI[-0.412,-0.256]
 
-During handling of the above exception, another exception occurred:
+saved p13_robustness.json
 
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p13_robustness_recheck.py", line 16, in <module>
-    m = loadmat(MAT, squeeze_me=False, struct_as_record=False)
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 234, in loadmat
-    with _open_file_context(file_name, appendmat) as f:
-         ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\contextlib.py", line 141, in __enter__
-    return next(self.gen)
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 17, in _open_file_context
-    f, opened = _open_file(file_like, appendmat, mode)
-                ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\scipy\io\matlab\_mio.py", line 45, in _open_file
-    return open(file_like, mode), True
-           ~~~~^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\gillies2020_suppl\\Gillies2020_SourceData_Fig2.mat'
+--- stderr (tail) ---
 

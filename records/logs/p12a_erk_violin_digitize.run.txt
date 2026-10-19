@@ -1,13 +1,22 @@
 $ python p12a_erk_violin_digitize.py
-# exit 1  wall 0.2s
+# exit 0  wall 0.2s
 
+violin-width reconstruction of DMSO (baseline) per-cell C/N distribution:
+  H1299 (NRAS-Q61K)    rows=152  mean=0.877  std=0.297  CV=0.339
+  HCT-116 (KRAS-G13D)  rows=156  mean=1.025  std=0.362  CV=0.353
+  SH-SY5Y (WT Ras/Raf) rows=159  mean=1.040  std=0.367  CV=0.353
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12a_erk_violin_digitize.py", line 8, in <module>
-    img = np.array(Image.open(os.path.join(HERE, 'data', 'erk_fig1.jpg')).convert('L')).astype(float)
-                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\site-packages\PIL\Image.py", line 3635, in open
-    fp = builtins.open(filename, "rb")
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\erk_fig1.jpg'
+pairwise |dCV|:
+  H1299 (NRAS-Q61K) vs HCT-116 (KRAS-G13D): 0.014 (criterion >0.15)
+  H1299 (NRAS-Q61K) vs SH-SY5Y (WT Ras/Raf): 0.014 (criterion >0.15)
+  HCT-116 (KRAS-G13D) vs SH-SY5Y (WT Ras/Raf): 0.000 (criterion >0.15)
+
+robustness over thresholds/windows:
+  H1299 (NRAS-Q61K)    CV=0.342 +/- 0.004 (range 0.339-0.350)
+  HCT-116 (KRAS-G13D)  CV=0.352 +/- 0.014 (range 0.329-0.374)
+  SH-SY5Y (WT Ras/Raf) CV=0.363 +/- 0.010 (range 0.353-0.380)
+
+CSV saved: data/P12a_erk_baseline_cv.csv
+
+--- stderr (tail) ---
 

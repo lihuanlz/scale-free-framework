@@ -1,19 +1,22 @@
 $ python p12b_egfr_dms_audit.py
-# exit 1  wall 1.3s
+# exit 0  wall 2.6s
 
+sites 268 codons 64
+synonymous mean freq 1.726e-06, nonsense mean freq 2.055e-09 (activity 0.001)
+missense variants with >=10 total counts: 1380
+enriched both drugs: 66 osi: 479 blu: 128
+both: n=66 vs 1314, med activity 0.000 vs 0.008, ratio 0.00, p=1.00e+00
+osi: n=479 vs 901, med activity 0.000 vs 0.015, ratio 0.00, p=1.00e+00
+blu: n=128 vs 1252, med activity 0.001 vs 0.008, ratio 0.12, p=1.00e+00
 
---- stderr ---
-Traceback (most recent call last):
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_egfr_dms_audit.py", line 45, in <module>
-    df, wt = load(s)
-             ~~~~^^^
-  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_egfr_dms_audit.py", line 34, in load
-    with gzip.open(os.path.join(DAT, sample + '_codoncounts.csv.gz'), 'rt') as f:
-         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\lihua\anaconda3\Lib\gzip.py", line 66, in open
-    binary_file = GzipFile(filename, gz_mode, compresslevel)
-  File "D:\Users\lihua\anaconda3\Lib\gzip.py", line 203, in __init__
-    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
-                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
-FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\gse305057\\GSM9161531_DMSO-A_codoncounts.csv.gz'
+named variants (site numbering as in library; kinase domain starts ~exon18):
+G719S    site 6 V>S  activity=1.094  osi_res=-9.03  blu_res=-20.85
+G719C    site 7 L>C  activity=0.001  osi_res=+4.63  blu_res=+1.47
+G719C    site 7 L>C  activity=22.820  osi_res=+6.49  blu_res=+5.35
+L718V    site 18 G>V  activity=0.022  osi_res=+0.40  blu_res=+0.48
+G724S    site 24 G>S  activity=0.004  osi_res=+2.29  blu_res=-0.56
+
+saved p12b_egfr_dms_variants.csv + p12b_egfr_dms_results.json
+
+--- stderr (tail) ---
 

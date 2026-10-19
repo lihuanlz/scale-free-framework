@@ -12,6 +12,8 @@ import pandas as pd
 warnings.filterwarnings('ignore')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 RAW = os.path.join(HERE, 'data', 'msb2022_repo', 'Proteomics_MSB_2022-main',
                    'Figures_1_2_4_5_6', 'Raw_Data')
 
@@ -132,7 +134,7 @@ out = {
     't0_cv_median': float(t0cv.median()),
     'fate_genes': fate_rows,
 }
-R.to_csv(os.path.join(HERE, 'p14_pergene_log2R.csv'))
-with open(os.path.join(HERE, 'p14_results.json'), 'w') as f:
+R.to_csv(os.path.join(OUT, 'p14_pergene_log2R.csv'))
+with open(os.path.join(OUT, 'p14_results.json'), 'w') as f:
     json.dump(out, f, indent=1, ensure_ascii=False)
 print('\nsaved p14_pergene_log2R.csv + p14_results.json')

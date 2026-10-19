@@ -14,6 +14,8 @@ from scipy.io import loadmat
 warnings.filterwarnings('ignore')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 MAT = os.path.join(HERE, 'data', 'gillies2020_suppl', 'Gillies2020_SourceData_Fig2.mat')
 
 m = loadmat(MAT, squeeze_me=False, struct_as_record=False)
@@ -148,7 +150,7 @@ def main():
             if 'I_CI95' in r:
                 line += '  I_CI=[%.3f,%.3f]' % tuple(r['I_CI95'])
             print(line)
-    with open(os.path.join(HERE, 'p13_mi_results.json'), 'w') as f:
+    with open(os.path.join(OUT, 'p13_mi_results.json'), 'w') as f:
         json.dump(out, f, indent=1)
     print('\nsaved p13_mi_results.json')
 

@@ -14,6 +14,8 @@ from scipy.stats import mannwhitneyu
 warnings.filterwarnings('ignore')
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
+os.makedirs(OUT, exist_ok=True)
 DAT = os.path.join(HERE, 'data', 'gse305057')
 
 CODON_TABLE = {
@@ -136,6 +138,6 @@ out['named'] = named
 out['n_missense_tested'] = int(len(mm))
 mm[['site','wt_aa','mut_aa','codon','activity','Osi_res','BLU_res','tot']].to_csv(
     os.path.join(HERE, 'p12b_egfr_dms_variants.csv'), index=False)
-with open(os.path.join(HERE, 'p12b_egfr_dms_results.json'), 'w') as f:
+with open(os.path.join(OUT, 'p12b_egfr_dms_results.json'), 'w') as f:
     json.dump(out, f, indent=1, ensure_ascii=False)
 print('\nsaved p12b_egfr_dms_variants.csv + p12b_egfr_dms_results.json')

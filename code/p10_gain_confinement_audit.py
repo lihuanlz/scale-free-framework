@@ -7,7 +7,9 @@ from scipy.stats import spearmanr
 
 SEED = 20260927
 rng = np.random.default_rng(SEED)
-ROOT = r'D:\Kimi_Agent_cell_sim_toolkit_workspace'
+_EXT = os.environ.get('CELL_EXTERNAL_DATA',
+                      os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                   'data_external', 'external'))
 PROM, MINDIST, MINP = 0.10, 8, 3      # frozen
 
 def cell_pulse_amps(trace):
@@ -43,7 +45,7 @@ def stats_block(amps_list):
 res = {}
 
 # ---------- ERK (Chavez-Abiega) ----------
-erk_dir = os.path.join(ROOT, '01_cell_line_1', 'public_data', 'ERK_Akt_GPCR_ChavezAbiega2022', 'Figure_1', 'Data')
+erk_dir = os.path.join(_EXT, 'ChavezAbiega2022', 'Figure_1', 'Data')
 group_Rs = []
 all_report = {}
 for f in ['All_Ex_Histamine_DMSO.csv', 'All_Ex_UK_DMSO.csv']:
@@ -68,7 +70,7 @@ res['ERK'] = dict(per_condition=all_report, median_R_across_conditions=group_Rs)
 print('ERK conditions:', len(all_report), 'median R:', group_Rs)
 
 # ---------- NF-kB (Wang sequential) ----------
-m = loadmat(os.path.join(ROOT, '03_cell_line_3', 'public_data', 'Wang2022_Sequential_NFkB', 'scmat_sequentialstim.mat'))
+m = loadmat(os.path.join(_EXT, 'Wang2022', 'scmat_sequentialstim.mat'))
 sc = np.asarray(m['scmatcomb_norm'], dtype=float)   # 11267 x 172
 amps_list = []
 for i in range(sc.shape[0]):
@@ -79,6 +81,7 @@ for i in range(sc.shape[0]):
 res['NFkB'] = stats_block(amps_list)
 print('NFkB:', res['NFkB'])
 
-out = os.path.join(ROOT, '05_main_program', 'cascade_line', 'p10_gain_confinement_results.json')
+out = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results',
+                   'p10_gain_confinement_results.json')
 json.dump(res, open(out, 'w'), indent=1)
 print('saved', out)

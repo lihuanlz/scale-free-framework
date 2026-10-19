@@ -75,5 +75,7 @@ ax.set_ylabel('$\\nu$ (pulse-count increment per tenfold dose)')
 ax.set_title('Discrimination map v0.9: model-side + experiment-side placements (public source figures / main-text quantification)', fontsize=11)
 ax.legend(fontsize=7.8, loc='center right', framealpha=0.95)
 plt.tight_layout()
-plt.savefig('discrimination_map_v09_experimental_points.png', dpi=200)
+import os as _os
+plt.savefig(_os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), 'results',
+                            'discrimination_map_v09_experimental_points.png'), dpi=200)
 print('Saved discrimination_map_v09_experimental_points.png')

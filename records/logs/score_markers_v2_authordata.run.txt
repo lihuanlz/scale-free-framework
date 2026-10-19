@@ -1,5 +1,5 @@
 $ python score_markers_v2_authordata.py
-# exit 0  wall 0.9s
+# exit 0  wall 0.8s
 
 ========================================================================
 M1  (author data, Figure2A + Figure2B, 0.4 M NaCl step)
@@ -37,5 +37,5 @@ EXPLORATORY (post-hoc, labelled): alternative coincidence operationalisations
   volume slope pre-shock=0.00853/min, post-35min=0.00147/min
   corr(Hog1, volume) over 4-30min window: r=-0.960 (strong anticorrelation expected)
 
---- stderr ---
+--- stderr (tail) ---
 

@@ -58,7 +58,7 @@ def linfit_r2(x, y):
 def main():
     global LOG_PATH
     root = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__))
-    outdir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
+    outdir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results') if '__file__' in globals() else os.getcwd()
     LOG_PATH = os.path.join(outdir, "code48_judgment_log.txt")
     if os.path.exists(LOG_PATH):
         os.remove(LOG_PATH)
