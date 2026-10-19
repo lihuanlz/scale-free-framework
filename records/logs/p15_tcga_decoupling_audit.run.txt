@@ -1,5 +1,5 @@
 $ python p15_tcga_decoupling_audit.py
-# exit 0  wall 9.5s
+# exit 0  wall 9.1s
 
 === coadread_tcga_pan_can_atlas_2018
 {

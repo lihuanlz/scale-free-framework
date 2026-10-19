@@ -23,11 +23,14 @@ SECTIONS = [
     ("08", "08_figure_legibility", "Sec. 10   figures legible at print size"),
     ("09", "09_adjudications", "Sec. 8    five blind adjudications, re-run"),
     ("10", "10_scripts", "Sec. 12   remaining analysis scripts"),
+    ("11", "11_slow", "Sec. 12   the two long audits (~13 min)"),
 ]
 
 
 def main(argv):
     quick = "--quick" in argv
+    slow = "--slow" in argv
+    argv = [a for a in argv if a != "--slow"]
     argv = [a for a in argv if a != "--quick"]
     want = set(argv) if argv else None
     if quick and not want:
@@ -37,6 +40,8 @@ def main(argv):
     t_all = time.time()
     for key, modname, title in SECTIONS:
         if want and key not in want:
+            continue
+        if not want and not slow and key == "11":
             continue
         rule(f"{title}   [{key}]")
         mod = importlib.import_module(modname)

@@ -1,0 +1,54 @@
+$ python code13_p53_fisher_stratification_S7.py
+# exit 0  wall 1.1s
+
+======================================================================
+【预言 ①+②：Fisher 谱】
+仅计数（数字极限）：λ = [26935.20402933  1898.43146377     0.             0.        ]  → 非零方向 2 个（预言 2）
+计数+振幅：          λ = [106666.66666667  26935.20402933   1898.43146377      0.        ] → 非零方向 3 个（预言 3）
+最小特征值/最大特征值 = 0.00e+00（浮点噪声量级 → 精确零方向存在）
+零方向特征向量 = [ 0.      0.     -0.7071  0.7071]（预言 ∝ (0,0,1,−1)/√2 = [0,0,0.7071,−0.7071]）
+与 G 轨道切向 (0,0,1,−1)/√2 的夹角余弦 = 1.000000（预言 1.000000）
+
+结构块 (ln D_c, ln ρ)：条件数 = 14.2（可辨识，对照 PdPC 形状块 ~30）
+======================================================================
+【预言 ③：MC 经验方差 vs Cramér–Rao 下界】(log 参数方差)
+               MC 经验         CRB      比值
+    ln ρ    4.87e-04    3.93e-04    1.24
+  ln D_c    2.33e-04    1.71e-04    1.36
+   ln sA    1.79e-05    1.88e-05    0.95
+
+【标度不可辨识：似然山脊】固定 s 于错误值，补偿 Â = sA/s 后似然差 < 噪声涨落：
+  s = 0.5（错误）→ Â = 4.00（补偿：Â·s = 2.00 恒定）
+  s = 0.8（错误）→ Â = 2.50（补偿：Â·s = 2.00 恒定）
+  s = 1.0（真值）→ Â = 2.00（补偿：Â·s = 2.00 恒定）
+  s = 1.3（错误）→ Â = 1.54（补偿：Â·s = 2.00 恒定）
+  s = 2.0（错误）→ Â = 1.00（补偿：Â·s = 2.00 恒定）
+
+已保存 p53_Fisher分层_S7.png
+
+--- stderr (tail) ---
+-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 23610 (\N{CJK UNIFIED IDEOGRAPH-5C3A}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 19978 (\N{CJK UNIFIED IDEOGRAPH-4E0A}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 30340 (\N{CJK UNIFIED IDEOGRAPH-7684}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 27169 (\N{CJK UNIFIED IDEOGRAPH-6A21}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 25311 (\N{CJK UNIFIED IDEOGRAPH-62DF}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 23665 (\N{CJK UNIFIED IDEOGRAPH-5C71}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 33034 (\N{CJK UNIFIED IDEOGRAPH-810A}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 24120 (\N{CJK UNIFIED IDEOGRAPH-5E38}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 30456 (\N{CJK UNIFIED IDEOGRAPH-76F8}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 21516 (\N{CJK UNIFIED IDEOGRAPH-540C}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 30495 (\N{CJK UNIFIED IDEOGRAPH-771F}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\code13_p53_fisher_stratification_S7.py:166: UserWarning: Glyph 20540 (\N{CJK UNIFIED IDEOGRAPH-503C}) missing from font(s) DejaVu Sans.
+  plt.savefig(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results', 'p53_Fisher_S7.png'), dpi=200)
+

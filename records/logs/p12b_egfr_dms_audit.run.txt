@@ -1,5 +1,5 @@
 $ python p12b_egfr_dms_audit.py
-# exit 0  wall 2.6s
+# exit 0  wall 2.8s
 
 sites 268 codons 64
 synonymous mean freq 1.726e-06, nonsense mean freq 2.055e-09 (activity 0.001)

@@ -8,12 +8,13 @@ paper.
 ```bash
 python reproduce/run_all.py --quick      # 8 sections, ~30 s, no downloads
 python reproduce/fetch_data.py           # ~430 MB, once
-python reproduce/run_all.py              # all 10 sections, ~9 min
+python reproduce/run_all.py              # all default sections, ~11 min
+python reproduce/run_all.py --slow       # adds the two long audits (~13 min more)
 python reproduce/run_all.py 01 03        # selected sections
 ```
 
-Exit code is 0 only if every check passes. Full state: **128 checks, 128 pass,
-0 fail**.
+Exit code is 0 only if every check passes. Default run: **130 checks, 130 pass,
+0 fail**; with `--slow`, 133.
 
 ## Sections
 
@@ -28,30 +29,29 @@ Exit code is 0 only if every check passes. Full state: **128 checks, 128 pass,
 | 07 | `07_figures.py` | Sec. 10 | runs all five `manuscript/make_fig*.py` |
 | 08 | `08_figure_legibility.py` | Sec. 10 | derives each figure's scale from its figsize and `\includegraphics` width; fails below 5 pt printed |
 | 09 | `09_adjudications.py` | Sec. 8 | re-runs P2, P2-CI, P3, P4 and P9 against the fetched archives and checks the frozen verdicts |
-| 10 | `10_scripts.py` | Sec. 12 | executes the remaining 18 analysis scripts and checks their artefacts |
+| 10 | `10_scripts.py` | Sec. 12 | executes the remaining 19 analysis scripts and checks their artefacts |
+| 11 | `11_slow.py` | Sec. 12 | `code09` and `code12`, about 13 minutes together; only with `--slow` |
 
 ## Coverage
 
-**21 of the 30 scripts in `code/` are executed** by this layer:
+**29 of the 30 scripts in `code/` are executed**, 27 of them in the default run:
 
 - 01–02: `code10`, `code04`
 - 03: `audit_bergmann2010_axis12`
 - 09: `code44`, `code44b`, `code45`, `code46`, `p9_bcd_anchor_audit`
-- 10: `code06`, `code08`, `code11`, `code15`, `code48`, `p10`, `p11`,
+- 10: `code06`, `code08`, `code11`, `code13`, `code15`, `code48`, `p10`, `p11`,
   `p12a_erk_violin_digitize`, `p12b_egfr_dms_audit`, `p12b_egfr_dms_A5_audit`,
   `p12b_extended_audit`, `p12b_final_audit`,
   `p12b_resistance_zero_direction_audit`, `p13_mutual_info_audit`,
   `p13_robustness_recheck`, `p14_shape_decoding_audit`,
   `p15_tcga_decoupling_audit`, `score_markers_v2_authordata`
+- 11 (`--slow`): `code09`, `code12`
 
-Nine remain outside the layer:
+One does not run:
 
 | script | why |
 |---|---|
-| `code09_nfkB_spike_mode_audit` | needs more than seven minutes |
-| `code12_nfkB_GLM_prediction_test_switchlike_IkB` | needs more than seven minutes |
-| `p12a_gerosa_a375_digitize` | fails on the current image ("unexpected tick count"); its output is archived, not regenerated |
-| `code13_p53_fisher_stratification_S7` | no longer in the tree |
+| `p12a_gerosa_a375_digitize` | fails on the current image ("unexpected tick count"); its digitised output is archived, not regenerated |
 
 ## Data
 

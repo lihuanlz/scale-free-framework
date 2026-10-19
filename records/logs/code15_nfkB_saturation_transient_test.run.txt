@@ -1,5 +1,5 @@
 $ python code15_nfkB_saturation_transient_test.py
-# exit 0  wall 78.4s
+# exit 0  wall 33.9s
 
 ============================================================================
 Code 15: quantitative test of the NF-κB saturation-transient hypothesis (GLM flaw-2 collision)

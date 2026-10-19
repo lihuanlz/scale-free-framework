@@ -1,5 +1,5 @@
 $ python p13_robustness_recheck.py
-# exit 0  wall 23.5s
+# exit 0  wall 16.7s
 
 nbins= 4  WT=0.405  G12C=-0.199  G12D=-0.226  G12V=-0.045  Q61R=-0.320  BRafV600E=-0.397
 nbins= 6  WT=0.420  G12C=-0.204  G12D=-0.226  G12V=-0.044  Q61R=-0.326  BRafV600E=-0.410

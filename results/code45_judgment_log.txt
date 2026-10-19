@@ -1,6 +1,6 @@
 ==========================================================================
 code 45 - P3 blind ruling: free-statistic sufficiency (Sung 2022 NF-kB spatial gradient) v0.1.1
-run time: 2026-10-19 14:51:34
+run time: 2026-10-19 15:20:16
 seed=20260814  bootstrap=2000  adjudication margins={'P3-1': 0.6, 'P3-2': 0.55, 'P3-3': 0.6}  analysis window=(0.0, 120.0) min
 numpy=2.3.5  scipy loaded  h5py=3.15.1
 pre-registration: prereg_P3_free_statistic_sufficiency_NFkB_spatial_gradient_v01.md (entry 75)
@@ -91,7 +91,7 @@ P3-3b  above-threshold duration: 60min > 30min   434   331  0.5214  0.4806  0.56
     30min    n=331   response rate=0.903
     60min    n=434   response rate=0.947
 
-elapsed 5.4s; output:
+elapsed 4.0s; output:
   D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_unit_table.csv
   D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_robust_arm.csv
   D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_descriptive_arm.csv

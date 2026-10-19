@@ -1,5 +1,5 @@
 $ python code06_nfkB_negative_feedback_oscillator_audit.py
-# exit 0  wall 22.9s
+# exit 0  wall 10.8s
 
 ========================================================================
 Part 1: destabilization-mode confirmation (third independent-system validation of Lemma 1(i)(ii))

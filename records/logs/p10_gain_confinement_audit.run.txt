@@ -1,5 +1,5 @@
 $ python p10_gain_confinement_audit.py
-# exit 0  wall 13.2s
+# exit 0  wall 9.0s
 
 ERK conditions: 4 median R: [0.5926222158891914, 1.0802198254465292]
 NFkB: {'n_cells': 11265, 'within_cv_median': 2.520110102971163, 'across_cv': 3.0305291296518444, 'R': 1.2025383835725696, 'R_ci95': [0.7720686256534584, 1.6092193418699834], 'rho_splithalf': -0.4019999558493527}

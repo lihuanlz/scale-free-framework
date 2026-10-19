@@ -1,5 +1,5 @@
 $ python code10_asymmetric_Km_degeneracy_group.py
-# exit 0  wall 1.4s
+# exit 0  wall 1.5s
 
 ========================================================================
 Code 10: asymmetric K_m (κ1 ≠ κ2) PdPC audit

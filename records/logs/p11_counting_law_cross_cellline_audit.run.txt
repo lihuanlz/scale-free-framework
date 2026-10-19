@@ -1,5 +1,5 @@
 $ python p11_counting_law_cross_cellline_audit.py
-# exit 0  wall 0.8s
+# exit 0  wall 1.0s
 
 P11-1 lines: ['UACC62', 'UO31', 'UACC257', 'H460', 'A549', 'U2OS', 'MCF7']
 P11-1 rho(efficiency, persistence@8Gy) = 0.857, one-sided p = 0.0068

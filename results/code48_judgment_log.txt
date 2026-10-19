@@ -1,6 +1,6 @@
 ==========================================================================
 Code 48 · P6 blind ruling: FCD attribution  -  NF-κB sequential grid fold vs absolute dose  v0.1.1
-Run time: 2026-10-19 14:57:11
+Run time: 2026-10-19 15:22:53
 seed=20260815  bootstrap=2000  criterion ΔR2=±0.15
 Pre-registration: prereg_P6_FCD_attribution_NFkB_sequential_grid_v01.md (registration no. 95, frozen)
 Data root directory: D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\Wang2022

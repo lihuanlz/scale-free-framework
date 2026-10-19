@@ -28,6 +28,7 @@ RUNS = [
     ("p13_robustness_recheck.py", None, "p13_robustness.json"),
     ("p14_shape_decoding_audit.py", None, "p14_results.json"),
     ("p15_tcga_decoupling_audit.py", None, "p15_tcga_results.json"),
+    ("code13_p53_fisher_stratification_S7.py", None, "p53_Fisher_S7.png"),
     ("score_markers_v2_authordata.py", None, None),
 ]
 

@@ -1,5 +1,5 @@
 $ python p13_mutual_info_audit.py
-# exit 0  wall 122.4s
+# exit 0  wall 92.1s
 
 time range: -7560 to 12191 s, 100 points
 

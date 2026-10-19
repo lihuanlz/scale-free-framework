@@ -1,5 +1,5 @@
 $ python code08_msn2_excitable_frequency_encoding.py
-# exit 0  wall 136.1s
+# exit 0  wall 52.9s
 
 ========================================================================
 code 8: excitable frequency encoding (Msn2/Crz1 type) - acceptance checklist
