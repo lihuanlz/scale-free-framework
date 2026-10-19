@@ -10,6 +10,8 @@ from _common import Report
 
 def run():
     rep = Report("05 cascade")
+    rep.run_script("cascade_audit_gpcr_ca.py", timeout=900)
+
     d = rep.json("cascade_audit_results.json")
     ep = d.get("exp_params", {})
     rep.check(len(ep) == 26, "26 per-experiment fits", str(len(ep)))

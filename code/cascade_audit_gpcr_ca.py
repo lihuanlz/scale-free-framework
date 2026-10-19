@@ -4,7 +4,9 @@
 import pickle, numpy as np, json
 from scipy import stats
 
-out = pickle.load(open('keshelava_parsed.pkl','rb'))
+import os as _os
+_D = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))), 'data_external', 'analysis_inputs')
+out = pickle.load(open(_os.path.join(_D, 'keshelava_parsed.pkl'),'rb'))
 CONCS = np.array([10,3,1.5,0.75,0.5,0.25,0.1])  # uM, Methods ladder (Keshelava 2018 Methods); rows descending, row0 = 10 uM
 
 cells = []  # (experiment, cell_id, matrix 7x5)
@@ -90,5 +92,6 @@ json.dump({'exp_params':exp_params,
            'within_cell_CV':rat_cv_within, 'across_cell_CV':cv_across,
            'spearman_adjacent':rhos, 'auc_raw':auc_raw, 'auc_ratio':auc_ratio,
            'responding_fraction':fracs, 'n_cells':len(cells)},
-          open('cascade_audit_results.json','w'), indent=1)
+          open(_os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                                        'results', 'cascade_audit_results.json'),'w'), indent=1)
 print('saved cascade_audit_results.json')
