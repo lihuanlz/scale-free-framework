@@ -1,0 +1,70 @@
+========================================================================
+Part 1: destabilization-mode confirmation (third independent-system validation of Lemma 1(i)(ii))
+========================================================================
+Equilibrium-branch scan C 鈭� [1e-4, 0.5] (300 points): Re 位_max crosses zero exactly once
+  Hopf point C_H = 0.002618, equilibrium N*=0.0499, I_m*=0.00249, I*=0.04938
+  Crossing pair 位 = 卤0.6341i (complex pair, Re=0, Im鈮�0) 鈫� Hopf
+  Third eigenvalue 位3 = -1.3878 < 0 (stable direction)
+  Hopf angular frequency 蠅_H = 0.6341 鈫� onset period T鈧� = 2蟺/蠅_H = 9.909
+  Conclusion: the unique destabilization is a Hopf (complex pair crosses zero), no saddle-node/steady-state loss 鈫� Lemma 1(i)(ii) v
+
+========================================================================
+Part 2: analog signatures (core acceptance) 鈥� amplitude A(C) along the dose scan
+========================================================================
+  Dose range: C/C_H 鈭� [1.08, 12] (11.1-fold, satisfies 鈮�10脳)
+  (a) Near onset (C鈭扖_H 鈭� [0.01, 0.40]脳C_H, 8 points): A虏鈭�(C鈭扖_H) linear R虏 = 0.99861
+  (b) Wide-range 伪 = 鈭俵nA/鈭俵nC (C/C_H 鈭� [2, 12]) = 0.714  (prediction > 0.3; EXC family |伪|鈮�0.15)
+  (c) Amplitude full-range change = 12.93-fold  (prediction 鈮� 1.5-fold)
+  Per point: C/C_H = [ 1.08  1.34  1.67  2.08  2.59  3.23  4.02  5.    6.22  7.75  9.64 12.  ]
+        A     = [0.0164 0.0337 0.0469 0.0594 0.0722 0.0858 0.1007 0.1174 0.1361 0.1575
+ 0.1822 0.2118]
+
+========================================================================
+Part 3: period invariance 鈥� T(C) along the same scan
+========================================================================
+  Per-point period T = [9.883 9.817 9.785 9.796 9.828 9.859 9.876 9.874 9.854 9.822 9.791 9.788]
+  Period variation = (Tmax鈭扵min)/Tmean = 1.00%  (prediction < 卤15%)
+  Reference literature: Nelson et al. 2004 (Science 306:704) NF-魏B oscillation period ~100 min
+  unchanged with TNF dose; this model period stays within 9.8卤0.5% in dimensionless
+  time units, ~constant over a 12-fold dose range 鈫� period-robustness signature reproduced v
+
+========================================================================
+Part 4: no pulse-count channel capacity 鈥� three-signature adjudication
+========================================================================
+  Up-sweep amplitude = [0.0164 0.0337 0.0469 0.0594 0.0722 0.0858 0.1007 0.1174 0.1361 0.1575
+ 0.1822 0.2118]
+  Down-sweep amplitude = [0.0164 0.0337 0.0469 0.0594 0.0722 0.0858 0.1007 0.1174 0.1361 0.1575
+ 0.1822 0.2118]
+  Hysteresis width = max|A_up鈭扐_down|/A_up = 0.000% 鈮� 0 (no bistability/no jumps)
+  Pulse-count test: at every dose there is 1 N_n peak per period; the pulse count does not grow with dose;
+  amplitude (not count) is the main encoding axis 鈥� the digital pattern of "fixed amplitude + growing count" is absent.
+  Three signatures of the discrimination theorem: onset continuity v (R虏=0.9986), hysteresis=0 (0.000%),伪=0.714>0.3
+  鈫� Verdict: falls in the NF analog region v (pure negative feedback 鈫� analog encoding, Lemma 1 holds)
+
+========================================================================
+Part 5: literature consistency check
+========================================================================
+  Tay et al. 2010 (Nature 466:267): across 4 orders of magnitude of TNF stimulus, the single-cell response is
+    "digital activation" (the fraction of responding cells rises with dose) + "analog parameters" (peak strength, delay,
+    number of oscillations are continuously modulated by dose).
+  Nelson et al. 2004 (Science 306:704): NF-魏B nucleocytoplasmic oscillation period ~100 min,
+    unchanged over the experimental dose range regardless of stimulus strength.
+  Consistency note: population-level "digital activation" is an activation-threshold + cell-heterogeneity phenomenon;
+    at the single-cell trajectory level, peak/timing parameters inside responding cells are still continuously (analog) modulated.
+    This matches the methodology of this framework that "discrimination must be done on single-cell trajectories":
+    this audit measures continuously growing amplitude and ~constant period on deterministic single-cell trajectories,
+    no pulse-count channel capacity 鈫� the pure negative feedback NF-魏B oscillator uses analog encoding.
+
+========================================================================
+Acceptance checklist (measured value vs prediction)
+========================================================================
+  [PASS] destabilization mode prediction: unique Hopf (complex pair crosses zero) measured: Re 位_max crosses zero once @C_H=0.00262, 位=卤0.634i
+  [PASS] (a) onset 鈭� scaling prediction: A虏鈭�(C鈭扖_H), R虏>0.99          measured: R虏 = 0.99861
+  [PASS] (b) wide-range 伪 prediction: > 0.3 (NF analog region)     measured: 伪 = 0.714
+  [PASS] (c) amplitude fold-change prediction: 鈮� 1.5-fold                   measured: 12.93-fold
+  [PASS] period invariance prediction: variation < 卤15%             measured: 1.00%
+  [PASS] hysteresis       prediction: = 0                          measured: 0.000%
+  [PASS] pulse-count capacity prediction: none (amplitude is the main axis) measured: 1 peak per period, count does not change with dose
+========================================================================
+
+Saved /mnt/agents/output/NF魏Baudit鍥�.png

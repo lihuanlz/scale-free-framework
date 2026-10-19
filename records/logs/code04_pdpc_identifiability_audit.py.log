@@ -1,0 +1,61 @@
+========================================================================
+Code 4: PdPC (Goldbeter鈥揔oshland cycle) identifiability audit
+========================================================================
+
+[T1] Theorem 1 (degenerate group invariance): baseline (1,1,1,1,0.1,1), 200-point log titration
+     group action (a) k1,k2 脳2             max|螖u| = 0.000e+00  (machine precision v)
+     group action (b) Km,ST 脳5             max|螖u| = 0.000e+00  (machine precision v)
+     group action (c) k1,E2T脳3;Km,ST脳2     max|螖u| = 2.220e-16  (machine precision v)
+
+[T2] Theorem 2 (Fisher barrier): 蟽=0.03, design 20 points / 3 orders of magnitude / centered at 尉=1
+     魏       蠂(shape lnc,ln魏)  蠂(abs 3-param)  位_min(abs)
+     0.005   33.36             1.137e+33       -4.034e-32
+     0.01    33.46             1.840e+17       8.882e-16
+     0.05    33.33             2.102e+17       -7.105e-15
+     0.1     30.39             1.295e+17       -1.421e-14
+     0.3     19.74             1.597e+17       7.105e-15
+     0.5     18.87             1.668e+33       -5.345e-31
+     1.0     25.41             9.905e+16       7.105e-15
+     shape 蠂鈭圼18.9, 33.5] (target 19鈥�34 v); absolute parameterization 位_min鈮�0 (numerical zero), effective 蠂鈮�1e10 鈫� shape/scale degeneracy holds
+
+[T3a] Theorem 3 (Hill closed form): n_H 鈮� 4尉路du/d尉|_陆  vs  1 + 1/(2魏)
+     魏=0.001   n_H(numeric)=500.997    n_H(closed)=501.000    rel_dev=6.26e-06
+     魏=0.005   n_H(numeric)=101.000    n_H(closed)=101.000    rel_dev=2.52e-07
+     魏=0.01    n_H(numeric)=51.000     n_H(closed)=51.000     rel_dev=6.37e-08
+     魏=0.05    n_H(numeric)=11.000     n_H(closed)=11.000     rel_dev=2.71e-09
+     魏=0.1     n_H(numeric)=6.000      n_H(closed)=6.000      rel_dev=7.17e-10
+     魏=0.5     n_H(numeric)=2.000      n_H(closed)=2.000      rel_dev=3.23e-11
+     魏=1.0     n_H(numeric)=1.500      n_H(closed)=1.500      rel_dev=8.25e-12
+
+[T3b] Theorem 3 (CI table): fixed design + 400 synthetic curves refit ln 魏 (ln c fixed)
+     魏       std(MC re-est)95% width ratiotarget    escape rate(nonlin)verdict
+     0.001   4.0023        脳2551.92    2920      0.77           v
+     0.005   0.8377        脳5.16       5.3       0.23           v
+     0.01    0.4440        脳2.39       2.4       0.06           v
+     0.05    0.1449        脳1.33       1.34      0.00           v
+     0.1     0.1227        脳1.27       1.29      0.00           v
+     0.5     0.1373        脳1.31       1.33      0.00           v
+     1.0     0.1795        脳1.42       1.45      0.00           v
+     Note: nonlinear refits escape in large numbers for 魏鈮�0.01 (likelihood plateau); the raw 95% percentile width reaches 脳3.12e+04 at 魏=0.001 鈥� the confidence-width catastrophe is worse than the Fisher prediction, so the Fisher barrier holds at the sampling level.
+
+[T4] Information critical point 魏*: I(尉;u), input ln尉 log-normal (median 1), output noise 蟽=0.03
+     魏       I(narrow 蟽尉=0.3) /bitI(wide 蟽尉=1.5) /bit
+     0.002   1.413               1.111
+     0.01    2.126               1.404
+     0.05    2.839               2.071
+     0.1     2.851               2.418
+     0.3     2.436               2.853
+     1       1.868               3.031
+     3       1.581               3.040
+     10      1.458               3.025
+     narrow-input peak I=2.85 bit @ 魏*=0.1 (target 鈮�2.8鈥�2.9 @ 0.05鈥�0.1)
+     wide-input peak I=3.04 bit @ 魏*=3 (target 鈮�3.0 @ 1鈥�3)
+     zero-order limit 魏=0.002: I_narrow=1.41, I_wide=1.11 bit (target 鈮�1.1鈥�1.4)
+
+Saved D:\Kimi_Agent_缁嗚優浠跨湡宸ュ叿鍖呮墿灞曚互鍙婂叿韬�鏅鸿兘20260911\_github\cell-communication-audit\04_code\PdPCaudit鍥�.png
+
+--- STDERR ---
+D:\Kimi_Agent_缁嗚優浠跨湡宸ュ叿鍖呮墿灞曚互鍙婂叿韬�鏅鸿兘20260911\_github\cell-communication-audit\04_code\code04_pdpc_identifiability_audit.py:295: UserWarning: Glyph 8811 (\N{MUCH GREATER-THAN}) missing from font(s) SimHei.
+  plt.tight_layout()
+D:\Kimi_Agent_缁嗚優浠跨湡宸ュ叿鍖呮墿灞曚互鍙婂叿韬�鏅鸿兘20260911\_github\cell-communication-audit\04_code\code04_pdpc_identifiability_audit.py:297: UserWarning: Glyph 8811 (\N{MUCH GREATER-THAN}) missing from font(s) SimHei.
+  plt.savefig(png_path, dpi=200)

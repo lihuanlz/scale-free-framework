@@ -1,0 +1,49 @@
+========================================================================
+Code 9: NF-魏B spike-mode dose-scan audit (Krishna 2006 standard spiky parameter set)
+========================================================================
+
+[1] Equilibrium-branch Hopf boundaries (analytic solve + finite-difference Jacobian)
+     low Hopf: C_H = 0.00589, 位 = -0.0000+4.2951j
+     high Hopf: C_H = 0.16741, 位 = -0.0000+17.1915j
+     equilibrium-root count spot check (6 C values): [1, 1, 1, 1, 1, 1] (all 1 鈫� equilibrium branch unique)
+
+[2] Adiabatic-continuation up/down sweep: 110 points 脳 both directions (approximately 2 minutes)
+     max up/down amplitude difference = 2.05e-03 鈫� hysteresis width = 0 (single branch)
+
+[3] Dual-initial-condition bistability probe (equilibrium neighborhood vs spike-cycle state)
+     C=0.008  A(init鈶�)=0.2727  A(init鈶�)=0.2728  鈫� same attractor
+     C=0.020  A(init鈶�)=0.5504  A(init鈶�)=0.5503  鈫� same attractor
+     C=0.035  A(init鈶�)=0.6212  A(init鈶�)=0.6213  鈫� same attractor
+     C=0.050  A(init鈶�)=0.3661  A(init鈶�)=0.3661  鈫� same attractor
+     C=0.070  A(init鈶�)=0.3609  A(init鈶�)=0.3609  鈫� same attractor
+     C=0.095  A(init鈶�)=0.3648  A(init鈶�)=0.3648  鈫� same attractor
+     C=0.120  A(init鈶�)=0.3339  A(init鈶�)=0.3339  鈫� same attractor
+     C=0.150  A(init鈶�)=0.2160  A(init鈶�)=0.2160  鈫� same attractor
+     conclusion: 8/8 same attractor 鈥� no coexistence (erratum to the code-6 header-note folding/bistability observation)
+
+[4] Fine low-onset scan (canard-explosion detection)
+     amplitude grows continuously from Hopf; near-vertical segment (canard) at C 鈮� 0.00600 (A: 0.061 鈫� 0.175)
+
+[5] Three-signature summary (spiky mode)
+     (i) onset continuity: continuous (supercritical Hopf @ 0.00589) + canard near-vertical segment
+     (ii) hysteresis width: 0 (up/down sweeps coincide point by point, no dual-initial-condition coexistence)
+     (iii) 伪: rising limb = +0.549 (window [0.009,0.032]); incl. canard window = +0.844; decaying limb = -0.438
+     period: range 0.37鈥�3.20 (approximately 8.8-fold 鈥� not invariant; high-frequency band has frequency-encoding character)
+     spikiness: C=0.035 fraction of time at half-peak and above = 10.8% (genuine spike waveform)
+
+     鈽� placement verdict: three signatures (continuous onset; zero hysteresis; 伪=+0.56>0.3) 鈫� NF-simulated region,
+        same region as the soft mode (code 6, 伪=0.714) 鈥� the 搂4 placement is robust to the parameter regime.
+
+Figure saved: D:\Kimi_Agent_缁嗚優浠跨湡宸ュ叿鍖呮墿灞曚互鍙婂叿韬�鏅鸿兘20260911\_github\cell-communication-audit\04_code\NF魏Bspike妯″紡audit鍥�.png
+
+Done. All results are reported faithfully; the single-branch audit is valid, and the code-6 header-note folding observation is erratumed as a long-transient artifact.
+
+--- STDERR ---
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.

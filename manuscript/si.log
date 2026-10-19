@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.15)  16 OCT 2026 03:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2026.10.19)  19 OCT 2026 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -398,10 +398,9 @@ Package hyperref Info: Link coloring ON on input line 16.
 \openout3 = `si.out'.
 
 
-Overfull \hbox (44.49777pt too wide) in paragraph at lines 19--29
-\OT1/cmr/m/n/10.95 audit which requires the Nikoli^^Sc et al. repository data (
-download instructions in \OT1/cmtt/m/n/10.95 data[]external/PROVENANCE.md\OT1/c
-mr/m/n/10.95 ). 
+Underfull \hbox (badness 3240) in paragraph at lines 20--30
+\OT1/cmr/m/n/10.95 anchor audit which requires the Nikoli^^Sc et al. repository
+ data (download instructions in
  []
 
 (si.toc
@@ -413,363 +412,400 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
 
 (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+
+[1
 
 {C:/Users/lihua/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `si.toc'.
 
- [2]
-Underfull \hbox (badness 10000) in paragraph at lines 41--41
+
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
 []|\OT1/cmtt/m/n/10.95 code04[]pdpc[]identifiability[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 42--42
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
 []|\OT1/cmtt/m/n/10.95 code10[]asymmetric[]Km[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
 []|\OT1/cmtt/m/n/10.95 code11[]discrimination[]map[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 45--45
+Underfull \hbox (badness 10000) in paragraph at lines 46--46
 []|\OT1/cmtt/m/n/10.95 code06[]nfkB[]negative[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 46--46
+Underfull \hbox (badness 10000) in paragraph at lines 47--47
 []|\OT1/cmtt/m/n/10.95 code08[]msn2[]excitable[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--48
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
 []|\OT1/cmtt/m/n/10.95 code12[]nfkB[]GLM[]prediction[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 50--50
 []|\OT1/cmtt/m/n/10.95 code15[]nfkB[]saturation[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--51
+Underfull \hbox (badness 10000) in paragraph at lines 52--52
 []|\OT1/cmr/m/n/10.95 P2 amplitude-stratification
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 []|\OT1/cmtt/m/n/10.95 P2[]verdict[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 \OT1/cmtt/m/n/10.95 summary.csv\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 \OT1/cmtt/m/n/10.95 P2[]msn2[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+Underfull \hbox (badness 10000) in paragraph at lines 52--53
 \OT1/cmtt/m/n/10.95 stratification[]
  []
 
 
-Underfull \hbox (badness 3965) in paragraph at lines 52--52
+Underfull \hbox (badness 3965) in paragraph at lines 53--53
 []|\OT1/cmr/m/n/10.95 P3 free-statistic sufficiency (NF-$\OML/cmm/m/it/10.95 ^^
 T$\OT1/cmr/m/n/10.95 B
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 52--53
+Underfull \hbox (badness 10000) in paragraph at lines 53--54
 []|\OT1/cmtt/m/n/10.95 P3[]verdict[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 53--54
+Underfull \hbox (badness 10000) in paragraph at lines 54--55
 []|\OT1/cmtt/m/n/10.95 P4[]verdict[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--55
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 []|\OT1/cmtt/m/n/10.95 P6[]verdict[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 []|\OT1/cmtt/m/n/10.95 p9[]bcd[]anchor[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 \OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 \OT1/cmtt/m/n/10.95 p9[]2[]upgrade[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 59--59
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+[]|\OT1/cmtt/m/n/10.95 records/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+\OT1/cmtt/m/n/10.95 logs/audit[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 58--59
+\OT1/cmtt/m/n/10.95 bergmann2010[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--60
 []|\OT1/cmtt/m/n/10.95 score[]markers[]v2[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--61
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+[]|\OT1/cmtt/m/n/10.95 records/logs/
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
+\OT1/cmtt/m/n/10.95 score[]markers[]v2[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--62
 []|\OT1/cmr/m/n/10.95 GPCR$\OMS/cmsy/m/n/10.95 !$\OT1/cmr/m/n/10.95 Ca cascade 
 audit; per-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 []|\OT1/cmtt/m/n/10.95 cascade[]audit[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 \OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 \OT1/cmtt/m/n/10.95 cascade[]hill[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--62
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 \OT1/cmtt/m/n/10.95 fits[]methods[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--62
+Underfull \hbox (badness 10000) in paragraph at lines 63--63
 []|\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]
  []
 
 
-Underfull \hbox (badness 5288) in paragraph at lines 62--62
+Underfull \hbox (badness 5288) in paragraph at lines 63--63
 []|\OT1/cmr/m/n/10.95 P10: gain-distribution confinement
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 []|\OT1/cmtt/m/n/10.95 p10[]gain[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 \OT1/cmtt/m/n/10.95 confinement[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 \OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
+Underfull \hbox (badness 10000) in paragraph at lines 63--64
 \OT1/cmtt/m/n/10.95 p10[]supplementary[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 64--64
+Underfull \hbox (badness 10000) in paragraph at lines 65--65
 []|\OT1/cmtt/m/n/10.95 p11[]counting[]law[]cross[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 65--66
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 []|\OT1/cmtt/m/n/10.95 P12a[]erk[]baseline[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 []|\OT1/cmtt/m/n/10.95 p12b[]*.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 \OT1/cmtt/m/n/10.95 p12b[]egfr[]dms[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []|\OT1/cmtt/m/n/10.95 p13[]mutual[]info[]audit.py\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--67
+Underfull \hbox (badness 10000) in paragraph at lines 68--68
 []|\OT1/cmr/m/n/10.95 P13 channel capacity (mutual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 []|\OT1/cmtt/m/n/10.95 p13[]mi[]
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 67--68
+Underfull \hbox (badness 1303) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 , \OT1/cmtt/m/n/10.95 p13[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10.95 robustness.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
 \OT1/cmtt/m/n/10.95 p13[]fig6[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 []|\OT1/cmtt/m/n/10.95 p14[]results.json\OT1/cmr/m/n/10.95 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 68--69
+Underfull \hbox (badness 10000) in paragraph at lines 69--70
 \OT1/cmtt/m/n/10.95 p14[]pergene[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 69--70
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
 []|\OT1/cmtt/m/n/10.95 p15[]tcga[]
  []
 
 
-Underfull \hbox (badness 3635) in paragraph at lines 69--70
+Underfull \hbox (badness 3635) in paragraph at lines 70--71
 \OT1/cmtt/m/n/10.95 results.json\OT1/cmr/m/n/10.95 , four
  []
 
 
-Underfull \hbox (badness 1603) in paragraph at lines 71--71
+Underfull \hbox (badness 1603) in paragraph at lines 72--72
 \OT1/cmr/m/n/10.95 from the umbrella edition \OT1/cmtt/m/n/10.95 draw[]ed[]
  []
 
-[3] [4]
+
+
+[3]
+
+[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 101.
+(hyperref)                removing `math shift' on input line 104.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\kappa' on input line 101.
+(hyperref)                removing `\kappa' on input line 104.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 101.
+(hyperref)                removing `math shift' on input line 104.
 
 
-Underfull \hbox (badness 1033) in paragraph at lines 116--116
+Underfull \hbox (badness 1033) in paragraph at lines 119--119
 []|\OT1/cmr/m/n/10 all 8 AUCs $\OML/cmm/m/it/10 < \OT1/cmr/m/n/10 0\OML/cmm/m/i
 t/10 :\OT1/cmr/m/n/10 60$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--116
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
 \OT1/cmr/m/n/10 (max 0.5819; one
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 117--117
+Underfull \hbox (badness 2591) in paragraph at lines 120--120
 []|$\OML/cmm/m/it/10 D \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 046
 8$, 95%
  []
 
 
-Underfull \hbox (badness 2103) in paragraph at lines 117--117
+Underfull \hbox (badness 2103) in paragraph at lines 120--120
 \OT1/cmr/m/n/10 CI (0.0316, 0.0622);
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--117
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
 \OT1/cmr/m/n/10 AUC$[] = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 567$,
  []
 
 
-Overfull \hbox (61.86728pt too wide) in paragraph at lines 123--125
-[]\OT1/cmr/m/n/10.95 All 25 per-unit rows (Histamine and UK ladders, low/mid/hi
-gh/full bands) with CIs are in \OT1/cmtt/m/n/10.95 P4[]verdict[]summary.csv\OT1
-/cmr/m/n/10.95 . 
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 126.
+(hyperref)                removing `\kappa' on input line 129.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\kappa' on input line 126.
+(hyperref)                removing `math shift' on input line 129.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 126.
 
 [5]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 167.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\to' on input line 167.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 167.
-
-
-Overfull \hbox (138.55597pt too wide) in paragraph at lines 169--174
-\OT1/cmr/m/n/10.95 two fitting ladders (default and Methods) archived in \OT1/c
-mtt/m/n/10.95 cascade[]audit[]results.json \OT1/cmr/m/n/10.95 and \OT1/cmtt/m/n
-/10.95 cascade[]hill[]fits[]methods[]ladder.json\OT1/cmr/m/n/10.95 ;
+Underfull \hbox (badness 1852) in paragraph at lines 166--169
+[]\OT1/cmr/m/n/10.95 Embryo-length range archived in \OT1/cmtt/m/n/10.95 p9[]bc
+d[]anchor[]results.json\OT1/cmr/m/n/10.95 . Axes-1/2 of the Bergmann
  []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 166--169
+\OT1/cmr/m/n/10.95 2010 Dataset-S1 audit are computed by \OT1/cmtt/m/n/10.95 au
+dit[]bergmann2010[]axis12.py \OT1/cmr/m/n/10.95 (output archived in
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 170.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\to' on input line 170.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 170.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (24.27513pt too wide) in paragraph at lines 224--229
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--244
 []\OT1/cmr/m/n/10.95 Split-half rank correlations and 95% CIs per condition are
- archived in \OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]results.json\OT1/cmr/m
-/n/10.95 .
+ archived in
  []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 239--244
+\OT1/cmtt/m/n/10.95 p10[]gain[]confinement[]results.json\OT1/cmr/m/n/10.95 . Su
+pplementary arms (\OT1/cmtt/m/n/10.95 p10[]supplementary[]arms[]
+ []
+
+
 
 [6]
-Overfull \hbox (12.68942pt too wide) in paragraph at lines 259--269
-\OT1/cmr/m/n/10.95 extended clinical expansion in \OT1/cmtt/m/n/10.95 P12b[]ext
-ended[]clinical[]expansion.csv \OT1/cmr/m/n/10.95 and \OT1/cmtt/m/n/10.95 P12b[
-]final[]expansion.csv
- []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (26.41295pt too wide) in paragraph at lines 289--297
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 1264) in paragraph at lines 304--312
 []\OT1/cmr/m/n/10.95 ($[]$G12V AREG $\OML/cmm/m/it/10.95 I \OT1/cmr/m/n/10.95 =
  0\OML/cmm/m/it/10.95 :\OT1/cmr/m/n/10.95 093$.) Per-genotype $\OML/cmm/m/it/10
-.95 n$ \OT1/cmr/m/n/10.95 (1116--2522 cells) and 95% bootstrap CIs in \OT1/cmtt
-/m/n/10.95 p13[]mi[]results.json
+.95 n$ \OT1/cmr/m/n/10.95 (1116--2522 cells) and 95% bootstrap CIs in
  []
+
+
 
 [7]
-Overfull \hbox (2.62373pt too wide) in paragraph at lines 344--351
-\OT1/cmr/m/n/10.95 numerical table \OT1/cmtt/m/n/10.95 data[]external/muzzey200
-9/mmc2.xls\OT1/cmr/m/n/10.95 ; only the glycerol arms rely on figure digitisati
-on
- []
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (78.4321pt too wide) in paragraph at lines 354--370
-\OT1/cmr/m/n/10.95 al. 2009 \OT1/cmtt/m/n/10.95 mmc2.xls \OT1/cmr/m/n/10.95 (PM
-C3109981). Referenced but not re-hosted (exact access notes in \OT1/cmtt/m/n/10
-.95 data[]external/PROVENANCE.md\OT1/cmr/m/n/10.95 ):
- []
 
-[8] [9] (si.aux)
+[8]
+
+[9] (si.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
@@ -778,13 +814,13 @@ Package rerunfilecheck Info: File `si.out' has not changed.
 (rerunfilecheck)             Checksum: 58331A4DE6CF2F2B4DEAF1363E0CB8F3;5095.
  ) 
 Here is how much of TeX's memory you used:
- 10231 strings out of 469327
- 156642 string characters out of 5456969
- 599043 words of memory out of 5000000
- 39200 multiletter control sequences out of 15000+600000
+ 10231 strings out of 469331
+ 156642 string characters out of 5457056
+ 599055 words of memory out of 5000000
+ 39201 multiletter control sequences out of 15000+600000
  641989 words of font info for 93 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 74i,11n,79p,406b,573s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,79p,406b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ams
@@ -807,7 +843,7 @@ m/cmsy9.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
 /amsfonts/cm/cmtt10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/
 public/amsfonts/symbols/msam10.pfb>
-Output written on si.pdf (9 pages, 270331 bytes).
+Output written on si.pdf (9 pages, 272571 bytes).
 PDF statistics:
  249 PDF objects out of 1000 (max. 8388607)
  196 compressed objects within 2 object streams

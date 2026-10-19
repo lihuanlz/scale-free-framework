@@ -1,0 +1,17 @@
+==========================================================================
+code 45 - P3 blind ruling: free-statistic sufficiency (Sung 2022 NF-kB spatial gradient) v0.1.1
+run time: 2026-09-26 23:02:34
+seed=20260814  bootstrap=2000  adjudication margins={'P3-1': 0.6, 'P3-2': 0.55, 'P3-3': 0.6}  analysis window=(0.0, 120.0) min
+numpy=2.4.4  scipy loaded  h5py=3.16.0
+pre-registration: 棰勬敞鍐宊P3_鍏嶈垂缁熻�￠噺鍏呭垎鎬�_NFkB绌洪棿姊�搴�_v01.md (entry 75)
+==========================================================================
+[missing files] the following files were not found under ROOT:
+   - FixedSource_TNF100_DC3.mat
+   - FixedSource_TNF30_DC3.mat
+   - FixedSource_TNF10_DC3.mat
+   - DifferentDuration_TNF100_DC2.mat
+ROOT = C:/Users/lihua/Desktop/NC/data/Sung2022
+Please confirm the four .mat files (note: each is nested one extra zip layer inside the package, unzip once more) are in place.
+
+[ABORT] data files incomplete
+This run is an empty run; it constitutes no ruling and produces no ruling table. Please send this log back.

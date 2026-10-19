@@ -8,8 +8,8 @@
 \contentsline {section}{\numberline {3}Morphogen instance: the Bcd absolute anchor (P9)}{6}{section.3}%
 \contentsline {section}{\numberline {4}Cascade instance: per-experiment Hill fits (GPCR$\to $Ca)}{6}{section.4}%
 \contentsline {section}{\numberline {5}P10: gain-distribution confinement across systems}{6}{section.5}%
-\contentsline {section}{\numberline {6}Tumour chain (P11--P16)}{7}{section.6}%
-\contentsline {subsection}{\numberline {6.1}P11: counting law across cell lines}{7}{subsection.6.1}%
+\contentsline {section}{\numberline {6}Tumour chain (P11--P16)}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}P11: counting law across cell lines}{6}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}P12b: resistance mutations and the zero direction}{7}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}P13: channel capacity across Ras/RAF genotypes}{7}{subsection.6.3}%
 \contentsline {subsection}{\numberline {6.4}P14: downstream shape decoding}{8}{subsection.6.4}%

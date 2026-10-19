@@ -110,8 +110,8 @@ axa.text((px0+pw+cx0)/2-0.01, iy0+0.26, 'group action', ha='center',
          fontsize=5.2, style='italic', color='0.4')
 axa.text(cx0+cw/2, iy0+0.052, 'four parameter sets, one curve',
          ha='center', va='bottom', fontsize=5.4, color=C_FALS)
-axa.text(cx0+cw/2, iy0-0.015, 'max $|\\Delta u|$ = 0 ($K_m,S_T$ x5); '
-         '$1.7\\times10^{-18}$ ($k,E$ rescaling): machine precision',
+axa.text(cx0+cw/2, iy0-0.015, 'max $|\\Delta u|$ = 0 (pure actions); '
+         '$2.2\\times10^{-16}$ ($k,E$ mixed): machine precision',
          ha='center', va='top', fontsize=5.2, color=C_FALS)
 
 axa.text(-0.012, 1.0, 'a', transform=axa.transAxes, fontsize=10,
@@ -132,7 +132,7 @@ cols = ['identifiable', 'internally\nconsistent', 'information-\nbearing',
 NO, YES = 'NO', 'YES'
 cells = [
     [(C_FALS, NO,  '4D degeneracy group:\n6 params -> 2 combos'),
-     (C_FALS, NO,  'scale block: exact zero\neigenvalue ($\\chi\\sim10^{300}$)'),
+     (C_FALS, NO,  'scale block: exact zero\neigenvalue (numerical zero)'),
      (C_FALS, NO,  'no information on\nabsolute scales'),
      (C_HIT,  YES, '$\\kappa$ exact from shape:\n$n_H = 1 + 1/(2\\kappa)$'),
      (C_HIT,  YES, 'closed form to machine\nprecision'),
@@ -140,7 +140,7 @@ cells = [
     [(C_FALS, NO,  'amplitude: 5.5% of\nparameter information'),
      (C_FALS, NO,  'gain dispersion: CV(A)\n0.002 -> 0.639'),
      (C_FALS, NO,  'two-layer death of the\namplitude channel'),
-     (C_HIT,  YES, 'timing channels carry\n94.2% of information'),
+     (C_HIT,  YES, 'timing channels carry\n94.5% of information'),
      (C_HIT,  YES, 'CV(T) pinned at 0.016\nunder gain dispersion'),
      (C_HIT,  YES, '$I(D;N)$ = 3.07 of 3.17\nbits (96.8%)')],
     [(C_FALS, NO,  'amplitude and midpoint\nfits irreconcilable'),

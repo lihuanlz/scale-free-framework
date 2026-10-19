@@ -1,0 +1,16 @@
+========================================================================
+Code 44b · P2 supplementary computation: bootstrap CI (v0.1.2)
+Adjudication frozen at registry No. 72; this script prints and changes no adjudication.
+seed 20260814 ｜ bootstrap 2000 ｜ scope 7 promoters x 3 dose pairs x 3 main channels @ 50min size-stratified
+data root directory: C:/Users/lihua/Desktop/NC/data/HansenZechner2021
+========================================================================
+[warning] missing file: ALD3 50min 100nM
+[warning] missing file: DCS2 50min 100nM
+[warning] missing file: DDR2 50min 100nM
+[warning] missing file: HXK1 50min 100nM
+[warning] missing file: RTN2 50min 100nM
+[warning] missing file: SIP18 50min 100nM
+[warning] missing file: TKL2 50min 100nM
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Abort: no data loaded; check ROOT.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

@@ -1,0 +1,73 @@
+============================================================================
+Code 15: quantitative test of the NF-魏B saturation-transient hypothesis (GLM flaw-2 collision)
+============================================================================
+
+[1] Resting state (C_basal=0.0001 fixed point): N_n=9.932e-03, I_m=9.864e-05, I=5.325e-03
+
+[2] Scan (K_T, C_max): 8脳3 = 24 combos 脳 5 doses = 120 step responses
+    C_max=0.003 done
+    C_max=0.005 done
+    C_max=0.008 done
+
+[3] Verdict table (Tay 2010: 伪=0.151, 谓=+0.58/decade, A2/A1鈭圼0.5,0.8])
+ C_max    K_T        伪       谓  A2/A1 resp. doses  inter-peak interval range (unit)
+ 0.003 linear        鈥�   1.800   0.70          1  2.27鈥�2.27
+ 0.003     30        鈥�   1.600   0.77          2  2.61鈥�5.70
+ 0.003     10        鈥�   2.000   0.69          2  2.38鈥�3.43
+ 0.003      3    0.313   2.300   0.74          3  2.32鈥�5.70
+ 0.003      1    0.175   2.600   0.69          3  2.28鈥�3.43
+ 0.003    0.3    0.204   2.400   0.73          4  2.28鈥�5.70
+ 0.003    0.1    0.110   2.300   0.70          4  2.27鈥�3.43
+ 0.003   0.03    0.141   1.600   0.73          5  2.27鈥�5.70
+ 0.005 linear        鈥�   1.800   0.84          2  2.28鈥�2.28
+ 0.005     30        鈥�   2.300   0.76          2  2.09鈥�3.89
+ 0.005     10    0.494   2.600   0.74          3  2.17鈥�2.49
+ 0.005      3    0.330   2.800   0.78          3  2.09鈥�3.89
+ 0.005      1    0.336   2.700   0.77          4  2.17鈥�2.49
+ 0.005    0.3    0.211   2.400   0.80          4  2.09鈥�3.89
+ 0.005    0.1    0.238   1.900   0.79          5  2.17鈥�2.49
+ 0.005   0.03    0.145   1.100   0.81          5  2.09鈥�3.89
+ 0.008 linear        鈥�   1.400   0.90          2  3.12鈥�3.12
+ 0.008     30        鈥�   2.200   0.77          2  2.70鈥�2.85
+ 0.008     10    0.513   2.400   0.84          3  2.09鈥�3.01
+ 0.008      3    0.304   2.200   0.81          3  2.70鈥�3.08
+ 0.008      1    0.340   2.100   0.86          4  2.09鈥�3.11
+ 0.008    0.3    0.193   1.900   0.83          4  2.70鈥�3.11
+ 0.008    0.1    0.238   1.100   0.87          5  2.09鈥�3.12
+ 0.008   0.03    0.133   0.900   0.85          5  2.70鈥�3.12
+
+[4] Tension quantification (deterministic level)
+    Among the 8 combos fitting 伪 (卤0.07), the lowest 谓 is 0.900 (C_max=0.008, K_T=0.03), still above the Tay upper bound 0.83
+    None of the 24 grid combos fits 谓 (lowest 0.900 vs Tay 0.58卤0.25)
+    Note: deterministic integer counts are inherently too steep 鈥� Tay's 谓 is a population mean, and threshold heterogeneity
+    flattens the count slope. So [4b] re-checks the closest combos at the population level before the verdict.
+
+[4b] Population re-check (log-normal heterogeneity added to the best 伪-fitting combos, 48 cells/dose)
+    C_max=0.008, K_T=0.03: population 谓=0.581 (Tay 0.58卤0.25), population 伪=0.129 (Tay 0.151卤0.07), population counts=[3.62 7.42 7.33 6.98 6.75]
+      secondary criteria: monotonic v; absolute count x (outside the Tay 1.7鈥�4.0 range); C_max>5.89e-03鈬抯ustained high-dose oscillation yes (Tay high-dose still decays 鈥� contradiction)
+    C_max=0.005, K_T=0.03: population 谓=1.087 (Tay 0.58卤0.25), population 伪=0.125 (Tay 0.151卤0.07), population counts=[3.04 8.4  8.5  8.44 8.46]
+      secondary criteria: monotonic v; absolute count x (outside the Tay 1.7鈥�4.0 range); C_max>5.89e-03鈬抯ustained high-dose oscillation no
+
+[5] Conclusion
+    Note: one nominal hit appeared at the population level (谓 and 伪 both matched), but it failed the secondary criteria
+    (non-monotonic count / absolute count 鈮�7 exceeds the Tay 4.0 / C_max>C_H sustained high-dose oscillation
+    contradicting the Tay decay observation) 鈥� not counted as a reproduction, but honestly recorded in the ledger.
+    Neither the deterministic grid (24 combos) nor the population re-check (best combos with heterogeneity)
+    has any combo jointly reproducing 伪, 谓 and the decay ratio 鈫� the saturation-transient hypothesis fails
+    quantitatively at both levels: the GLM flaw-2 mechanism (store-depletion saturation) is real and can make
+    the first peak stereotyped, but its quantitative predictions cannot match all three Tay numbers 鈥� the 'unique
+    reading' is quantitatively supported by this test (搂4 and SI must write: mechanism acknowledged + quantitatively excluded, not simple denial).
+
+[6] Time calibration: dimensionless inter-peak median 2.55 鈬� using the Tay mid value 85 min, 1 unit 鈮� 33 min; observation window 20 units 鈮� 666 min
+
+Figure saved: D:\Kimi_Agent_缁嗚優浠跨湡宸ュ叿鍖呮墿灞曚互鍙婂叿韬�鏅鸿兘20260911\_github\cell-communication-audit\04_code\浠ｇ爜15_saturationtransienttest.png
+
+--- STDERR ---
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.
+Font 'default' does not have a glyph for '\u2212' [U+2212], substituting with a dummy symbol.

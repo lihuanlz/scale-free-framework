@@ -1,0 +1,47 @@
+GLM prediction test: does switch-like I魏B伪 degradation (n=1->4) move the Krishna model out of the NF class?
+========================================================================
+
+========================================================================
+[original soft] B=3, 未=0.005, Hill n=1
+========================================================================
+equilibrium-branch multiplicity C grid points: 0/150 (>0 -> fold/bistability exists)
+instability windows: [('2.489e-03', '1.000e+00')]
+limit-cycle amplitude 12 points: 0.0494鈥�0.991 (20.07-fold span)
+伪 = 鈭俵nA/鈭俵nC = +0.727 (R虏=0.979)
+period span: 1.67-fold
+onset test (first 6 points near onset A虏鈭�(C鈭扖_in)): R虏=0.998 (->1 supercritical sqrt onset; poor -> canard/discontinuous)
+excitability probe (C=8.30e-04=window lower bound/3, steady state N*=0.0284):
+  螖     = [1.e-04 3.e-04 1.e-03 3.e-03 1.e-02 3.e-02 1.e-01 3.e-01]
+  response peaks= [1.e-04 3.e-04 1.e-03 3.e-03 1.e-02 3.e-02 1.e-01 3.e-01]
+  strongest/weakest response ratio = 3000.0, perturbation span ratio = 3000 (ratios similar -> graded damped spiral = NF resting side; response ratio << perturbation ratio -> threshold-stereotyped = EXC candidate)
+
+========================================================================
+[GLM modified soft (n=4)] B=3, 未=0.005, Hill n=4
+========================================================================
+equilibrium-branch multiplicity C grid points: 0/150 (>0 -> fold/bistability exists)
+instability windows: []
+no instability window 鈥� this parameter set has no self-sustained oscillation region.
+
+========================================================================
+[original spiky (standard parameters)] B=954.5, 未=0.029, Hill n=1
+========================================================================
+equilibrium-branch multiplicity C grid points: 0/150 (>0 -> fold/bistability exists)
+instability windows: [('5.559e-03', '1.665e-01')]
+limit-cycle amplitude 11 points: 0.267鈥�0.607 (2.27-fold span)
+伪 = 鈭俵nA/鈭俵nC = +0.032 (R虏=0.017)
+period span: 8.56-fold
+onset test (first 6 points near onset A虏鈭�(C鈭扖_in)): R虏=0.874 (->1 supercritical sqrt onset; poor -> canard/discontinuous)
+excitability probe (C=1.85e-03=window lower bound/3, steady state N*=0.0420):
+  螖     = [1.e-04 3.e-04 1.e-03 3.e-03 1.e-02 3.e-02 1.e-01 3.e-01]
+  response peaks= [1.e-04 3.e-04 1.e-03 3.e-03 1.e-02 3.e-02 1.e-01 3.e-01]
+  strongest/weakest response ratio = 3000.0, perturbation span ratio = 3000 (ratios similar -> graded damped spiral = NF resting side; response ratio << perturbation ratio -> threshold-stereotyped = EXC candidate)
+
+========================================================================
+[GLM modified spiky (n=4)] B=954.5, 未=0.029, Hill n=4
+========================================================================
+equilibrium-branch multiplicity C grid points: 0/150 (>0 -> fold/bistability exists)
+instability windows: [('9.114e-03', '2.005e-01')]
+limit-cycle amplitude 12 points: 0.33鈥�0.642 (1.95-fold span)
+伪 = 鈭俵nA/鈭俵nC = -0.016 (R虏=0.006)
+period span: 9.75-fold
+onset test (first 6 points near onset A虏鈭�(C鈭扖_in)): R虏=0.901 (->1 supercritical sqrt onset; poor -> canard/discontinuous)

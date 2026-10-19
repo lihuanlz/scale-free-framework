@@ -1,0 +1,56 @@
+========================================================================
+Code 44 · P2 blind ruling: amplitude-stratified decay prediction
+pre-registration: 2026-08-14 v0.1 | seed 20260814 | bootstrap 2000
+data root directory: C:/Users/lihua/Desktop/NC/data/HansenZechner2021/2018_DataForPaper
+criteria: P2-1 Δ_mol≥+0.03; P2-2 Δ_AU≤0.01 and <Δ_mol; P2-3 |Δ_time|≤0.01 (k=3); each ≥6/7 promoters
+========================================================================
+[warning] missing file: ALD3 DM 10min 100nM, skipping ALD3 10min
+[warning] missing file: ALD3 DM 20min 100nM, skipping ALD3 20min
+[warning] missing file: ALD3 DM 30min 100nM, skipping ALD3 30min
+[warning] missing file: ALD3 DM 40min 100nM, skipping ALD3 40min
+[warning] missing file: ALD3 DM 50min 100nM, skipping ALD3 50min
+[warning] missing file: DCS2 DM 10min 100nM, skipping DCS2 10min
+[warning] missing file: DCS2 DM 20min 100nM, skipping DCS2 20min
+[warning] missing file: DCS2 DM 30min 100nM, skipping DCS2 30min
+[warning] missing file: DCS2 DM 40min 100nM, skipping DCS2 40min
+[warning] missing file: DCS2 DM 50min 100nM, skipping DCS2 50min
+[warning] missing file: DDR2 DM 10min 100nM, skipping DDR2 10min
+[warning] missing file: DDR2 DM 20min 100nM, skipping DDR2 20min
+[warning] missing file: DDR2 DM 30min 100nM, skipping DDR2 30min
+[warning] missing file: DDR2 DM 40min 100nM, skipping DDR2 40min
+[warning] missing file: DDR2 DM 50min 100nM, skipping DDR2 50min
+[warning] missing file: HXK1 DM 10min 100nM, skipping HXK1 10min
+[warning] missing file: HXK1 DM 20min 100nM, skipping HXK1 20min
+[warning] missing file: HXK1 DM 30min 100nM, skipping HXK1 30min
+[warning] missing file: HXK1 DM 40min 100nM, skipping HXK1 40min
+[warning] missing file: HXK1 DM 50min 100nM, skipping HXK1 50min
+[warning] missing file: RTN2 DM 10min 100nM, skipping RTN2 10min
+[warning] missing file: RTN2 DM 20min 100nM, skipping RTN2 20min
+[warning] missing file: RTN2 DM 30min 100nM, skipping RTN2 30min
+[warning] missing file: RTN2 DM 40min 100nM, skipping RTN2 40min
+[warning] missing file: RTN2 DM 50min 100nM, skipping RTN2 50min
+[warning] missing file: SIP18 DM 10min 100nM, skipping SIP18 10min
+[warning] missing file: SIP18 DM 20min 100nM, skipping SIP18 20min
+[warning] missing file: SIP18 DM 30min 100nM, skipping SIP18 30min
+[warning] missing file: SIP18 DM 40min 100nM, skipping SIP18 40min
+[warning] missing file: SIP18 DM 50min 100nM, skipping SIP18 50min
+[warning] missing file: TKL2 DM 10min 100nM, skipping TKL2 10min
+[warning] missing file: TKL2 DM 20min 100nM, skipping TKL2 20min
+[warning] missing file: TKL2 DM 30min 100nM, skipping TKL2 30min
+[warning] missing file: TKL2 DM 40min 100nM, skipping TKL2 40min
+[warning] missing file: TKL2 DM 50min 100nM, skipping TKL2 50min
+[warning] missing file: pSIP18_mut6 DM 10min 100nM, skipping pSIP18_mut6 10min
+[warning] missing file: pSIP18_mut6 DM 20min 100nM, skipping pSIP18_mut6 20min
+[warning] missing file: pSIP18_mut6 DM 30min 100nM, skipping pSIP18_mut6 30min
+[warning] missing file: pSIP18_mut6 DM 40min 100nM, skipping pSIP18_mut6 40min
+[warning] missing file: pSIP18_mut6 DM 50min 100nM, skipping pSIP18_mut6 50min
+[warning] missing file: pSIP18_mut21 DM 10min 100nM, skipping pSIP18_mut21 10min
+[warning] missing file: pSIP18_mut21 DM 20min 100nM, skipping pSIP18_mut21 20min
+[warning] missing file: pSIP18_mut21 DM 30min 100nM, skipping pSIP18_mut21 30min
+[warning] missing file: pSIP18_mut21 DM 40min 100nM, skipping pSIP18_mut21 40min
+[warning] missing file: pSIP18_mut21 DM 50min 100nM, skipping pSIP18_mut21 50min
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Abort: no condition data were loaded. Check that ROOT points to the directory
+that directly contains the promoter folders (ALD3 etc.). This run is an empty run, not a ruling.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

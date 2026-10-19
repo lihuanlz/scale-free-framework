@@ -4,7 +4,10 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 
-XLS = Path(r"D:\Kimi_Agent_cell_sim_toolkit_workspace\05_main_program\osmo_line\data\muzzey2009\mmc2.xls")
+_X = Path(__file__).resolve().parent.parent / "data_external" / "muzzey2009"
+# mmc2.xlsx is the same workbook re-saved from the published mmc2.xls so that it
+# reads with pandas/openpyxl; the original .xls is kept beside it for provenance.
+XLS = _X / "mmc2.xlsx" if (_X / "mmc2.xlsx").exists() else _X / "mmc2.xls"
 
 
 def sheet(name, tcol=0):

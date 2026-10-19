@@ -1,0 +1,24 @@
+======================================================================
+[Predictions (1)+(2): Fisher spectrum]
+counts only (number limit): 位 = [26935.20402933  1898.43146377     0.             0.        ]  鈫� non-null directions: 2 (prediction 2)
+counts+amplitude:           位 = [106666.66666667  26935.20402933   1898.43146377      0.        ] 鈫� non-null directions: 3 (prediction 3)
+smallest/largest eigenvalue = 0.00e+00 (float-noise order of magnitude 鈫� exact null direction exists)
+null directioneigenvector = [ 0.      0.     -0.7071  0.7071]锛坧rediction 鈭� (0,0,1,鈭�1)/鈭�2 = [0,0,0.7071,鈭�0.7071]锛�
+cosine of the angle with the G orbit tangent (0,0,1,鈭�1)/鈭�2 = 1.000000 (prediction 1.000000)
+
+Structural block (ln D_c, ln 蟻): condition number = 14.2 (identifiable; cf. PdPC shape block ~30)
+======================================================================
+[Prediction (3): MC empirical variance vs Cram茅r鈥揜ao lower bound] (log-parameter variance)
+        MC empirical         CRB   ratio
+    ln 蟻    4.87e-04    3.93e-04    1.24
+  ln D_c    2.33e-04    1.71e-04    1.36
+   ln sA    1.79e-05    1.88e-05    0.95
+
+[Scale unidentifiable: likelihood ridge] fixing s at a wrong value; after compensation 脗 = sA/s the likelihood difference is < noise fluctuation:
+  s = 0.5锛坋rror锛夆啋 脗 = 4.00锛坈ompensation锛毭偮穝 = 2.00 constant锛�
+  s = 0.8锛坋rror锛夆啋 脗 = 2.50锛坈ompensation锛毭偮穝 = 2.00 constant锛�
+  s = 1.0锛坓round truth锛夆啋 脗 = 2.00锛坈ompensation锛毭偮穝 = 2.00 constant锛�
+  s = 1.3锛坋rror锛夆啋 脗 = 1.54锛坈ompensation锛毭偮穝 = 2.00 constant锛�
+  s = 2.0锛坋rror锛夆啋 脗 = 1.00锛坈ompensation锛毭偮穝 = 2.00 constant锛�
+
+Saved p53_Fisherstratified_S7.png

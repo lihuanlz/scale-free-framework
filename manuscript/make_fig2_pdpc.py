@@ -103,7 +103,7 @@ axb.set_ylim(0, 1.02)
 axb.legend(fontsize=5.0, loc='upper left', frameon=False, handlelength=1.6)
 axb.annotate('four parameter sets, one orbit, one curve\n'
              'max $|\\Delta u|$ = 0 ($K_m,S_T$ x5)\n'
-             'max $|\\Delta u|$ = $1.7\\times10^{-18}$ ($k,E$)',
+             'max $|\\Delta u|$ = $2.2\\times10^{-16}$ ($k,E$ mixed)',
              xy=(0.98, 0.03), xycoords='axes fraction', ha='right', va='bottom',
              fontsize=5.2, color=C_VERM)
 axb.set_title('degeneracy-group invariance (200-pt grid)', fontsize=6.3)
@@ -138,16 +138,15 @@ axc.text(0.5, 7.2, 'shape tier\n($\\ln c, \\ln\\kappa$)',
          ha='center', va='top', fontsize=5.4, color=C_BLUE, fontweight='bold')
 axc.text(3, 7.2, 'absolute tier\n($\\ln c, \\ln K_m, \\ln S_T$)',
          ha='center', va='top', fontsize=5.4, color=C_VERM, fontweight='bold')
-axc.text(0.5, -2.2, '$\\chi \\approx$ 19-34', ha='center', va='top',
+axc.text(0.5, -2.2, '$\\chi \\approx$ 19-33', ha='center', va='top',
          fontsize=5.6, color=C_BLUE, fontweight='bold')
 axc.text(2.72, -2.2, 'exact zero\neigenvalue along orbit', ha='center', va='top',
          fontsize=5.2, color=C_VERM, fontweight='bold')
 axc.annotate('', xy=(4, -21.5), xytext=(4, -13.2),
              arrowprops=dict(arrowstyle='-|>', color=C_VERM, lw=1.0))
 axc.text(3.55, -16.0,
-         '$\\lambda_{min}$ at float floor ~$10^{-14}$:\n'
-         'effective $\\chi$ saturates at $10^{17}$-$10^{19}$;\n'
-         'extrapolated $\\chi\\sim10^{300}$ (deep saturation)',
+         '$\\lambda_{min}$ at the float floor:\n'
+         'absolute block = numerical zero',
          fontsize=5.0, va='center', ha='right', color=C_VERM)
 axc.set_title('Fisher eigenspectrum at $\\kappa$ = 0.05 (schematic tiers)', fontsize=6.3)
 panel_letter(axc, 'c')
@@ -163,7 +162,7 @@ axd.loglog(kap_tab, nH_tab, 'o', ms=5, mfc='none', mec=C_VERM, mew=1.2,
 axd.axvspan(3e-4, 0.01, color=C_ORG, alpha=0.12)
 axd.text(3.5e-3, 18, 'one-sided-bound regime:\nreport $\\kappa \\leq \\kappa_{max}$,\nnever a point estimate',
          fontsize=5.4, ha='center', color='#8a5a00')
-axd.annotate('$\\kappa = 10^{-3}$: $n_H$ = 501,\n95% CI inflation x2920',
+axd.annotate('$\\kappa = 10^{-3}$: $n_H$ = 501,\n95% CI inflation x2552',
              xy=(0.0015, 380), xytext=(0.02, 120),
              fontsize=5.6, color=C_VERM,
              arrowprops=dict(arrowstyle='-|>', color=C_VERM, lw=0.8))

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.10.15)  16 OCT 2026 08:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2026.10.19)  19 OCT 2026 12:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,25 +497,31 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/microtype\mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+
 [1
 
 {C:/Users/lihua/AppData/Local/MiKTeX/2.9/fonts/map/pdftex/pdftex.map}]
+
 [2]
-<fig1_schematic.png, id=160, 520.344pt x 332.08064pt>
+
+[3]
+<fig1_schematic.png, id=167, 520.344pt x 332.08064pt>
 File: fig1_schematic.png Graphic file (type png)
 <use fig1_schematic.png>
 Package pdftex.def Info: fig1_schematic.png  used on input line 86.
 (pdftex.def)             Requested size: 452.9679pt x 289.0953pt.
- [3] [4 <./fig1_schematic.png>]
 LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
 02.
-
-(C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/base\omscmr.fd
+ (C:\Users\lihua\AppData\Roaming\MiKTeX\2.9\tex/latex/base\omscmr.fd
 File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
 
+
+[4]
+
+[5 <./fig1_schematic.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 119--119
 []$\OML/cmm/m/it/10 K[]$\OT1/cmr/m/n/10 (+20) , $\OML/cmm/m/it/10 K[]$\OT1/cmr/
 m/n/10 (+20) ,
@@ -551,31 +557,46 @@ Underfull \hbox (badness 3792) in paragraph at lines 123--124
 []\OT1/cmr/m/n/10 (+20) feedback on the reference;
  []
 
-[5] [6]
-<fig2_pdpc.png, id=202, 520.344pt x 335.69415pt>
+
+
+[6]
+<fig2_pdpc.png, id=203, 520.344pt x 335.69415pt>
 File: fig2_pdpc.png Graphic file (type png)
 <use fig2_pdpc.png>
 Package pdftex.def Info: fig2_pdpc.png  used on input line 181.
 (pdftex.def)             Requested size: 452.9679pt x 292.24106pt.
-<fig3_pdpc_full.png, id=205, 780.516pt x 404.712pt>
+<fig3_pdpc_full.png, id=206, 780.516pt x 404.712pt>
 File: fig3_pdpc_full.png Graphic file (type png)
 <use fig3_pdpc_full.png>
 Package pdftex.def Info: fig3_pdpc_full.png  used on input line 188.
 (pdftex.def)             Requested size: 452.9679pt x 234.87515pt.
- [7] [8 <./fig2_pdpc.png>] [9] [10]
-<fig4_instances.png, id=279, 809.9058pt x 515.526pt>
+
+
+[7]
+
+[8 <./fig2_pdpc.png>]
+
+[9]
+
+[10]
+<fig4_instances.png, id=275, 800.7516pt x 504.9264pt>
 File: fig4_instances.png Graphic file (type png)
 <use fig4_instances.png>
 Package pdftex.def Info: fig4_instances.png  used on input line 235.
-(pdftex.def)             Requested size: 452.9679pt x 288.33075pt.
+(pdftex.def)             Requested size: 452.9679pt x 285.63065pt.
 
 Underfull \hbox (badness 7433) in paragraph at lines 254--254
 []\OT1/cmr/m/n/10 (+20) pulse count and timing;
  []
 
 
-Underfull \hbox (badness 3039) in paragraph at lines 255--255
-[]\OT1/cmr/m/n/10 (+20) fold change; pulse count
+Underfull \hbox (badness 10000) in paragraph at lines 255--255
+\OT1/cmr/m/n/10 (+20) attribution intermediate
+ []
+
+
+Underfull \hbox (badness 1472) in paragraph at lines 256--256
+\OT1/cmr/m/n/10 (+20) dose end only; trajectory
  []
 
 
@@ -629,174 +650,190 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--263
 []\OT1/cmr/m/n/10 (+20) Yeast osmotic
  []
 
-<fig5_ledger.png, id=306, 520.344pt x 668.4975pt>
+
+
+[11]
+<fig5_ledger.png, id=313, 520.344pt x 668.4975pt>
 File: fig5_ledger.png Graphic file (type png)
 <use fig5_ledger.png>
 Package pdftex.def Info: fig5_ledger.png  used on input line 275.
 (pdftex.def)             Requested size: 416.72963pt x 535.41075pt.
 
-Underfull \hbox (badness 2042) in paragraph at lines 290--290
-[]\OT1/cmr/m/n/10 (+20) Gap-gene readout tracks relative
+Underfull \hbox (badness 1881) in paragraph at lines 289--289
+\OT1/cmr/m/n/8 (+20) 581 embryos; exact scaling
  []
 
 
-Underfull \hbox (badness 4328) in paragraph at lines 290--290
-[]\OT1/cmr/m/n/10 (+20) mid-embryo median $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 (
-+20) =
+Underfull \hbox (badness 6510) in paragraph at lines 290--290
+[]\OT1/cmr/m/n/8 (+20) mid-embryo median $\OML/cmm/m/it/8 S \OT1/cmr/m/n/8 (+20
+) =
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 291--291
-[]\OT1/cmr/m/n/10 (+20) Wnt reads fold change with a
+Underfull \hbox (badness 10000) in paragraph at lines 292--292
+[]\OT1/cmr/m/n/8 (+20) Chemotaxis mixed-ligand midpoints
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+[]\OT1/cmr/m/n/8 (+20) Confirmed for
+ []
+
+
+Underfull \hbox (badness 2126) in paragraph at lines 293--293
+[]\OT1/cmr/m/n/8 (+20) timing share 94.5% at the
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 293--293
-[]\OT1/cmr/m/n/10 (+20) timing share of Fisher
+\OT1/cmr/m/n/8 (+20) representative calibration;
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 293--293
-\OT1/cmr/m/n/10 (+20) information dominates;
+Underfull \hbox (badness 1122) in paragraph at lines 293--293
+\OT1/cmr/m/n/8 (+20) reverses at mechanism level
  []
 
 
-Underfull \hbox (badness 1831) in paragraph at lines 293--293
-\OT1/cmr/m/n/10 (+20) amplitude dose-invariant in
+Underfull \hbox (badness 10000) in paragraph at lines 293--294
+[]\OT1/cmr/m/n/8 (+20) Confirmed at
  []
 
 
-Underfull \hbox (badness 5924) in paragraph at lines 294--294
-\OT1/cmr/m/n/10 (+20) BRAF-V600E $\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 (+20) 0\O
-ML/cmm/m/it/10 :\OT1/cmr/m/n/10 (+20) 413$ bits;
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
+\OT1/cmr/m/n/8 (+20) BRAF-V600E $\OMS/cmsy/m/n/8 ^^@\OT1/cmr/m/n/8 (+20) 0\OML/
+cmm/m/it/8 :\OT1/cmr/m/n/8 (+20) 413$ bits;
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 294--295
+[]\OT1/cmr/m/n/8 (+20) Confirmed for strong
+ []
+
+
+Underfull \hbox (badness 1320) in paragraph at lines 295--295
+\OT1/cmr/m/n/8 (+20) higher under sustained p53;
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 295--296
-[]\OT1/cmr/m/n/10 (+20) Confirmed with
+[]\OT1/cmr/m/n/8 (+20) Confirmed with
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 296--296
-[]\OT1/cmr/m/n/10 (+20) Resistance mutations preserve
+\OT1/cmr/m/n/8 (+20) 1.73-fold vs WT; EGFR
  []
 
 
-Underfull \hbox (badness 4181) in paragraph at lines 296--296
-\OT1/cmr/m/n/10 (+20) one counterexample subset
+Underfull \hbox (badness 10000) in paragraph at lines 296--296
+\OT1/cmr/m/n/8 (+20) resistance variants retain
+ []
+
+
+Underfull \hbox (badness 4595) in paragraph at lines 296--297
+[]\OT1/cmr/m/n/8 (+20) Confirmed; manifold
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 298--298
+[]\OT1/cmr/m/n/8 (+20) Msn2 amplitude and ERK
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 298--298
-[]\OT1/cmr/m/n/10 (+20) Amplitude stratification (Msn2);
- []
-
-
-Underfull \hbox (badness 8189) in paragraph at lines 298--298
-\OT1/cmr/m/n/10 (+20) duration-axis decoding (NF-$\OML/cmm/m/it/10 ^^T$\OT1/cmr
-/m/n/10 (+20) B);
- []
-
-
-Underfull \hbox (badness 3148) in paragraph at lines 298--298
-\OT1/cmr/m/n/10 (+20) event-time dose decoding (ERK-
+\OT1/cmr/m/n/8 (+20) event-time failed; NF-$\OML/cmm/m/it/8 ^^T$\OT1/cmr/m/n/8 
+(+20) B
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 298--299
-[]\OT1/cmr/m/n/10 (+20) Falsified; removed
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 299--299
-[]\OT1/cmr/m/n/10 (+20) Size--gain operationalisation of
+[]\OT1/cmr/m/n/8 (+20) Falsified for two,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 299--300
-[]\OT1/cmr/m/n/10 (+20) Falsified; clause
+[]\OT1/cmr/m/n/8 (+20) Falsified; clause
  []
 
 
-Underfull \hbox (badness 3179) in paragraph at lines 300--300
-\OT1/cmr/m/n/10 (+20) repair failure switches the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
-[]\OT1/cmr/m/n/10 (+20) Falsified; counting
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 302--302
-\OT1/cmr/m/n/10 (+20) receptor abundance in mutant
+Underfull \hbox (badness 1275) in paragraph at lines 300--300
+\OT1/cmr/m/n/8 (+20) repair failure switches to a
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 302--303
-[]\OT1/cmr/m/n/10 (+20) Falsified at bulk
+[]\OT1/cmr/m/n/8 (+20) Falsified at bulk
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 303--303
-[]\OT1/cmr/m/n/10 (+20) KRAS-G13D channel capacity
+[]\OT1/cmr/m/n/8 (+20) KRAS-G13D channel capacity
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 303--303
-\OT1/cmr/m/n/10 (+20) intermediate between G12V and
- []
 
+[12]
 
-Underfull \hbox (badness 1895) in paragraph at lines 304--304
-[]\OT1/cmr/m/n/10 (+20) Zero hysteresis in the p53 dose
- []
+[13]
 
-[11] [12] [13] [14] [15] [16] [17] [18] [19 <./fig3_pdpc_full.png>] [20 <./fig4
-_instances.png>] [21 <./fig5_ledger.png>] (main.aux)
+[14]
+
+[15]
+
+[16]
+
+[17]
+
+[18]
+
+[19]
+
+[20 <./fig3_pdpc_full.png>]
+
+[21 <./fig4_instances.png>]
+
+[22 <./fig5_ledger.png>] (main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-09-09>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 114C4729AFAD688C0160F76A1C57FA40;5420.
  ) 
 Here is how much of TeX's memory you used:
- 14527 strings out of 469327
- 230745 string characters out of 5456969
- 712850 words of memory out of 5000000
- 43132 multiletter control sequences out of 15000+600000
- 645244 words of font info for 202 fonts, out of 8000000 for 9000
+ 14549 strings out of 469331
+ 230916 string characters out of 5457056
+ 711477 words of memory out of 5000000
+ 43135 multiletter control sequences out of 15000+600000
+ 646033 words of font info for 212 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
- 74i,11n,79p,2737b,620s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 74i,11n,79p,2791b,621s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/ams
-fonts/cm/cmex10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type
-1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/
-fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX
-/2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lihua/AppData/Roaming/M
-iKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lihua/AppData/Roam
-ing/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lihua/AppData/
-Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lihua/AppD
-ata/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/lihua/
-AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/
-lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/U
-sers/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-<C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm
-/cmtt10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfo
-nts/symbols/msam10.pfb>
-Output written on main.pdf (21 pages, 1299511 bytes).
+fonts/cm/cmbx8.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
+c/amsfonts/cm/cmex10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/
+fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX
+/2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/lihua/AppData/Roaming/M
+iKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/lihua/AppData/Roam
+ing/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/lihua/AppData
+/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/lihua/App
+Data/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/lihua
+/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/l
+ihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/U
+sers/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+<C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfonts/cm/
+cmti10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/amsfon
+ts/cm/cmtt10.pfb><C:/Users/lihua/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/
+amsfonts/symbols/msam10.pfb>
+Output written on main.pdf (22 pages, 1285726 bytes).
 PDF statistics:
- 522 PDF objects out of 1000 (max. 8388607)
- 437 compressed objects within 5 object streams
- 108 named destinations out of 1000 (max. 500000)
- 34010 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 532 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 36058 words of extra memory for PDF output out of 42996 (max. 10000000)
 

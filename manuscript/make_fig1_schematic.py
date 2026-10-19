@@ -16,10 +16,6 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import (FancyBboxPatch, FancyArrowPatch, Circle,
                                 Ellipse, Polygon, Rectangle, Arc)
 
-sys.path.insert(0, str(Path(sys.executable).parent.parent.parent))
-from daimon_runtime import setup_plot
-setup_plot()
-
 plt.rcParams.update({
     "font.family": "sans-serif",
     "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans"],

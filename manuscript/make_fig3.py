@@ -4,9 +4,9 @@
 # (they ran into each other), no suptitle.
 import sys, os
 from pathlib import Path
-sys.path.insert(0, str(Path(sys.executable).parent.parent.parent))
-from daimon_runtime import setup_plot
-setup_plot()
+import matplotlib
+matplotlib.rcParams.update({"font.size": 8, "axes.linewidth": 0.6,
+                            "pdf.fonttype": 42, "ps.fonttype": 42})
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -44,7 +44,7 @@ ax.plot(xi_of_u(u, 5 * k0, 5 * k0), u, "o", ms=1.4, color=VERM, mfc="none",
 ax.set_xscale("log"); ax.set_xlim(1e-2, 1e3)
 ax.set_xlabel(r"$\xi$"); ax.set_ylabel("$u$")
 ax.set_title(r"group action: curves coincide, max $|\Delta u| = 0$", fontsize=8)
-ax.text(0.03, 0.58, "four generators verified:\n0, 1.7e-18, 0, 0 (symmetric)\n0, 2.2e-16, 0, 0 (asymmetric)\n"
+ax.text(0.03, 0.58, "four generators verified:\n0, 0, 0, 0 (pure actions)\n0, 2.2e-16, 0, 0 (mixed rate-enzyme)\n"
         "counterexample: 1.45e-1", transform=ax.transAxes, fontsize=5.2, color="0.3", va="top")
 ax.legend(fontsize=5.4, loc="lower right")
 
@@ -86,8 +86,8 @@ for k in kg:
 ax.plot(kg, chi_shape, "o-", color=BLUE, ms=3.5, label=r"shape block ($\ln c$, $\ln\kappa$)")
 ax.plot(kg, chi_abs, "s--", color=VERM, ms=3.5, label=r"absolute block ($\ln c$, $\ln K_m$, $\ln S_T$)")
 ax.set_xscale("log"); ax.set_yscale("log")
-ax.axhspan(19, 34, color=BLUE, alpha=0.10)
-ax.text(0.008, 6, "archived range 19--34", fontsize=5.2, color=BLUE)
+ax.axhspan(19, 33, color=BLUE, alpha=0.10)
+ax.text(0.008, 6, "archived range 19--33", fontsize=5.2, color=BLUE)
 ax.set_xlabel(r"$\kappa$"); ax.set_ylabel(r"Fisher condition number $\chi$")
 ax.set_title("shape identifiable, scale not (exact zero direction)", fontsize=8)
 ax.legend(fontsize=5.2, loc="center left")
@@ -118,7 +118,7 @@ for sp in axin.spines.values():
 # ---- e: one-sided protocol (SI S2.3 table) ----
 ax = axs[4]
 kt = np.array([0.001, 0.005, 0.01, 0.05, 0.1, 0.5, 1.0])
-ci = np.array([2920, 5.3, 2.4, 1.34, 1.29, 1.33, 1.45])
+ci = np.array([2551.92, 5.16, 2.39, 1.33, 1.27, 1.31, 1.42])
 nh = np.array([501, 101, 51, 11, 6, 2, 1.5])
 ax.plot(kt, ci, "o-", color=VERM, ms=4, label="95% CI inflation")
 ax.axvspan(10**(-3.4), 0.01, color="0.5", alpha=0.12)
@@ -166,7 +166,7 @@ axin.plot(gg, widths, color=VERM, lw=1.0)
 axin.axvspan(10, 20, color=BLUE, alpha=0.10)
 axin.axhspan(0.44, 0.58, xmin=0, xmax=1, color="0.5", alpha=0.15)
 axin.text(15, 0.09, "archived 0.44--0.58 dex\nat g = 10--20", fontsize=4.5, ha="center", color="0.35")
-axin.text(1.2, 0.60, r"apparent $n_H$ $\approx$ 480 at g = 10 (archived);""\np42 MAPK $n_H$ $\geq$ 35",
+axin.text(1.2, 0.60, r"p42 MAPK $n_H$ $\geq$ 35",
           fontsize=4.5, ha="left", va="top", color=BLUE)
 axin.set_xlim(0.45, 20); axin.set_ylim(0, 0.65)
 axin.set_xlabel("feedback gain g", fontsize=5); axin.set_ylabel("hysteresis width (dex)", fontsize=5)

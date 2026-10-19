@@ -28,8 +28,8 @@ Pre-registered checks:
 """
 import csv, math, pathlib, statistics
 
-HERE = pathlib.Path(__file__).parent
-DATA = HERE / "data"
+HERE = pathlib.Path(__file__).resolve().parent
+DATA = HERE.parent / "data_external" / "bergmann2010"
 
 def load(name):
     with open(DATA / name, encoding="utf-8") as f:

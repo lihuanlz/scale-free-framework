@@ -14,6 +14,7 @@ statistics, and the reference economics of cellular signalling}
 \date{October 2026}
 
 \begin{document}
+\sloppy
 \maketitle
 
 \noindent This Supporting Information documents the complete computational
@@ -54,9 +55,9 @@ Script & Computes & Archived output \\
 \texttt{code48} & P6 FCD attribution (NF-$\kappa$B sequential grid) & \texttt{P6\_\allowbreak{}verdict\_\allowbreak{}summary.csv} \\
 \multicolumn{3}{l}{\emph{Morphogen instance}}\\
 \texttt{p9\_\allowbreak{}bcd\_\allowbreak{}anchor\_\allowbreak{}audit.py} & P9: absolute-anchor test of the Bcd profile (581 embryos) & \texttt{p9\_\allowbreak{}bcd\_\allowbreak{}anchor\_\allowbreak{}results.json}, \texttt{p9\_\allowbreak{}2\_\allowbreak{}upgrade\_\allowbreak{}results.json} \\
-\texttt{audit\_\allowbreak{}bergmann2010\_\allowbreak{}axis12.py} & Bergmann 2010 axes-1/2 audit & console/tables \\
+\texttt{audit\_\allowbreak{}bergmann2010\_\allowbreak{}axis12.py} & Bergmann 2010 axes-1/2 audit & \texttt{records/\allowbreak{}logs/\allowbreak{}audit\_\allowbreak{}bergmann2010\_\allowbreak{}axis12.txt} \\
 \multicolumn{3}{l}{\emph{Yeast positive control}}\\
-\texttt{score\_\allowbreak{}markers\_\allowbreak{}v2\_\allowbreak{}authordata.py} & Hog1 osmotic set-point markers from author data & console/tables \\
+\texttt{score\_\allowbreak{}markers\_\allowbreak{}v2\_\allowbreak{}authordata.py} & Hog1 osmotic set-point markers from author data & \texttt{records/\allowbreak{}logs/\allowbreak{}score\_\allowbreak{}markers\_\allowbreak{}v2\_\allowbreak{}authordata.txt} \\
 \multicolumn{3}{l}{\emph{Cascade instance}}\\
 \texttt{cascade\_\allowbreak{}audit\_\allowbreak{}gpcr\_\allowbreak{}ca.py} & GPCR$\to$Ca cascade audit; per-experiment Hill fits & \texttt{cascade\_\allowbreak{}audit\_\allowbreak{}results.json}, \texttt{cascade\_\allowbreak{}hill\_\allowbreak{}fits\_\allowbreak{}methods\_\allowbreak{}ladder.json} \\
 \texttt{p10\_\allowbreak{}gain\_\allowbreak{}confinement\_\allowbreak{}audit.py} & P10: gain-distribution confinement across systems & \texttt{p10\_\allowbreak{}gain\_\allowbreak{}confinement\_\allowbreak{}results.json}, \texttt{p10\_\allowbreak{}supplementary\_\allowbreak{}arms\_\allowbreak{}results.json} \\
@@ -75,6 +76,8 @@ Script & Computes & Archived output \\
 \texttt{make\_\allowbreak{}fig5\_\allowbreak{}ledger.py} & Fig.~5 confirmation/falsification ledger (renamed copy of \texttt{code/make\_\allowbreak{}fig1.py}) & \texttt{fig5\_\allowbreak{}ledger.png} \\
 \bottomrule
 \end{longtable}
+
+Run logs for every analysis script in this table are archived under \texttt{records/logs/} in the repository; scripts whose output is console-only have their stdout captured there as \texttt{.txt}, and the figure scripts in \texttt{manuscript/} now read only \texttt{data\_external/} and \texttt{results/} of the repository.
 
 \section{Blind adjudication campaign: verdicts against frozen lines}
 
@@ -162,7 +165,7 @@ Upgrade arm $\alpha_b$ ($n=301$) & $1.942$ (s.e.\ 0.755) & archived in JSON \\
 
 Embryo-length range archived in \texttt{p9\_bcd\_anchor\_results.json}.
 Axes-1/2 of the Bergmann 2010 Dataset-S1 audit are computed by
-\texttt{audit\_bergmann2010\_axis12.py} (tables printed to console).
+\texttt{audit\_bergmann2010\_axis12.py} (output archived in \texttt{records/logs/}).
 
 \section{Cascade instance: per-experiment Hill fits (GPCR$\to$Ca)}
 
@@ -196,9 +199,21 @@ Experiment & top & EC$_{50}$ ($\mu$M) & Hill $n$ & $n_{\rm cells}$ \\
 16 & 0.293 & 1.678 & 3.82 & 10 \\
 17 & 0.266 & 0.758 & 2.73 & 9 \\
 18 & 0.169 & 0.775 & 1.77 & 14 \\
+19 & 0.191 & 0.565 & 2.85 & 8 \\
+20 & 0.163 & 0.750 & 1.34 & 9 \\
+21 & 0.206 & 0.749 & 1.85 & 29 \\
+22 & 0.269 & 5.165 & 0.93 & 10 \\
+23 & 0.145 & 0.783 & 1.23 & 18 \\
+24 & 0.107 & 0.159 & 2.25 & 1 \\
+25 & 0.154 & 0.375 & 1.47 & 10 \\
+26 & 0.191 & 0.532 & 1.82 & 18 \\
+28 & 0.229 & 0.795 & 1.90 & 16 \\
+29 & 0.297 & 0.685 & 1.97 & 22 \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+The source archive contains 27 experiments (numbered 01--29 with 08 and 12 absent); 26 yielded a usable fit, experiment 27 did not. Over these 26 fits the median EC$_{50}$ is $0.632\ \mu$M, the coefficient of variation 1.161, and the range 0.159--5.165 $\mu$M (32.4-fold); these are the values quoted in the main text.
 
 \section{P10: gain-distribution confinement across systems}
 
@@ -223,7 +238,7 @@ NF-$\kappa$B & pooled & 11{,}265 & 2.520 & 1.203 \\
 
 Split-half rank correlations and 95\% CIs per condition are archived in
 \texttt{p10\_gain\_confinement\_results.json}. Supplementary arms
-(\texttt{p10\_supplementary\_arms\_results.json}): S1P/CN ERK median
+(\texttt{p10\_supplementary\_arms\_\allowbreak results.json}): S1P/CN ERK median
 $R=2.17$ (2 conditions); Histamine/UK Akt-RB arms have no qualifying
 conditions ($n=0$).
 

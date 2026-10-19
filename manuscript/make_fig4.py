@@ -1,16 +1,21 @@
 # Build fig4_instances.png: four worked instances of the framework
 # (a) Bicoid->gap scaling profile; (b) Wnt fold-change plateau/breakdown;
 # (c) M3R->Ca cascade gain-distribution confinement; (d) yeast osmotic causal arm.
-import sys, json
+# Self-contained: reads only data_external/ and results/ of this repository.
+import json, csv
 from pathlib import Path
-sys.path.insert(0, str(Path(sys.executable).parent.parent.parent))
-from daimon_runtime import setup_plot
-setup_plot()
+
+import matplotlib
+matplotlib.rcParams.update({"font.size": 8, "axes.linewidth": 0.6,
+                            "pdf.fonttype": 42, "ps.fonttype": 42})
 import numpy as np
 import matplotlib.pyplot as plt
-import csv
 
-BASE = r'D:\Kimi_Agent_cell_sim_toolkit_workspace\05_main_program'
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parent
+DATA = REPO / "data_external"
+RESULTS = REPO / "results"
+
 fig, axes = plt.subplots(2, 2, figsize=(11.5, 7.6))
 plt.subplots_adjust(hspace=0.42, wspace=0.30, left=0.075, right=0.975, top=0.90, bottom=0.09)
 
@@ -18,7 +23,7 @@ BLUE, ORANGE, GREEN, GRAY = '#2166ac', '#b35806', '#1b7837', '#666666'
 
 # ---------- (a) Bicoid scaling ----------
 ax = axes[0, 0]
-rows = list(csv.DictReader(open(BASE + r'\morphogen_line\data\bergmann2010_datasetS2_scaling.csv')))
+rows = list(csv.DictReader(open(DATA / "bergmann2010" / "bergmann2010_datasetS2_scaling.csv", encoding="utf-8")))
 dosage_style = {'1': (BLUE, 'o', r'1$\times$ bcd'), '2': (ORANGE, 's', r'2$\times$ bcd'), '4': (GREEN, '^', r'4$\times$ bcd')}
 for dose, (c, m, lab) in dosage_style.items():
     xs = [float(r['100*x/L']) for r in rows if r['bcd dosage'] == dose]
@@ -36,23 +41,23 @@ ax.set_title('a   morphogen readout (Bicoid to gap genes)', fontsize=10.5, loc='
 
 # ---------- (b) Wnt plateau ----------
 ax = axes[0, 1]
-wr = list(csv.DictReader(open(BASE + r'\Wnt_line\data\fig4F_digitized.csv')))
+wr = list(csv.DictReader(open(RESULTS / "fig4F_digitized.csv", encoding="utf-8")))
 x = [float(r['LiCl_mM']) for r in wr]
 y = [float(r['fold_change']) for r in wr]
 ax.axhspan(0.95, 1.05, color=BLUE, alpha=0.12, label=r'$\pm$5% plateau band')
-ax.axvspan(50, 58, color=ORANGE, alpha=0.18)
+ax.axvspan(48.6, 58.1, color=ORANGE, alpha=0.18)
 ax.plot(x, y, 'o-', color=BLUE, ms=6, lw=1.4)
 ax.axhline(1.0, color='k', lw=0.8, ls='--', alpha=0.5)
 ax.set_xlabel('LiCl (mM)')
 ax.set_ylabel(r'fold change of $\beta$-catenin signalling')
 ax.set_ylim(0, 1.35)
-ax.text(52, 1.22, 'breakdown onset\n50–58 mM', fontsize=8.5, color=ORANGE, ha='left')
-ax.text(6, 0.28, 'plateau 0.96–1.04 over 0–50 mM\n(fold-change readout confirmed)', fontsize=8.5, color=GRAY)
+ax.text(48.6, 1.22, 'breakdown bracketed\n48.6-58.1 mM', fontsize=8.5, color=ORANGE, ha='left')
+ax.text(4, 0.28, 'plateau 0.96-1.04, 7-49 mM\n(fold-change readout confirmed)', fontsize=8.5, color=GRAY)
 ax.set_title(r'b   Wnt/$\beta$-catenin fold-change plateau (digitised)', fontsize=10.5, loc='left')
 
 # ---------- (c) cascade CV decomposition ----------
 ax = axes[1, 0]
-d = json.load(open(BASE + r'\cascade_line\cascade_audit_results.json'))
+d = json.load(open(RESULTS / "cascade_audit_results.json", encoding="utf-8"))
 doses = [10, 3, 1.5, 0.75, 0.5, 0.25, 0.1]
 wc = d['within_cell_CV']; ac = d['across_cell_CV']
 ax.plot(doses, ac, 's-', color=ORANGE, lw=1.5, ms=5.5, label='across-cell CV (gain distribution)')
@@ -69,7 +74,7 @@ ax.set_title('c   cascade relay (M3R to Ca$^{2+}$, 353 cells)', fontsize=10.5, l
 # ---------- (d) yeast osmotic causal arm ----------
 ax = axes[1, 1]
 def load(name):
-    rr = list(csv.DictReader(open(BASE + r'\osmo_line\data\muzzey2009\digitized\\' + name)))
+    rr = list(csv.DictReader(open(DATA / "muzzey2009" / "digitized" / name, encoding="utf-8")))
     return np.array([float(r['x']) for r in rr]), np.array([float(r['y']) for r in rr])
 xm, ym = load('f5B_vol_minusPP1.csv')
 xp, yp = load('f5B_vol_plusPP1.csv')

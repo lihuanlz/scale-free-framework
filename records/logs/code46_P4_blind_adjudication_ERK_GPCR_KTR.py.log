@@ -1,0 +1,6 @@
+code 46 v0.1.5 - P4 blind ruling: ERK re-adjudication (GPCR-KTR trace level)
+run time 2026-09-26T23:02:35 | SEED=20260815 | bootstrap=2000 (first round, i.e. execute)
+ROOT=C:/Users/lihua/Desktop/NC/data/ChavezAbiega2022
+
+=== main-analysis ligand Histamine (DMSO) ===
+[ABORT] file missing: C:/Users/lihua/Desktop/NC/data/ChavezAbiega2022\Figure_1\Data\All_Ex_Histamine_DMSO.csv - empty run, no ruling constituted.
