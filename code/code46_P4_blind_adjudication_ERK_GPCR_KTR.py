@@ -66,7 +66,12 @@ import numpy as np
 import pandas as pd
 
 # ---------------- config (frozen) ----------------
-ROOT      = r"C:/Users/lihua/Desktop/NC/data/ChavezAbiega2022"
+_EXT = os.environ.get("CELL_EXTERNAL_DATA",
+               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "data_external", "external"))
+ROOT      = os.path.join(_EXT, "ChavezAbiega2022")
+if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
+    ROOT = sys.argv[1]
 SEED      = 20260815
 N_BOOT    = 2000
 N_MIN     = 30

@@ -65,7 +65,12 @@ except ImportError:
     raise SystemExit(1)
 
 # ----------------------------- config section --------------------------------------
-ROOT = r"C:/Users/lihua/Desktop/NC/data/Sung2022"   # <- put the four .mat files here (subdirectories allowed)
+_EXT = os.environ.get("CELL_EXTERNAL_DATA",
+               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "data_external", "external"))
+ROOT = os.path.join(_EXT, "Sung2022")   # the four .mat files (subdirectories allowed)
+if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
+    ROOT = sys.argv[1]
 
 SEED   = 20260814
 N_BOOT = 2000

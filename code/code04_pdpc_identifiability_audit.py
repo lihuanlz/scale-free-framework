@@ -293,6 +293,6 @@ for a in axes.flat:                                    # uniformly apply the log
     if a.get_yscale() == 'log': a.yaxis.set_major_formatter(logfmt)
 
 plt.tight_layout()
-png_path = os.path.join(OUTDIR, 'PdPC_audit_fig.png')
+png_path = os.path.join(os.path.dirname(OUTDIR), 'results', 'PdPC_audit_fig.png')
 plt.savefig(png_path, dpi=200)
 print(f'\nSaved {png_path}')

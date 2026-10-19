@@ -199,7 +199,7 @@ ax[1,1].set_ylabel('max|Δu|')
 ax[1,1].set_title('(d) group-action exactness (4 exact + 1 breaking) → group dimension 4')
 ax[1,1].grid(alpha=0.3, axis='y')
 fig.tight_layout()
-out = os.path.join(OUTDIR, 'asymmetric_Km_analysis_fig.png')
+out = os.path.join(os.path.dirname(OUTDIR), 'results', 'asymmetric_Km_analysis_fig.png')
 fig.savefig(out, dpi=160)
 print(f'\nFigure saved: {out}')
 

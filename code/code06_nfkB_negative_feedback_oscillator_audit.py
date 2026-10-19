@@ -311,6 +311,7 @@ ax.set_xlabel('time (dimensionless)'); ax.set_ylabel('nuclear NF-κB $N_n$')
 ax.legend(fontsize=9); ax.set_title('(c) representative trajectories: amplitude encodes dose, period ~constant')
 
 plt.tight_layout()
-out_png = '/mnt/agents/output/NFkB_audit_fig.png'
+import os as _os
+out_png = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', 'results', 'code06_nfkB_audit_fig.png')
 plt.savefig(out_png, dpi=200)
 print(f'Saved {out_png}')

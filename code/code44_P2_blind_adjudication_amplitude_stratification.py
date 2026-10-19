@@ -42,7 +42,10 @@ from scipy.io import loadmat
 from scipy.stats import rankdata
 
 # ---------------- user configuration ----------------
-ROOT = r"C:/Users/lihua/Desktop/NC/data/HansenZechner2021/2018_DataForPaper"
+_EXT = os.environ.get("CELL_EXTERNAL_DATA",
+               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                            "data_external", "external"))
+ROOT = os.path.join(_EXT, "HansenZechner2021", "2018_DataForPaper")
 if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
     ROOT = sys.argv[1]
 # ---------------------------------------------

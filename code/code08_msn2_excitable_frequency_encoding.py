@@ -232,5 +232,7 @@ ax.set_xlabel('ln $I_0$'); ax.set_ylabel('pulse count N'); ax.legend(fontsize=9)
 ax.set_title('(c) equivalent counting index: N ~ linear in ln I0')
 
 plt.tight_layout()
-plt.savefig('/mnt/agents/output/Msn2_frequency_encoding_fig.png', dpi=200)
-print('\nsaved /mnt/agents/output/Msn2_frequency_encoding_fig.png')
+import os as _os
+_p = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..', 'results', 'code08_msn2_frequency_fig.png')
+plt.savefig(_p, dpi=200)
+print('\nsaved ' + _p)

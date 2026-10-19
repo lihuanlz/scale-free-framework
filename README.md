@@ -17,12 +17,20 @@ Framework-paper code, results and manuscript source for:
   - *yeast positive control*: `score_markers_v2_authordata.py`;
   - *cascade instance*: `cascade_audit_gpcr_ca.py`, `p10_gain_confinement_audit.py`;
   - *tumour ledger P11–P16*: `p11_*.py` … `p15_*.py`.
-- `results/` — derived outputs (ours): verdict-summary CSVs of the adjudication campaign, anchor-analysis JSONs, cascade results, tumour-chain result JSONs/CSVs, and our own digitisation of Goentoro & Kirschner (2009) Fig. 4F.
-- `data_external/` — small third-party tables with provenance (`bergmann2010/`, `muzzey2009/`). Large source archives are **not** re-hosted; see `data_external/PROVENANCE.md` for exact sources.
+- `results/` — derived outputs (ours): verdict-summary CSVs of the adjudication campaign, anchor-analysis JSONs, cascade results, tumour-chain result JSONs/CSVs, and our own digitisation of Goentoro & Kirschner (2009) Fig. 4F. The two PdPC analysis figures written by `code04` and `code10` also land here.
+- `data_external/` — small third-party tables with provenance (`bergmann2010/`, `muzzey2009/`). Large source archives are **not** re-hosted; `data_external/external/README.md` lists the four that are needed by the adjudication scripts and how to point `CELL_EXTERNAL_DATA` at them.
+- `reproduce/` — ordered entry points that re-run the archived scripts in the order of the paper and assert that what they print still matches the manuscript. `python reproduce/run_all.py` runs 78 checks in about 25 s.
+- `records/logs/` — archived run logs of the analysis scripts, including the captured stdout of the console-only ones.
 
 ## Running
 
-Python 3 (numpy/scipy/matplotlib/pandas). Most scripts are self-contained against `results/` and `data_external/`; the per-embryo Bicoid anchor audit requires the Nikolić et al. repository data (download instructions in PROVENANCE.md).
+Python 3 (numpy/scipy/matplotlib/pandas). Most scripts are self-contained against `results/` and `data_external/`; the per-embryo Bicoid anchor audit and the four adjudication scripts P2/P3/P4 need the third-party archives listed in `data_external/external/README.md`.
+
+To check the paper's numbers end to end:
+
+```bash
+python reproduce/run_all.py
+```
 
 ## Ownership
 
