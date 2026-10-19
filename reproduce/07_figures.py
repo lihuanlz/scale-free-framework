@@ -30,7 +30,8 @@ def run():
             continue
         before = (MAN / png).stat().st_mtime if (MAN / png).exists() else 0
         t0 = time.time()
-        cp = subprocess.run([sys.executable, str(p)], cwd=str(MAN),
+        env = dict(__import__("os").environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
+        cp = subprocess.run([sys.executable, str(p)], cwd=str(MAN), env=env,
                             capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=900)
         ok = cp.returncode == 0
         rep.check(ok, f"{script} exit code", str(cp.returncode) if not ok else f"{time.time()-t0:.1f}s")

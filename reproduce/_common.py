@@ -48,7 +48,8 @@ class Report:
             self.check(False, f"{script} present", "file missing")
             return ""
         t0 = time.time()
-        cp = subprocess.run([sys.executable, str(path)], cwd=str(CODE),
+        env = dict(os.environ, PYTHONIOENCODING="utf-8", PYTHONUTF8="1")
+        cp = subprocess.run([sys.executable, str(path)], cwd=str(CODE), env=env,
                             capture_output=True, text=True, encoding="utf-8", errors="replace", timeout=timeout)
         dt = time.time() - t0
         out = cp.stdout or ""

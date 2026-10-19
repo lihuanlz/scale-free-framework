@@ -42,7 +42,7 @@ def solve_u(xi, kappa):
         out.flat[i] = brentq(f, 1e-16, 1-1e-16, args=(x,), xtol=1e-14, rtol=1e-14)
     return out
 
-fig = plt.figure(figsize=(183*MM, 235*MM))
+fig = plt.figure(figsize=(159*MM, 204*MM))
 
 # ============================================================
 # Panel a: five-step audit discipline + degeneracy-group inset
@@ -76,7 +76,7 @@ for i, ((title, sub), x) in enumerate(zip(steps, xs)):
                                       arrowstyle='-|>', mutation_scale=7,
                                       color=C_BLUE, lw=0.9))
 axa.text(0.005, 0.52, "one discipline, applied identically to every system:",
-         fontsize=6, style='italic', color='#444444', va='center')
+         fontsize=6.0, style='italic', color='#444444', va='center')
 
 # --- inset: degeneracy-group concept ---
 iy0, ih = 0.03, 0.40
@@ -114,7 +114,7 @@ axa.text(cx0+cw/2, iy0-0.015, 'max $|\\Delta u|$ = 0 (pure actions); '
          '$2.2\\times10^{-16}$ ($k,E$ mixed): machine precision',
          ha='center', va='top', fontsize=5.2, color=C_FALS)
 
-axa.text(-0.012, 1.0, 'a', transform=axa.transAxes, fontsize=10,
+axa.text(-0.012, 1.0, 'a', transform=axa.transAxes, fontsize=10.0,
          fontweight='bold', va='top')
 
 # ============================================================
@@ -185,20 +185,20 @@ for i, rname in enumerate(rows):
         axb.text(x0+cw_/2, y1-rh*0.24, word, ha='center', va='center',
                  fontsize=6.2, fontweight='bold', color=col)
         axb.text(x0+cw_/2, y1-rh*0.62, txt, ha='center', va='center',
-                 fontsize=4.9, color='#222222')
+                 fontsize=5.0, color='#222222')
 axb.text(tbl_x0+1.5*cw_, tbl_y0-0.030,
          'unidentifiable / inconsistent / unused', ha='center', va='top',
          fontsize=5.2, style='italic', color=C_FALS)
 axb.text(tbl_x0+4.5*cw_, tbl_y0-0.030,
          'identifiable / exact / information-bearing', ha='center', va='top',
          fontsize=5.2, style='italic', color=C_HIT)
-axb.text(-0.012, 1.06, 'b', transform=axb.transAxes, fontsize=10,
+axb.text(-0.012, 1.06, 'b', transform=axb.transAxes, fontsize=10.0,
          fontweight='bold', va='top')
 
 # ============================================================
 # Panel c: blind-adjudication ledger (14 clauses)
 # ============================================================
-axc = fig.add_axes([0.175, 0.075, 0.475, 0.285])
+axc = fig.add_axes([0.235, 0.075, 0.425, 0.285])
 
 M = lambda v, line: v/line - 1.0
 rows_c = [
@@ -276,7 +276,7 @@ for i, (label, col, pts, ci, note) in enumerate(rows_c):
         ms = 4.2 if mk == 'o' else 4.6
         axc.plot([x], [y], marker=mk, ms=ms, mfc=col, mec='k', mew=0.4,
                  zorder=5, linestyle='none')
-    axc.text(XL+0.07, y, note, fontsize=4.9, va='center', color='#222222',
+    axc.text(XL+0.07, y, note, fontsize=5.0, va='center', color='#222222',
              clip_on=False)
     if i in (2, 5, 8, 11, 12):
         axc.axhline(y-0.5, color='0.78', lw=0.5)
@@ -300,7 +300,7 @@ fig.legend(handles, ['hit (2)', 'intermediate (5)', 'falsified (6)',
 axc.set_title('Totals: 2 hits / 5 intermediates / 6 falsifications / 1 dataset-level limitation\n'
               '(14 pre-registered clauses, 7 adjudications P2-P7, 6 datasets)',
               fontsize=6.0, fontweight='bold', loc='left', pad=14)
-axc.text(-0.375, 1.085, 'c', transform=axc.transAxes, fontsize=10,
+axc.text(-0.375, 1.085, 'c', transform=axc.transAxes, fontsize=10.0,
          fontweight='bold', va='top')
 
 fig.savefig(os.path.join(OUTDIR, 'fig5_ledger.png'), dpi=200)

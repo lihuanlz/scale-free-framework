@@ -1,5 +1,5 @@
 $ python code04_pdpc_identifiability_audit.py
-# exit 0  wall 14.0s
+# exit 0  wall 12.0s
 
 ========================================================================
 Code 4: PdPC (Goldbeter–Koshland cycle) identifiability audit

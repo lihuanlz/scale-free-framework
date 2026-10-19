@@ -48,7 +48,7 @@ def du_dk(u, xi, kappa):
     Gu = xi*(1-kappa-2*u) - (kappa+1-2*u)
     return -Gk/Gu
 
-fig = plt.figure(figsize=(183*MM, 118*MM))
+fig = plt.figure(figsize=(159*MM, 122*MM))
 gs = fig.add_gridspec(2, 6, top=0.86, bottom=0.135, left=0.065, right=0.985,
                       hspace=0.85, wspace=0.9)
 
@@ -70,7 +70,7 @@ axa.set_xlabel('input activity ratio $\\xi$')
 axa.set_ylabel('modified fraction $u^*$')
 axa.set_ylim(0, 1.02)
 axa.legend(fontsize=5.4, loc='lower right', frameon=False, handlelength=1.4)
-axa.set_title('symmetric Michaelis steady state', fontsize=6.3)
+axa.set_title('symmetric Michaelis', fontsize=6.3)
 panel_letter(axa, 'a')
 
 # ---------------- Panel b: degeneracy-group invariance ----------------
@@ -104,9 +104,9 @@ axb.legend(fontsize=5.0, loc='upper left', frameon=False, handlelength=1.6)
 axb.annotate('four parameter sets, one orbit, one curve\n'
              'max $|\\Delta u|$ = 0 ($K_m,S_T$ x5)\n'
              'max $|\\Delta u|$ = $2.2\\times10^{-16}$ ($k,E$ mixed)',
-             xy=(0.98, 0.03), xycoords='axes fraction', ha='right', va='bottom',
+             xy=(0.02, 0.03), xycoords='axes fraction', ha='left', va='bottom',
              fontsize=5.2, color=C_VERM)
-axb.set_title('degeneracy-group invariance (200-pt grid)', fontsize=6.3)
+axb.set_title('group invariance', fontsize=6.3)
 panel_letter(axb, 'b')
 
 # ---------------- Panel c: Fisher eigenspectrum ----------------
@@ -148,7 +148,7 @@ axc.text(3.55, -16.0,
          '$\\lambda_{min}$ at the float floor:\n'
          'absolute block = numerical zero',
          fontsize=5.0, va='center', ha='right', color=C_VERM)
-axc.set_title('Fisher eigenspectrum at $\\kappa$ = 0.05 (schematic tiers)', fontsize=6.3)
+axc.set_title('Fisher spectrum, $\\kappa$=0.05', fontsize=6.3)
 panel_letter(axc, 'c')
 
 # ---------------- Panel d: Hill-slope closed form ----------------
@@ -160,8 +160,8 @@ nH_tab  = [501, 101, 51, 11, 6, 2, 1.5]   # SI S2.3 table (= closed form)
 axd.loglog(kap_tab, nH_tab, 'o', ms=5, mfc='none', mec=C_VERM, mew=1.2,
            ls='none', label='numerical logit slope (archived)')
 axd.axvspan(3e-4, 0.01, color=C_ORG, alpha=0.12)
-axd.text(3.5e-3, 18, 'one-sided-bound regime:\nreport $\\kappa \\leq \\kappa_{max}$,\nnever a point estimate',
-         fontsize=5.4, ha='center', color='#8a5a00')
+axd.text(0.97, 0.95, 'one-sided-bound\nregime: report\n$\\kappa \\leq \\kappa_{max}$',
+         transform=axd.transAxes, fontsize=5.4, ha='right', va='top', color='#8a5a00')
 axd.annotate('$\\kappa = 10^{-3}$: $n_H$ = 501,\n95% CI inflation x2552',
              xy=(0.0015, 380), xytext=(0.02, 120),
              fontsize=5.6, color=C_VERM,
@@ -169,7 +169,7 @@ axd.annotate('$\\kappa = 10^{-3}$: $n_H$ = 501,\n95% CI inflation x2552',
 axd.set_xlabel('$\\kappa = K_m/S_T$')
 axd.set_ylabel('Hill slope $n_H$')
 axd.legend(fontsize=5.6, loc='lower left', frameon=False)
-axd.set_title('Hill-slope closed form vs numerics', fontsize=6.3)
+axd.set_title('Hill-slope closed form', fontsize=6.3)
 panel_letter(axd, 'd', dx=-0.11)
 
 # ---------------- Panel e: mutual information vs kappa ----------------
@@ -178,9 +178,8 @@ kap_mi = [0.002, 0.01, 0.05, 0.1, 0.3, 1, 3, 10]
 I_narrow = [1.42, 2.12, 2.84, 2.85, 2.44, 1.87, 1.58, 1.46]  # SI S2.6, sigma_xi=0.3
 I_wide   = [1.11, 1.41, 2.07, 2.42, 2.85, 3.03, 3.04, 3.02]  # SI S2.6, sigma_xi=1.5
 axe.axhspan(1.1, 1.4, color=C_GREY, alpha=0.18)
-axe.text(1.55e-3, 0.78, 'zero-order limit ($\\kappa\\to0$): 1.1-1.4 bits;\n'
-         'a decision element, not a measurement element',
-         fontsize=5.2, va='center', color='0.30')
+axe.text(0.03, 0.17, 'zero-order limit ($\\kappa\\to0$): 1.1-1.4 bits',
+         transform=axe.transAxes, fontsize=5.2, color='0.35')
 axe.semilogx(kap_mi, I_narrow, '^-', color=C_BLUE, ms=5, lw=1.2,
              label='narrow input, $\\sigma_\\xi$ = 0.3')
 axe.semilogx(kap_mi, I_wide, 's-', color=C_VERM, ms=4.6, lw=1.2,
@@ -188,17 +187,17 @@ axe.semilogx(kap_mi, I_wide, 's-', color=C_VERM, ms=4.6, lw=1.2,
 axe.axvline(0.1, color=C_BLUE, ls=':', lw=0.9)
 axe.axvline(3, color=C_VERM, ls=':', lw=0.9)
 axe.annotate('$\\kappa^* \\approx$ 0.05-0.1\n2.85 bits', xy=(0.1, 2.85),
-             xytext=(0.0035, 3.25), fontsize=5.4, color=C_BLUE,
+             xytext=(0.0022, 2.95), fontsize=5.4, color=C_BLUE,
              arrowprops=dict(arrowstyle='-|>', color=C_BLUE, lw=0.8))
 axe.annotate('$\\kappa^* \\approx$ 1-3\n3.04 bits', xy=(3, 3.04),
-             xytext=(0.45, 3.32), fontsize=5.4, color=C_VERM,
+             xytext=(0.30, 2.62), fontsize=5.4, color=C_VERM,
              arrowprops=dict(arrowstyle='-|>', color=C_VERM, lw=0.8))
 axe.set_xlabel('$\\kappa = K_m/S_T$')
 axe.set_ylabel('$I(\\xi; u)$  (bits)')
 axe.set_ylim(0.55, 3.6)
 axe.set_xlim(1.4e-3, 14)
 axe.legend(fontsize=5.6, loc='lower right', frameon=False)
-axe.set_title('interior information optimum; zero-order limit is poor', fontsize=6.3)
+axe.set_title('information optimum', fontsize=6.3)
 panel_letter(axe, 'e', dx=-0.11)
 
 fig.savefig(os.path.join(OUTDIR, 'fig2_pdpc.png'), dpi=200)

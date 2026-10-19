@@ -69,19 +69,19 @@ def cross_mark(ax, x, y, s=1.8, color=VERM, lw=1.4, z=4):
 # ----------------------------------------------------------------------------
 # EDFig 1 : mathematical framework schematic
 # ----------------------------------------------------------------------------
-fig = plt.figure(figsize=(7.2, 4.6))
+fig = plt.figure(figsize=(6.27, 3.9))
 ax = fig.add_axes([0, 0, 1, 1])
 ax.set_xlim(0, 180)
 ax.set_ylim(0, 112)
 ax.axis("off")
 
 # ---------------- panel a : layered cascade + degeneracy group -------------
-ax.text(3, 108.7, "a", fontsize=8, fontweight="bold", va="center")
-ax.text(7, 108.7, "Cascade of layers and the degeneracy group $G_i$",
-        fontsize=7, fontweight="bold", va="center")
-ax.text(7, 104.8, "inset: an orbit of $G_i$-equivalent parameter sets "
-        "collapses to a point in output space",
-        fontsize=4.8, style="italic", color=GRAY, va="center")
+ax.text(3, 108.7, "a", fontsize=8.0, fontweight="bold", va="center")
+ax.text(7, 108.7, "Cascade of layers and the group $G_i$",
+        fontsize=7.0, fontweight="bold", va="center")
+ax.text(7, 104.8, "inset: an orbit of $G_i$-equivalent sets "
+        "collapses to one point",
+        fontsize=5.38, style="italic", color=GRAY, va="center")
 
 layers = [
     ("Layer 1: receptor", 86.0, 100.0),
@@ -92,12 +92,12 @@ LX0, LX1 = 4.0, 58.0
 for name, y0, y1 in layers:
     ymid = (y0 + y1) / 2
     rbox(ax, LX0, y0, LX1 - LX0, y1 - y0, "white", BLUE, lw=1.0, r=1.2)
-    ax.text(LX0 + 2.2, ymid + 4.2, name, fontsize=6, fontweight="bold",
+    ax.text(LX0 + 2.2, ymid + 4.2, name, fontsize=6.0, fontweight="bold",
             va="center")
     ax.text(LX0 + 2.2, ymid + 0.2, r"parameters $\theta_i \in \Theta_i$",
-            fontsize=4.8, va="center", color=GRAY)
+            fontsize=5.38, va="center", color=GRAY)
     ax.text(LX0 + 2.2, ymid - 3.6, r"$Y_i \sim P(\cdot \mid Y_{i-1}, \theta_i)$",
-            fontsize=4.8, va="center", color=GRAY)
+            fontsize=5.38, va="center", color=GRAY)
     # degeneracy-orbit inset
     ecx, ecy = 43.0, ymid
     e = Ellipse((ecx, ecy), 13.0, 8.0, fc=SKY, ec=BLUE, lw=0.9, alpha=0.25,
@@ -111,15 +111,15 @@ for name, y0, y1 in layers:
 
 # input arrow into Layer 1
 arrow(ax, 20, 103.0, 20, 100.6, color=GRAY, lw=1.1)
-ax.text(22, 101.8, "input $S(t)$", fontsize=5, va="center", color=GRAY)
+ax.text(22, 101.8, "input $S(t)$", fontsize=5.6, va="center", color=GRAY)
 # inter-layer arrows
 arrow(ax, 26, 86.0, 26, 78.6, color=GRAY, lw=1.1)
-ax.text(28, 82.2, "$Y_1$", fontsize=5, va="center", color=GRAY)
+ax.text(28, 82.2, "$Y_1$", fontsize=5.6, va="center", color=GRAY)
 arrow(ax, 26, 64.0, 26, 56.6, color=GRAY, lw=1.1)
-ax.text(28, 60.2, "$Y_2$", fontsize=5, va="center", color=GRAY)
+ax.text(28, 60.2, "$Y_2$", fontsize=5.6, va="center", color=GRAY)
 # output arrow
 arrow(ax, 26, 42.0, 26, 37.2, color=GRAY, lw=1.1)
-ax.text(28, 39.4, "output $Y_3$", fontsize=5, va="center", color=GRAY)
+ax.text(28, 39.4, "output $Y_3$", fontsize=5.6, va="center", color=GRAY)
 
 # connectors from layers into panel b
 for _, y0, y1 in layers:
@@ -127,11 +127,11 @@ for _, y0, y1 in layers:
           ms=5, z=1)
 
 # ---------------- panel b : survival set -----------------------------------
-ax.text(66, 108.7, "b", fontsize=8, fontweight="bold", va="center")
-ax.text(70, 108.7, "Survival set $T_i$ (interface algebra)", fontsize=7,
+ax.text(66, 108.7, "b", fontsize=8.0, fontweight="bold", va="center")
+ax.text(70, 108.7, "Survival set $T_i$ (interface algebra)", fontsize=7.0,
         fontweight="bold", va="center")
-ax.text(70, 104.8, "generic interface $y = kx + b$, gain $k$ not identifiable",
-        fontsize=4.8, style="italic", color=GRAY, va="center")
+ax.text(70, 104.8, "generic $y=kx+b$; gain not identifiable",
+        fontsize=5.38, style="italic", color=GRAY, va="center")
 
 rows = [
     ("difference ratios", True),
@@ -155,11 +155,11 @@ for label, ok in rows:
                 color=VERM)
     ry -= 8.6
 ax.text(66.5, 46.5, "amplitude survives only if the gain is pinned from outside",
-        fontsize=4.8, style="italic", color=GRAY, va="center")
+        fontsize=5.38, style="italic", color=GRAY, va="center")
 
 # ---------------- panel c : three-leg criterion -----------------------------
-ax.text(118, 108.7, "c", fontsize=8, fontweight="bold", va="center")
-ax.text(122, 108.7, "Three-leg criterion", fontsize=7, fontweight="bold",
+ax.text(118, 108.7, "c", fontsize=8.0, fontweight="bold", va="center")
+ax.text(122, 108.7, "Three-leg criterion", fontsize=7.0, fontweight="bold",
         va="center")
 
 pillars = [
@@ -172,16 +172,16 @@ pillars = [
 for x0, leg, lines, fails, fc, ec in pillars:
     cx = x0 + 8.5
     for j, f in enumerate(fails):
-        ax.text(cx, 105.2 - 3.0 * j, f, fontsize=4.6, style="italic",
+        ax.text(cx, 105.2 - 3.0 * j, f, fontsize=5.15, style="italic",
                 color=VERM, ha="center", va="center")
     rbox(ax, x0, 74.5, 17, 24.0, fc, ec, lw=0.9, r=0.8, alpha=0.45)
-    ax.text(cx, 94.0, leg, fontsize=6, fontweight="bold", ha="center",
+    ax.text(cx, 94.0, leg, fontsize=6.0, fontweight="bold", ha="center",
             va="center")
     for j, ln in enumerate(lines):
-        ax.text(cx, 89.6 - 3.4 * j, ln, fontsize=5.2, ha="center", va="center")
+        ax.text(cx, 89.6 - 3.4 * j, ln, fontsize=5.82, ha="center", va="center")
 ax.add_patch(Rectangle((120, 68.5), 56, 5.0, fc=GRAY, ec="none", zorder=2))
 ax.text(148, 71.0, "statistic $X$ crosses the interface iff all three hold",
-        fontsize=5.2, color="white", ha="center", va="center", zorder=3)
+        fontsize=5.82, color="white", ha="center", va="center", zorder=3)
 
 # ---------------- panel c lower : information-loss identity -----------------
 ax.text(118, 63.5, "Information-loss identity", fontsize=6.3,
@@ -196,17 +196,17 @@ for lab, w, col, hot in segs:
     ax.add_patch(Rectangle((bx, by), w, bh, fc=col, ec="white", lw=0.6,
                            alpha=0.9 if hot else 0.55, zorder=2))
     ax.text(bx + w / 2, by - 2.4, f"${lab}$" if lab != "I(S;Y_n)"
-            else "$I(S;Y_n)$", fontsize=4.8, ha="center", va="center",
+            else "$I(S;Y_n)$", fontsize=5.38, ha="center", va="center",
             color=VERM if hot else GRAY)
     bx += w
-ax.text(148, 42.6, r"weakest layer $i^{\ast} = \arg\max_i L_i$ "
-        "(highlighted) sets the end-to-end bound", fontsize=4.8, ha="center",
+ax.text(148, 42.6, r"weakest layer $i^{\ast}=\arg\max_i L_i$ "
+        "sets the bound", fontsize=5.38, ha="center",
         va="center", color=VERM)
 
 # ---------------- panel d : three reference classes -------------------------
-ax.text(3, 35.8, "d", fontsize=8, fontweight="bold", va="center")
+ax.text(3, 35.8, "d", fontsize=8.0, fontweight="bold", va="center")
 ax.text(7, 35.8, "Three reference classes: who sets and maintains the "
-        "reference", fontsize=7, fontweight="bold", va="center")
+        "reference", fontsize=7.0, fontweight="bold", va="center")
 
 tiles = [
     (2.0, "Class I: calibration-free", GREEN,
@@ -217,21 +217,21 @@ tiles = [
      "$K_d$, $K_m$ as dimensional converters; no cellular payment"),
     (120.0, "Class III: paid references", "#B87A00",
      "marker: active feedback on the reference itself",
-     "set points, internal standards; paid continuously, drifts if unmaintained"),
+     "set points, internal standards; paid continuously"),
 ]
 for x0, head, col, marker, body in tiles:
     rbox(ax, x0, 4.5, 56, 27, col, col, lw=0.8, r=1.0, alpha=0.10)
     ax.add_patch(Rectangle((x0 + 0.8, 25.5), 54.4, 5.2, fc=col, ec="none",
                            alpha=0.30, zorder=2))
-    ax.text(x0 + 28, 28.1, head, fontsize=6, fontweight="bold", ha="center",
+    ax.text(x0 + 28, 28.1, head, fontsize=6.0, fontweight="bold", ha="center",
             va="center", zorder=3)
-    ax.text(x0 + 2.5, 20.5, marker, fontsize=5.2, style="italic", va="center")
-    ax.text(x0 + 2.5, 15.8, body, fontsize=5.2, va="center", color=GRAY)
+    ax.text(x0 + 2.5, 20.5, marker, fontsize=5.82, style="italic", va="center")
+    ax.text(x0 + 2.5, 15.8, body, fontsize=5.82, va="center", color=GRAY)
     extra = {
         2.0: "no maintenance signature expected",
         61.0: "no maintenance signature; outside class-III jurisdiction",
         120.0: "two of three markers + reference-value specificity",
     }[x0]
-    ax.text(x0 + 2.5, 11.1, extra, fontsize=4.8, va="center", color=GRAY)
+    ax.text(x0 + 2.5, 11.1, extra, fontsize=5.38, va="center", color=GRAY)
 
 fig.savefig(OUT / "fig1_schematic.png", dpi=200)

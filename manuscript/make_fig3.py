@@ -18,8 +18,8 @@ u = np.linspace(1e-7, 1 - 1e-7, 4000)
 def xi_of_u(u, k1, k2):
     return u / (1 - u) * (k1 + 1 - u) / (k2 + u)
 
-fig, axs = plt.subplots(2, 3, figsize=(10.8, 5.6))
-plt.subplots_adjust(hspace=0.52, wspace=0.34, left=0.06, right=0.985, top=0.88, bottom=0.10)
+fig, axs = plt.subplots(3, 2, figsize=(6.26, 7.58))
+plt.subplots_adjust(hspace=0.60, wspace=0.34, left=0.13, right=0.985, top=0.975, bottom=0.065)
 axs = axs.ravel()
 
 # ---- a: GK curve family ----
@@ -31,7 +31,7 @@ for k, c in zip(kappas, cols):
     ax.plot(xv, u, color=c, lw=1.2, label=rf"$\kappa$ = {k:g}, $n_H$ = {1+1/(2*k):.4g}")
 ax.set_xscale("log"); ax.set_xlim(1e-2, 1e3)
 ax.set_xlabel(r"activity ratio $\xi$"); ax.set_ylabel("modified fraction $u$")
-ax.set_title("Goldbeter--Koshland curve family", fontsize=8)
+ax.set_title("Goldbeter--Koshland family", fontsize=7.0)
 ax.legend(fontsize=5.6, loc="lower right", framealpha=0.95)
 
 # ---- b: group-action invariance ----
@@ -43,10 +43,10 @@ ax.plot(xi_of_u(u, 5 * k0, 5 * k0), u, "o", ms=1.4, color=VERM, mfc="none",
         label=r"($K_m$, $S_T$) $\times$5 action")
 ax.set_xscale("log"); ax.set_xlim(1e-2, 1e3)
 ax.set_xlabel(r"$\xi$"); ax.set_ylabel("$u$")
-ax.set_title(r"group action: curves coincide, max $|\Delta u| = 0$", fontsize=8)
-ax.text(0.03, 0.58, "four generators verified:\n0, 0, 0, 0 (pure actions)\n0, 2.2e-16, 0, 0 (mixed rate-enzyme)\n"
-        "counterexample: 1.45e-1", transform=ax.transAxes, fontsize=5.2, color="0.3", va="top")
-ax.legend(fontsize=5.4, loc="lower right")
+ax.set_title(r"group action: one curve, max $|\Delta u|=0$", fontsize=7.0)
+ax.text(0.03, 0.90, "four generators; counterexample $1.45\\times10^{-1}$",
+        transform=ax.transAxes, fontsize=5.4, color="0.35")
+
 
 # ---- c: Fisher condition numbers (recomputed: 20 pts / 3 decades, sigma = 0.03) ----
 ax = axs[2]
@@ -87,9 +87,9 @@ ax.plot(kg, chi_shape, "o-", color=BLUE, ms=3.5, label=r"shape block ($\ln c$, $
 ax.plot(kg, chi_abs, "s--", color=VERM, ms=3.5, label=r"absolute block ($\ln c$, $\ln K_m$, $\ln S_T$)")
 ax.set_xscale("log"); ax.set_yscale("log")
 ax.axhspan(19, 33, color=BLUE, alpha=0.10)
-ax.text(0.008, 6, "archived range 19--33", fontsize=5.2, color=BLUE)
+ax.text(0.02, 2.2e4, "range 19--33", fontsize=5.4, color=BLUE)
 ax.set_xlabel(r"$\kappa$"); ax.set_ylabel(r"Fisher condition number $\chi$")
-ax.set_title("shape identifiable, scale not (exact zero direction)", fontsize=8)
+ax.set_title("shape identifiable, scale not", fontsize=7.0)
 ax.legend(fontsize=5.2, loc="center left")
 
 # ---- d: asymmetric Michaelis triple ----
@@ -99,18 +99,18 @@ for r, c in zip([0.1, 0.3, 1.0, 3.0, 10.0], plt.cm.plasma(np.linspace(0.1, 0.85,
     ax.plot(xi_of_u(u, r * k2, k2), u, color=c, lw=1.2, label=f"r = {r:g}")
 ax.set_xscale("log"); ax.set_xlim(1e-2, 1e3)
 ax.set_xlabel(r"$\xi$"); ax.set_ylabel("$u$")
-ax.set_title(r"asymmetric Michaelis curves ($\kappa_2$ = 0.01)", fontsize=8)
+ax.set_title(r"asymmetric Michaelis ($\kappa_2=0.01$)", fontsize=7.0)
 ax.legend(fontsize=5.2, loc="upper left")
-axin = ax.inset_axes([0.45, 0.13, 0.52, 0.42])
+axin = ax.inset_axes([0.50, 0.14, 0.45, 0.36])
 rr = np.logspace(np.log10(0.03), np.log10(30), 60)
 nH = 4 / (4 - 1 / (rr * k2 + 0.5) - 1 / (k2 + 0.5))
 axin.plot(rr, nH, color=BLUE, lw=1.0)
 axin.axhline(51.0, color="0.4", ls="--", lw=0.6)
 for r0, n0 in [(0.03, 98.973), (30, 5.068)]:
     axin.plot(r0, n0, "o", ms=3.5, color=VERM)
-    axin.annotate(f"{n0:.1f}", (r0, n0), textcoords="offset points", xytext=(4, 2), fontsize=4.5)
+    axin.annotate(f"{n0:.1f}", (r0, n0), textcoords="offset points", xytext=(4, 2), fontsize=5.0)
 axin.set_xscale("log")
-axin.set_xlabel(r"$r = \kappa_1/\kappa_2$", fontsize=5); axin.set_ylabel(r"$n_H$ closed form", fontsize=5)
+axin.set_xlabel(r"$r = \kappa_1/\kappa_2$", fontsize=5.0); axin.set_ylabel(r"$n_H$ closed form", fontsize=5.0)
 axin.tick_params(labelsize=4.5)
 for sp in axin.spines.values():
     sp.set_linewidth(0.4)
@@ -130,7 +130,7 @@ ax2.plot(kt, nh, "s--", color=BLUE, ms=3.5, label="$n_H$")
 ax2.set_yscale("log"); ax2.set_ylabel(r"Hill coefficient $n_H$", color=BLUE)
 ax2.tick_params(axis="y", labelcolor=BLUE, labelsize=6)
 ax2.spines["right"].set_linewidth(0.6)
-ax.set_title(r"one-sided protocol below $\kappa \sim 0.01$", fontsize=8)
+ax.set_title(r"one-sided protocol", fontsize=7.0)
 ax.legend(fontsize=5.2, loc="upper right")
 
 # ---- f: positive-feedback switch ----
@@ -146,9 +146,9 @@ for g, c in zip([0, 2, 5, 10, 20], plt.cm.cividis(np.linspace(0.05, 0.9, 5))):
     ax.plot(xig, u, color=c, lw=1.2, label=f"g = {g}")
 ax.set_xscale("log"); ax.set_xlim(1e-2, 30)
 ax.set_xlabel(r"activity ratio $\xi$"); ax.set_ylabel("$u$")
-ax.set_title(rf"positive-feedback switch: $g^*$ = {gstar:.3f}", fontsize=8)
+ax.set_title(rf"feedback switch: $g^*={gstar:.3f}$", fontsize=7.0)
 ax.legend(fontsize=5.2, loc="lower right")
-axin = ax.inset_axes([0.40, 0.57, 0.57, 0.41])
+axin = ax.inset_axes([0.56, 0.13, 0.42, 0.30])
 ufine = np.linspace(1e-6, 1 - 1e-6, 60000)
 Mfine = xi_of_u(ufine, kap, kap)
 
@@ -165,17 +165,14 @@ for g in gg:
 axin.plot(gg, widths, color=VERM, lw=1.0)
 axin.axvspan(10, 20, color=BLUE, alpha=0.10)
 axin.axhspan(0.44, 0.58, xmin=0, xmax=1, color="0.5", alpha=0.15)
-axin.text(15, 0.09, "archived 0.44--0.58 dex\nat g = 10--20", fontsize=4.5, ha="center", color="0.35")
-axin.text(1.2, 0.60, r"p42 MAPK $n_H$ $\geq$ 35",
-          fontsize=4.5, ha="left", va="top", color=BLUE)
-axin.set_xlim(0.45, 20); axin.set_ylim(0, 0.65)
-axin.set_xlabel("feedback gain g", fontsize=5); axin.set_ylabel("hysteresis width (dex)", fontsize=5)
+axin.text(11, 0.12, "archived 0.44--0.58", fontsize=5.0, ha="center", color="0.35")
+axin.set_xlabel("feedback gain g", fontsize=5.0); axin.set_ylabel("hysteresis width (dex)", fontsize=5.0)
 axin.tick_params(labelsize=4.5)
 for sp in axin.spines.values():
     sp.set_linewidth(0.4)
 
 for i, ax in enumerate(axs):
-    ax.text(-0.16, 1.04, "abcdef"[i], transform=ax.transAxes, fontsize=10,
+    ax.text(-0.16, 1.04, "abcdef"[i], transform=ax.transAxes, fontsize=10.0,
             fontweight="bold", va="top", ha="left")
 
 fig.savefig(os.path.join(HERE, "fig3_pdpc_full.png"), dpi=150)

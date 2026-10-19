@@ -20,6 +20,7 @@ SECTIONS = [
     ("05", "05_cascade", "Sec. 7    M3R-to-Ca2+ cascade"),
     ("06", "06_ledger", "Sec. 9    prediction ledger"),
     ("07", "07_figures", "Sec. 10   manuscript figures"),
+    ("08", "08_figure_legibility", "Sec. 10   figures legible at print size"),
 ]
 
 
