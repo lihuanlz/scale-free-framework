@@ -1,0 +1,25 @@
+{
+  "script": "code46 v0.1.5",
+  "seed": 20260815,
+  "n_boot": 2000,
+  "verdicts": {
+    "P4-1": "falsified",
+    "P4-2": "miss-intermediate",
+    "P4-3": "falsified"
+  },
+  "overall": "P4 falsified (a falsified clause exists)",
+  "P4-2": {
+    "AUC_L": 0.5668941796791128,
+    "AUC_H": 0.520067739060398,
+    "D": 0.04682644061871477,
+    "D_ci": [
+      0.031555976409926724,
+      0.06222081459380818
+    ]
+  },
+  "P4-3": {
+    "n_le_001": 4,
+    "n_ge_003": 5
+  },
+  "timestamp": "2026-10-19T14:17:18"
+}

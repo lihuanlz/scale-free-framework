@@ -21,6 +21,7 @@ SECTIONS = [
     ("06", "06_ledger", "Sec. 9    prediction ledger"),
     ("07", "07_figures", "Sec. 10   manuscript figures"),
     ("08", "08_figure_legibility", "Sec. 10   figures legible at print size"),
+    ("09", "09_adjudications", "Sec. 8    five blind adjudications, re-run"),
 ]
 
 

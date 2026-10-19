@@ -1,0 +1,14 @@
+$ python code48_P6_blind_adjudication_FCD_attribution.py
+# exit 2  wall 0.4s
+
+==========================================================================
+Code 48 · P6 blind ruling: FCD attribution  -  NF-κB sequential grid fold vs absolute dose  v0.1.1
+Run time: 2026-10-19 14:06:37
+seed=20260815  bootstrap=2000  criterion ΔR2=±0.15
+Pre-registration: prereg_P6_FCD_attribution_NFkB_sequential_grid_v01.md (registration no. 95, frozen)
+Data root directory: D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code
+==========================================================================
+[ABORT] missing file D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\scmat_sequentialstim.mat  -  empty run, does not constitute a ruling
+
+--- stderr ---
+

@@ -1,0 +1,7 @@
+$ python code11_discrimination_map_v09.py
+# exit 0  wall 1.5s
+
+Saved discrimination_map_v09_experimental_points.png
+
+--- stderr ---
+

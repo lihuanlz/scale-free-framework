@@ -1,0 +1,29 @@
+$ python p14_shape_decoding_audit.py
+# exit 1  wall 0.6s
+
+
+--- stderr ---
+Traceback (most recent call last):
+  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p14_shape_decoding_audit.py", line 19, in <module>
+    sm = pd.read_excel(os.path.join(RAW, 'samples_summary.xlsx'), header=None)
+  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\excel\_base.py", line 481, in read_excel
+    io = ExcelFile(
+        io,
+    ...<2 lines>...
+        engine_kwargs=engine_kwargs,
+    )
+  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1604, in __init__
+    ext = inspect_excel_format(
+        content_or_path=path_or_buffer, storage_options=storage_options
+    )
+  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\excel\_base.py", line 1452, in inspect_excel_format
+    with get_handle(
+         ~~~~~~~~~~^
+        content_or_path, "rb", storage_options=storage_options, is_text=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ) as handle:
+    ^
+  File "D:\Users\lihua\anaconda3\Lib\site-packages\pandas\io\common.py", line 935, in get_handle
+    handle = open(handle, ioargs.mode)
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\msb2022_repo\\Proteomics_MSB_2022-main\\Figures_1_2_4_5_6\\Raw_Data\\samples_summary.xlsx'
+

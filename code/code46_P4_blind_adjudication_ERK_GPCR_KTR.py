@@ -67,7 +67,7 @@ import pandas as pd
 
 # ---------------- config (frozen) ----------------
 _EXT = os.environ.get("CELL_EXTERNAL_DATA",
-               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+               os.path.join(os.path.dirname(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')),
                             "data_external", "external"))
 ROOT      = os.path.join(_EXT, "ChavezAbiega2022")
 if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
@@ -97,7 +97,7 @@ FILE_F1   = os.path.join("Figure_1", "Data", "All_Ex_{lig}_DMSO.csv")
 FILE_F3   = os.path.join("Figure_3", "Data", "ALL_{lig3}.csv")   # inhibitor descriptive arm (may be absent)
 LIG3_NAME = {"Histamine": "His", "UK": "UK", "S1P": "S1P"}
 
-OUT_DIR   = os.path.dirname(os.path.abspath(__file__))
+OUT_DIR   = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
 LOG_LINES = []
 
 def log(s):

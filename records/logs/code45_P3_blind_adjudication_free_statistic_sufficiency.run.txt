@@ -1,0 +1,105 @@
+$ python code45_P3_blind_adjudication_free_statistic_sufficiency.py
+# exit 0  wall 5.6s
+
+==========================================================================
+code 45 - P3 blind ruling: free-statistic sufficiency (Sung 2022 NF-kB spatial gradient) v0.1.1
+run time: 2026-10-19 14:16:38
+seed=20260814  bootstrap=2000  adjudication margins={'P3-1': 0.6, 'P3-2': 0.55, 'P3-3': 0.6}  analysis window=(0.0, 120.0) min
+numpy=2.3.5  scipy loaded  h5py=3.15.1
+pre-registration: prereg_P3_free_statistic_sufficiency_NFkB_spatial_gradient_v01.md (entry 75)
+==========================================================================
+  file[100] = D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\Sung2022\FixedSource_TNF100_DC3.mat
+  file[30] = D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\Sung2022\FixedSource_TNF30_DC3.mat
+  file[10] = D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\Sung2022\FixedSource_TNF10_DC3.mat
+  file[DUR] = D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\Sung2022\DifferentDuration_TNF100_DC2.mat
+
+[load] dose series (FixedSource, per-chamber feed offset os=-osD+osI)
+  [TNF10] interval = 6.0 min (read from the file)
+  [TNF10] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [TNF10] chambers 8, raw cells 1454, included 860; removeddetails {'end < 120 min': 592, 'baseline frames < 2': 2}
+  [TNF30] interval = 6.0 min (read from the file)
+  [TNF30] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [TNF30] chambers 12, raw cells 2511, included 1624; removeddetails {'end < 120 min': 881, 'baseline frames < 2': 5, 'missing>10%': 1}
+  [TNF100] interval = 6.0 min (read from the file)
+  [TNF100] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [TNF100] chambers 12, raw cells 3682, included 2825; removeddetails {'end < 120 min': 852, 'baseline frames < 2': 5}
+
+[load] duration series (DifferentDuration, adj=-42)
+  [duration15min] interval = 6.0 min (read from the file)
+  [duration15min] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [duration15min] chambers 3, raw cells 368, included 230; removeddetails {'missing>10%': 125, 'end < 120 min': 8, 'baseline frames < 2': 5}
+  [duration30min] interval = 6.0 min (read from the file)
+  [duration30min] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [duration30min] chambers 4, raw cells 547, included 331; removeddetails {'missing>10%': 179, 'end < 120 min': 19, 'baseline frames < 2': 18}
+  [duration60min] interval = 6.0 min (read from the file)
+  [duration60min] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [duration60min] chambers 4, raw cells 633, included 434; removeddetails {'end < 120 min': 19, 'missing>10%': 161, 'baseline frames < 2': 19}
+
+[P3-2] TNF100 cells with valid distance 2825/2825
+  tertile boundaries: 0.8218 / 1.6236 mm; near/mid/far = 942/941/942
+
+[adjudication] 6 units (AUC directions in header D7; CI = bootstrap 2000 percentile)
+unit   contrast                     n_A   n_B     AUC   CI_lo   CI_himargin  at-line
+P3-1a  τ(3): TNF10 > TNF30          860  1624  0.6548  0.6323  0.6777  0.60  v
+P3-1b  τ(3): TNF30 > TNF100        1624  2825  0.5184  0.5002  0.5379  0.60  x
+P3-2a  τ(3): mid band > near band   941   942  0.9070  0.8924  0.9211  0.55  v
+P3-2b  τ(3): far band > mid band    942   941  0.8193  0.7985  0.8393  0.55  v
+P3-3a  above-threshold duration: 30min > 15min   331   230  0.5911  0.5464  0.6414  0.60  x
+P3-3b  above-threshold duration: 60min > 30min   434   331  0.5214  0.4806  0.5608  0.60  x
+
+[clause verdicts]
+  P3-1: miss-intermediate  -  thresholds partially met but not all; per the pre-registration letter this is not recorded as falsified - recorded as-is
+  P3-2: hit  -  all units >= 0.55
+  P3-3: falsified  -  all units below threshold (all < 0.6, P3-F literal)
+
+[P3-F overall falsification] triggered: at least one clause falsified
+[overall ruling] P3 falsified (a falsified clause exists)
+
+[robust arms] point estimates (not adjudicated)
+  k=2 P3-1a τ: TNF10>TNF30                     n=860/1624  AUC=0.6261
+  k=2 P3-1b τ: TNF30>TNF100                    n=1624/2825  AUC=0.4788
+  k=2 P3-2a tau: mid>near                      n=941/942  AUC=0.8356
+  k=2 P3-2b tau: far>mid                       n=942/941  AUC=0.7203
+  k=4 P3-1a τ: TNF10>TNF30                     n=860/1624  AUC=0.6625
+  k=4 P3-1b τ: TNF30>TNF100                    n=1624/2825  AUC=0.5545
+  k=4 P3-2a tau: mid>near                      n=941/942  AUC=0.9378
+  k=4 P3-2b tau: far>mid                       n=942/941  AUC=0.8717
+  cells within the distance overlap band (0.5, 1.5) mm: TNF10=416, TNF30=632, TNF100=1208
+  overlap-band P3-1a tau(3): TNF10>TNF30       n=416/632  AUC=0.7368
+  overlap-band P3-1b tau(3): TNF30>TNF100      n=632/1208  AUC=0.5702
+  [Option B] TNF10 re-aligned with the overridden block [39,148]+osI_30 (robust arm only)
+  [TNF10-OptB] interval = 6.0 min (read from the file)
+  [TNF10-OptB] R shape (5, 24) (row 0 = chamber labels, row 1 = per-cell blocks; other rows unused by the authors' script)
+  [TNF10-OptB] chambers 8, raw cells 1454, included 892; removeddetails {'end < 120 min': 559, 'baseline frames < 2': 3}
+  OptB P3-1a τ(3): TNF10>TNF30                 n=892/1624  AUC=0.6836
+  OptB P3-1b τ(3): TNF30>TNF100 (control)      n=1624/2825  AUC=0.5184
+
+[descriptive arm] paid-type control (peak amplitude) + count decoder + response rate (none adjudicated)
+  peak P3-1a: TNF30>TNF10                      n=1624/860  AUC=0.7130
+  peak P3-1b: TNF100>TNF30                     n=2825/1624  AUC=0.7610
+  peak P3-2a: near>mid                         n=942/941  AUC=0.7405
+  peak P3-2b: mid>far                          n=941/942  AUC=0.7958
+  peak P3-3a: 30min>15min                      n=331/230  AUC=0.5626
+  peak P3-3b: 60min>30min                      n=434/331  AUC=0.5087
+  count P3-1a: TNF30>TNF10                     n=1624/860  AUC=0.5791
+  count P3-1b: TNF100>TNF30                    n=2825/1624  AUC=0.5094
+  response rate (uncensored fraction of tau(3)):
+    TNF10    n=860   response rate=0.831
+    TNF30    n=1624  response rate=0.950
+    TNF100   n=2825  response rate=0.991
+    near band n=942   response rate=1.000
+    mid band n=941   response rate=1.000
+    far band n=942   response rate=0.973
+    15min    n=230   response rate=0.826
+    30min    n=331   response rate=0.903
+    60min    n=434   response rate=0.947
+
+elapsed 4.5s; output:
+  D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_unit_table.csv
+  D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_robust_arm.csv
+  D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_descriptive_arm.csv
+  D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_ruling.json
+  D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code45_judgment_log.txt
+
+--- stderr (tail) ---
+

@@ -1,0 +1,37 @@
+$ python p12b_extended_audit.py
+# exit 1  wall 0.1s
+
+=== ABL (all_data canonical) |dlog10 kcat/KM| ===
+  Y253H  fold=  2.05  |dlog|=0.312
+  E255V  fold=  1.73  |dlog|=0.237
+  I315M  fold=  1.45  |dlog|=0.162
+  T315I  fold=  3.31  |dlog|=0.520
+  Y253C  fold=  3.96  |dlog|=0.598
+  V299M  fold=  6.49  |dlog|=0.812
+  I314V  fold=  0.75  |dlog|=0.123
+  F382Y  fold= 16.75  |dlog|=1.224
+  M318I  fold= 23.98  |dlog|=1.380
+  Y320D  fold=  3.16  |dlog|=0.499
+  L248M  fold= 11.72  |dlog|=1.069
+  V299L  fold=  3.54  |dlog|=0.549
+
+=== EGFR (Yun 2008) ===
+  T790M        eff=0.02322  fold vs WT=4.64  |dlog|=0.667
+  L858R        eff=0.01003  fold vs WT=2.01  |dlog|=0.302
+  L858R/T790M  eff=0.05429  fold vs WT=10.86  |dlog|=1.036
+  L858R/T790M vs L858R driver background: fold=5.41 |dlog|=0.734
+
+EXPANDED MAIN TEST (Amendment A1): clinical n=4 [0.312, 0.237, 0.162, 0.667]
+  medians: clinical 0.274 vs p-nc 0.705 ; fold ratio 2.70
+  one-sided MW U=7 exact p=0.0768 (criteria p<0.05 and fold>2)
+  => FAIL
+SENSITIVITY (T790M vs driver background, |dlog|=0.734): U=7 p=0.0768 fold=2.70
+DATA-QC sensitivity (KM&Kcat sheet): Y253H |dlog|=0.391 (all_data 0.312), T315I 0.707 (0.520)
+
+--- stderr ---
+Traceback (most recent call last):
+  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_extended_audit.py", line 99, in <module>
+    with open(os.path.join(HERE,'data','P12b_extended_clinical_expansion.csv'),'w',newline='') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\P12b_extended_clinical_expansion.csv'
+

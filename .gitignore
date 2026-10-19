@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 pass*.log
+
+data_external/external/
+

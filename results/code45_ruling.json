@@ -1,0 +1,113 @@
+{
+  "version": "v0.1.1",
+  "seed": 20260814,
+  "n_boot": 2000,
+  "margins": {
+    "P3-1": 0.6,
+    "P3-2": 0.55,
+    "P3-3": 0.6
+  },
+  "units": [
+    {
+      "clause": "P3-1",
+      "unit": "P3-1a",
+      "contrast": "τ(3): TNF10 > TNF30",
+      "n_a": 860,
+      "n_b": 1624,
+      "auc": 0.6548272998052469,
+      "ci_lo": 0.632292913707183,
+      "ci_hi": 0.6776694602760912,
+      "margin": 0.6,
+      "pass": "Y"
+    },
+    {
+      "clause": "P3-1",
+      "unit": "P3-1b",
+      "contrast": "τ(3): TNF30 > TNF100",
+      "n_a": 1624,
+      "n_b": 2825,
+      "auc": 0.5183599982562448,
+      "ci_lo": 0.500238970748507,
+      "ci_hi": 0.5379293642922534,
+      "margin": 0.6,
+      "pass": "N"
+    },
+    {
+      "clause": "P3-2",
+      "unit": "P3-2a",
+      "contrast": "τ(3): mid band > near band",
+      "n_a": 941,
+      "n_b": 942,
+      "auc": 0.9070239682679356,
+      "ci_lo": 0.8924434411600795,
+      "ci_hi": 0.9211163390574693,
+      "margin": 0.55,
+      "pass": "Y"
+    },
+    {
+      "clause": "P3-2",
+      "unit": "P3-2b",
+      "contrast": "τ(3): far band > mid band",
+      "n_a": 942,
+      "n_b": 941,
+      "auc": 0.8193072825358576,
+      "ci_lo": 0.7984917313649706,
+      "ci_hi": 0.8393142036185924,
+      "margin": 0.55,
+      "pass": "Y"
+    },
+    {
+      "clause": "P3-3",
+      "unit": "P3-3a",
+      "contrast": "above-threshold duration: 30min > 15min",
+      "n_a": 331,
+      "n_b": 230,
+      "auc": 0.5911204518586628,
+      "ci_lo": 0.5464107447786681,
+      "ci_hi": 0.6414292985682385,
+      "margin": 0.6,
+      "pass": "N"
+    },
+    {
+      "clause": "P3-3",
+      "unit": "P3-3b",
+      "contrast": "above-threshold duration: 60min > 30min",
+      "n_a": 434,
+      "n_b": 331,
+      "auc": 0.521423002492099,
+      "ci_lo": 0.4806056566472218,
+      "ci_hi": 0.5608088706196833,
+      "margin": 0.6,
+      "pass": "N"
+    }
+  ],
+  "verdicts": {
+    "P3-1": {
+      "verdict": "miss-intermediate",
+      "reason": "thresholds partially met but not all; per the pre-registration letter this is not recorded as falsified - recorded as-is",
+      "units": [
+        "P3-1a",
+        "P3-1b"
+      ]
+    },
+    "P3-2": {
+      "verdict": "hit",
+      "reason": "all units >= 0.55",
+      "units": [
+        "P3-2a",
+        "P3-2b"
+      ]
+    },
+    "P3-3": {
+      "verdict": "falsified",
+      "reason": "all units below threshold (all < 0.6, P3-F literal)",
+      "units": [
+        "P3-3a",
+        "P3-3b"
+      ]
+    }
+  },
+  "overall": "P3 falsified (a falsified clause exists)",
+  "any_clause_falsified": true,
+  "all_clauses_hit": false
+}

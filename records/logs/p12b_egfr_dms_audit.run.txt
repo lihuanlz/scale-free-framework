@@ -1,0 +1,19 @@
+$ python p12b_egfr_dms_audit.py
+# exit 1  wall 1.3s
+
+
+--- stderr ---
+Traceback (most recent call last):
+  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_egfr_dms_audit.py", line 45, in <module>
+    df, wt = load(s)
+             ~~~~^^^
+  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_egfr_dms_audit.py", line 34, in load
+    with gzip.open(os.path.join(DAT, sample + '_codoncounts.csv.gz'), 'rt') as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\lihua\anaconda3\Lib\gzip.py", line 66, in open
+    binary_file = GzipFile(filename, gz_mode, compresslevel)
+  File "D:\Users\lihua\anaconda3\Lib\gzip.py", line 203, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+                               ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\gse305057\\GSM9161531_DMSO-A_codoncounts.csv.gz'
+

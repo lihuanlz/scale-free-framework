@@ -1,0 +1,64 @@
+code 46 v0.1.5 - P4 blind ruling: ERK re-adjudication (GPCR-KTR trace level)
+run time 2026-10-19T14:16:43 | SEED=20260815 | bootstrap=2000 (first round, i.e. execute)
+ROOT=D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\ChavezAbiega2022
+
+=== main-analysis ligand Histamine (DMSO) ===
+  load All_Ex_Histamine_DMSO.csv: 7393 cells, 6 dose levels [0.19, 0.67, 2.33, 8.16, 28.57, 100.0], frame grid 2.50-83.00 min (162 frames)
+  included 7393/7393 cells (removed 0: baseline frames <3 / sigma_0=0 / end <38.5 / missing >10%)
+    level 0.19: n=925
+    level 0.67: n=1313
+    level 2.33: n=1183
+    level 8.16: n=1272
+    level 28.57: n=1310
+    level 100: n=1390
+  [low zone] tau(3) 0.19<->0.67: AUC=0.5819 [0.558,0.606] n=925/1313 at-line=False
+  [low zone] tau(3) 0.67<->2.33: AUC=0.5633 [0.541,0.586] n=1313/1183 at-line=False
+  [high zone] tau(3) 8.16<->28.57: AUC=0.5636 [0.544,0.584] n=1272/1310 at-line=False
+  [high zone] tau(3) 28.57<->100: AUC=0.4695 [0.450,0.490] n=1310/1390 at-line=False
+  [P4-3] 0.19<->0.67: delta=-0.0025 (pooled 0.5819 - within-strata mean 0.5844; strata n=[848, 721, 669])
+  [P4-3] 0.67<->2.33: delta=-0.0040 (pooled 0.5633 - within-strata mean 0.5672; strata n=[913, 756, 827])
+  [P4-3] 2.33<->8.16: delta=-0.1091 (pooled 0.5300 - within-strata mean 0.6392; strata n=[1165, 868])
+  [P4-3] 8.16<->28.57: delta=+0.1311 (pooled 0.5636 - within-strata mean 0.4325; strata n=[1190])
+  [P4-3] 28.57<->100: delta=-0.1190 (pooled 0.4695 - within-strata mean 0.5885; strata n=[922, 1279])
+
+=== main-analysis ligand UK (DMSO) ===
+  load All_Ex_UK_DMSO.csv: 7508 cells, 6 dose levels [0.41, 1.23, 3.7, 11.1, 33.3, 100.0], frame grid 2.50-83.00 min (162 frames)
+  included 7508/7508 cells (removed 0: baseline frames <3 / sigma_0=0 / end <38.5 / missing >10%)
+    level 0.41: n=1366
+    level 1.23: n=1244
+    level 3.7: n=1274
+    level 11.1: n=1236
+    level 33.3: n=1233
+    level 100: n=1155
+  [low zone] tau(3) 0.41<->1.23: AUC=0.5561 [0.535,0.578] n=1366/1244 at-line=False
+  [low zone] tau(3) 1.23<->3.7: AUC=0.5663 [0.544,0.588] n=1244/1274 at-line=False
+  [high zone] tau(3) 11.1<->33.3: AUC=0.5377 [0.516,0.560] n=1236/1233 at-line=False
+  [high zone] tau(3) 33.3<->100: AUC=0.5096 [0.485,0.532] n=1233/1155 at-line=False
+  [P4-3] 0.41<->1.23: delta=+0.0039 (pooled 0.5561 - within-strata mean 0.5522; strata n=[898, 1063, 649])
+  [P4-3] 1.23<->3.7: delta=-0.0393 (pooled 0.5663 - within-strata mean 0.6056; strata n=[1338, 608])
+  [P4-3] 3.7<->11.1: delta=-0.0273 (pooled 0.5941 - within-strata mean 0.6213; strata n=[1390, 599])
+  [P4-3] 11.1<->33.3: delta=-0.0001 (pooled 0.5377 - within-strata mean 0.5378; strata n=[845, 1022, 602])
+  [P4-3] 33.3<->100: delta=+0.0536 (pooled 0.5096 - within-strata mean 0.4559; strata n=[819, 1251])
+
+=== P4-2 aggregation (saturation-zone disordering test) ===
+  AUC_L(low-zone mean)=0.5669 | AUC_H(high-zone mean)=0.5201 | D=+0.0468 [+0.032,+0.062]
+
+=== D8 adjudication (frozen table executed verbatim) ===
+  P4-1: falsified
+  P4-2: miss-intermediate
+  P4-3: falsified
+  overall ruling: P4 falsified (a falsified clause exists)
+  P4-3 count: |Δ|≤0.01 → 4/10; |Δ|≥0.03 → 5/10
+
+main output saved: code46_unit_table.csv / code46_robust_arm.csv / code46_ruling.json
+
+=== descriptive arm (not adjudicated) ===
+  load All_Ex_S1P_DMSO.csv: 7891 cells, 6 dose levels [40.6, 81.3, 162.5, 325.0, 650.0, 1300.0], frame grid 2.50-83.00 min (162 frames)
+  S1P descriptive arm done (11 rows)
+  Akt descriptive arm done (Histamine)
+  Akt descriptive arm done (UK)
+  inhibitor arm done (Histamine)
+  inhibitor arm done (UK)
+
+output: code46_unit_table.csv / code46_robust_arm.csv / code46_descriptive_arm.csv / code46_ruling.json / code46_judgment_log.txt
+- recorded either way: please return the five outputs; they enter the ledger as-is regardless of outcome. -

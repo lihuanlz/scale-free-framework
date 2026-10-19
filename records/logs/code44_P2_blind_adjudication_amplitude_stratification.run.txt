@@ -1,0 +1,191 @@
+$ python code44_P2_blind_adjudication_amplitude_stratification.py
+# exit 0  wall 3.1s
+
+========================================================================
+Code 44 · P2 blind ruling: amplitude-stratified decay prediction
+pre-registration: 2026-08-14 v0.1 | seed 20260814 | bootstrap 2000
+data root directory: D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\data_external\external\HansenZechner2021\2018_DataForPaper
+criteria: P2-1 Δ_mol≥+0.03; P2-2 Δ_AU≤0.01 and <Δ_mol; P2-3 |Δ_time|≤0.01 (k=3); each ≥6/7 promoters
+========================================================================
+[done] ALD3 DM 10min
+[done] ALD3 DM 20min
+[done] ALD3 DM 30min
+[done] ALD3 DM 40min
+[done] ALD3 DM 50min
+[done] DCS2 DM 10min
+[done] DCS2 DM 20min
+[done] DCS2 DM 30min
+[done] DCS2 DM 40min
+[done] DCS2 DM 50min
+[done] DDR2 DM 10min
+[done] DDR2 DM 20min
+[done] DDR2 DM 30min
+[done] DDR2 DM 40min
+[done] DDR2 DM 50min
+[done] HXK1 DM 10min
+[done] HXK1 DM 20min
+[done] HXK1 DM 30min
+[done] HXK1 DM 40min
+[done] HXK1 DM 50min
+[done] RTN2 DM 10min
+[done] RTN2 DM 20min
+[done] RTN2 DM 30min
+[done] RTN2 DM 40min
+[done] RTN2 DM 50min
+[done] SIP18 DM 10min
+[done] SIP18 DM 20min
+[done] SIP18 DM 30min
+[done] SIP18 DM 40min
+[done] SIP18 DM 50min
+[done] TKL2 DM 10min
+[done] TKL2 DM 20min
+[done] TKL2 DM 30min
+[done] TKL2 DM 40min
+[done] TKL2 DM 50min
+[done] pSIP18_mut6 DM 10min
+[done] pSIP18_mut6 DM 20min
+[done] pSIP18_mut6 DM 30min
+[done] pSIP18_mut6 DM 40min
+[done] pSIP18_mut6 DM 50min
+[done] pSIP18_mut21 DM 10min
+[done] pSIP18_mut21 DM 20min
+[done] pSIP18_mut21 DM 30min
+[done] pSIP18_mut21 DM 40min
+[done] pSIP18_mut21 DM 50min
+
+========================================================================
+Ruling (main-analysis duration 50min, size tercile stratification)
+------------------------------------------------------------------------
+promoter    Δ_mol     Δ_AU   Δ_time   P2-1   P2-2   P2-3
+ALD3      -0.0006  +0.0013  -0.0046      x      x      v
+DCS2      -0.0083  +0.0136  -0.0102      x      x      x
+DDR2      -0.0022  -0.0018  +0.0009      x      x      v
+HXK1      -0.0197  -0.0020  +0.0007      x      x      v
+RTN2      -0.0108  -0.0001  -0.0018      x      x      v
+SIP18     -0.0056  -0.0007  -0.0018      x      x      v
+TKL2      -0.0015  +0.0001  +0.0028      x      x      v
+------------------------------------------------------------------------
+P2-1 (amplitude paid)   :0/7 promoters pass → falsified
+P2-2 (normalized redeem):0/7 promoters pass → falsified
+P2-3 (event timing free):6/7 promoters pass → hit
+P2-F overall: corresponding clause(s) falsified, double-recorded in the ledger as-is
+
+Details of the 21 adjudication units (main-analysis duration, size stratification):
+  [mol_peak]
+    ALD3     100-275   AUC_pool=0.829 terc_mean=0.830 Δ=-0.0007 [ point est ] n=109/139
+    ALD3     275-690   AUC_pool=0.771 terc_mean=0.771 Δ=-0.0008 [ point est ] n=139/163
+    ALD3     690-3000  AUC_pool=0.665 terc_mean=0.665 Δ=-0.0002 [ point est ] n=163/171
+    DCS2     100-275   AUC_pool=0.945 terc_mean=0.953 Δ=-0.0080 [ point est ] n=102/108
+    DCS2     275-690   AUC_pool=0.580 terc_mean=0.590 Δ=-0.0096 [ point est ] n=108/68
+    DCS2     690-3000  AUC_pool=0.474 terc_mean=0.481 Δ=-0.0072 [ point est ] n=68/109
+    DDR2     100-275   AUC_pool=0.880 terc_mean=0.884 Δ=-0.0047 [ point est ] n=157/148
+    DDR2     275-690   AUC_pool=0.721 terc_mean=0.752 Δ=-0.0313 [ point est ] n=148/149
+    DDR2     690-3000  AUC_pool=0.575 terc_mean=0.545 Δ=+0.0294 [ point est ] n=149/151
+    HXK1     100-275   AUC_pool=0.802 terc_mean=0.813 Δ=-0.0117 [ point est ] n=169/193
+    HXK1     275-690   AUC_pool=0.648 terc_mean=0.646 Δ=+0.0019 [ point est ] n=193/184
+    HXK1     690-3000  AUC_pool=0.544 terc_mean=0.593 Δ=-0.0491 [ point est ] n=184/138
+    RTN2     100-275   AUC_pool=0.844 terc_mean=0.844 Δ=-0.0005 [ point est ] n=108/262
+    RTN2     275-690   AUC_pool=0.772 terc_mean=0.792 Δ=-0.0194 [ point est ] n=262/106
+    RTN2     690-3000  AUC_pool=0.723 terc_mean=0.736 Δ=-0.0124 [ point est ] n=106/134
+    SIP18    100-275   AUC_pool=0.721 terc_mean=0.722 Δ=-0.0010 [ point est ] n=40/212
+    SIP18    275-690   AUC_pool=0.788 terc_mean=0.803 Δ=-0.0151 [ point est ] n=212/131
+    SIP18    690-3000  AUC_pool=0.756 terc_mean=0.757 Δ=-0.0007 [ point est ] n=131/69
+    TKL2     100-275   AUC_pool=0.905 terc_mean=0.904 Δ=+0.0004 [ point est ] n=127/178
+    TKL2     275-690   AUC_pool=0.805 terc_mean=0.810 Δ=-0.0051 [ point est ] n=178/134
+    TKL2     690-3000  AUC_pool=0.584 terc_mean=0.584 Δ=+0.0001 [ point est ] n=134/117
+  [au_peak]
+    ALD3     100-275   AUC_pool=0.837 terc_mean=0.832 Δ=+0.0043 [ point est ] n=109/139
+    ALD3     275-690   AUC_pool=0.778 terc_mean=0.772 Δ=+0.0056 [ point est ] n=139/163
+    ALD3     690-3000  AUC_pool=0.664 terc_mean=0.671 Δ=-0.0061 [ point est ] n=163/171
+    DCS2     100-275   AUC_pool=0.959 terc_mean=0.957 Δ=+0.0018 [ point est ] n=102/108
+    DCS2     275-690   AUC_pool=0.592 terc_mean=0.586 Δ=+0.0057 [ point est ] n=108/68
+    DCS2     690-3000  AUC_pool=0.556 terc_mean=0.522 Δ=+0.0333 [ point est ] n=68/109
+    DDR2     100-275   AUC_pool=0.874 terc_mean=0.884 Δ=-0.0107 [ point est ] n=157/148
+    DDR2     275-690   AUC_pool=0.765 terc_mean=0.771 Δ=-0.0068 [ point est ] n=148/149
+    DDR2     690-3000  AUC_pool=0.551 terc_mean=0.539 Δ=+0.0119 [ point est ] n=149/151
+    HXK1     100-275   AUC_pool=0.821 terc_mean=0.825 Δ=-0.0038 [ point est ] n=169/193
+    HXK1     275-690   AUC_pool=0.659 terc_mean=0.656 Δ=+0.0029 [ point est ] n=193/184
+    HXK1     690-3000  AUC_pool=0.603 terc_mean=0.608 Δ=-0.0050 [ point est ] n=184/138
+    RTN2     100-275   AUC_pool=0.847 terc_mean=0.846 Δ=+0.0004 [ point est ] n=108/262
+    RTN2     275-690   AUC_pool=0.804 terc_mean=0.803 Δ=+0.0009 [ point est ] n=262/106
+    RTN2     690-3000  AUC_pool=0.751 terc_mean=0.753 Δ=-0.0017 [ point est ] n=106/134
+    SIP18    100-275   AUC_pool=0.723 terc_mean=0.720 Δ=+0.0028 [ point est ] n=40/212
+    SIP18    275-690   AUC_pool=0.806 terc_mean=0.811 Δ=-0.0049 [ point est ] n=212/131
+    SIP18    690-3000  AUC_pool=0.771 terc_mean=0.771 Δ=-0.0000 [ point est ] n=131/69
+    TKL2     100-275   AUC_pool=0.904 terc_mean=0.903 Δ=+0.0015 [ point est ] n=127/178
+    TKL2     275-690   AUC_pool=0.814 terc_mean=0.816 Δ=-0.0021 [ point est ] n=178/134
+    TKL2     690-3000  AUC_pool=0.591 terc_mean=0.590 Δ=+0.0009 [ point est ] n=134/117
+  [time_k3]
+    ALD3     100-275   AUC_pool=0.289 terc_mean=0.304 Δ=-0.0150 [ point est ] n=109/139
+    ALD3     275-690   AUC_pool=0.340 terc_mean=0.342 Δ=-0.0024 [ point est ] n=139/163
+    ALD3     690-3000  AUC_pool=0.300 terc_mean=0.296 Δ=+0.0036 [ point est ] n=163/171
+    DCS2     100-275   AUC_pool=0.352 terc_mean=0.368 Δ=-0.0152 [ point est ] n=102/108
+    DCS2     275-690   AUC_pool=0.335 terc_mean=0.326 Δ=+0.0095 [ point est ] n=108/68
+    DCS2     690-3000  AUC_pool=0.436 terc_mean=0.461 Δ=-0.0248 [ point est ] n=68/109
+    DDR2     100-275   AUC_pool=0.425 terc_mean=0.426 Δ=-0.0009 [ point est ] n=157/148
+    DDR2     275-690   AUC_pool=0.323 terc_mean=0.316 Δ=+0.0071 [ point est ] n=148/149
+    DDR2     690-3000  AUC_pool=0.474 terc_mean=0.477 Δ=-0.0036 [ point est ] n=149/151
+    HXK1     100-275   AUC_pool=0.473 terc_mean=0.470 Δ=+0.0035 [ point est ] n=169/193
+    HXK1     275-690   AUC_pool=0.346 terc_mean=0.349 Δ=-0.0030 [ point est ] n=193/184
+    HXK1     690-3000  AUC_pool=0.487 terc_mean=0.486 Δ=+0.0015 [ point est ] n=184/138
+    RTN2     100-275   AUC_pool=0.209 terc_mean=0.209 Δ=-0.0003 [ point est ] n=108/262
+    RTN2     275-690   AUC_pool=0.335 terc_mean=0.344 Δ=-0.0090 [ point est ] n=262/106
+    RTN2     690-3000  AUC_pool=0.667 terc_mean=0.663 Δ=+0.0039 [ point est ] n=106/134
+    SIP18    100-275   AUC_pool=0.458 terc_mean=0.458 Δ=-0.0003 [ point est ] n=40/212
+    SIP18    275-690   AUC_pool=0.594 terc_mean=0.606 Δ=-0.0124 [ point est ] n=212/131
+    SIP18    690-3000  AUC_pool=0.530 terc_mean=0.523 Δ=+0.0074 [ point est ] n=131/69
+    TKL2     100-275   AUC_pool=0.404 terc_mean=0.400 Δ=+0.0043 [ point est ] n=127/178
+    TKL2     275-690   AUC_pool=0.364 terc_mean=0.363 Δ=+0.0014 [ point est ] n=178/134
+    TKL2     690-3000  AUC_pool=0.544 terc_mean=0.542 Δ=+0.0026 [ point est ] n=134/117
+
+robust arm k∈{2,4} and other durations (promoter-level Δ, point estimates):
+  [time_k2] ALD3:-0.005 DCS2:-0.006 DDR2:-0.000 HXK1:+0.002 RTN2:-0.003 SIP18:-0.001 TKL2:+0.001
+  [time_k4] ALD3:-0.001 DCS2:-0.010 DDR2:-0.000 HXK1:+0.000 RTN2:-0.001 SIP18:-0.002 TKL2:+0.002
+  [duration 10min Δ_mol] ALD3:-0.003 DCS2:-0.010 DDR2:+0.003 HXK1:-0.011 RTN2:+0.002 SIP18:-0.002 TKL2:+0.006
+  [duration 20min Δ_mol] ALD3:-0.003 DCS2:-0.004 DDR2:+0.000 HXK1:-0.008 RTN2:-0.004 SIP18:-0.014 TKL2:-0.001
+  [duration 30min Δ_mol] ALD3:+0.003 DCS2:-0.003 DDR2:-0.006 HXK1:-0.012 RTN2:-0.004 SIP18:-0.001 TKL2:-0.003
+  [duration 40min Δ_mol] ALD3:-0.002 DCS2:-0.020 DDR2:-0.002 HXK1:-0.022 RTN2:+0.002 SIP18:-0.020 TKL2:+0.003
+  [alternative-proxy stratified Δ_mol] ALD3:+0.007 DCS2:-0.004 DDR2:+0.004 HXK1:-0.001 RTN2:+0.003 SIP18:+0.001 TKL2:+0.004
+
+Mutants (descriptive, not adjudicated):
+  pSIP18_mut6: Δ_mol=-0.0017 Δ_AU=+0.0046 Δ_time=-0.0016
+  pSIP18_mut21: Δ_mol=+0.0003 Δ_AU=-0.0003 Δ_time=+0.0017
+
+Secondary arm (descriptive, not adjudicated): FM/FM4 decoding
+    [FM descriptive] ALD3 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.403 firstTimeAUC=0.569 peakAUC=0.792 (n=51/123)
+    [FM descriptive] ALD3 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.284 firstTimeAUC=0.292 peakAUC=0.582 (n=135/123)
+    [FM descriptive] ALD3 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.654 firstTimeAUC=0.673 peakAUC=0.715 (n=135/165)
+    [FM descriptive] DCS2 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.613 firstTimeAUC=0.608 peakAUC=0.947 (n=42/107)
+    [FM descriptive] DCS2 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.461 firstTimeAUC=0.429 peakAUC=0.795 (n=132/107)
+    [FM descriptive] DCS2 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.498 firstTimeAUC=0.622 peakAUC=0.842 (n=132/173)
+    [FM descriptive] DDR2 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.517 firstTimeAUC=0.691 peakAUC=0.945 (n=140/229)
+    [FM descriptive] DDR2 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.458 firstTimeAUC=0.571 peakAUC=0.776 (n=186/229)
+    [FM descriptive] DDR2 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.464 firstTimeAUC=0.464 peakAUC=0.611 (n=186/251)
+    [FM descriptive] HXK1 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.440 firstTimeAUC=0.523 peakAUC=0.798 (n=106/89)
+    [FM descriptive] HXK1 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.470 firstTimeAUC=0.388 peakAUC=0.657 (n=343/89)
+    [FM descriptive] HXK1 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.530 firstTimeAUC=0.550 peakAUC=0.587 (n=343/183)
+    [FM descriptive] RTN2 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.599 firstTimeAUC=0.766 peakAUC=0.963 (n=40/133)
+    [FM descriptive] RTN2 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.555 firstTimeAUC=0.583 peakAUC=0.754 (n=177/133)
+    [FM descriptive] RTN2 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.558 firstTimeAUC=0.607 peakAUC=0.753 (n=177/198)
+    [FM descriptive] SIP18 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.506 firstTimeAUC=0.399 peakAUC=0.791 (n=100/79)
+    [FM descriptive] SIP18 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.480 firstTimeAUC=0.425 peakAUC=0.590 (n=59/79)
+    [FM descriptive] SIP18 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.447 firstTimeAUC=0.464 peakAUC=0.635 (n=59/106)
+    [FM descriptive] TKL2 FM8(8pulse) vs FM4-15min(4pulse): countAUC=0.489 firstTimeAUC=0.525 peakAUC=0.875 (n=61/130)
+    [FM descriptive] TKL2 FM4(4pulse) vs FM4-15min(4pulse, same count, different interval): countAUC=0.395 firstTimeAUC=0.352 peakAUC=0.542 (n=243/130)
+    [FM descriptive] TKL2 FM4(4pulse) vs FM4-75min(4pulse, same count, different interval): countAUC=0.422 firstTimeAUC=0.402 peakAUC=0.545 (n=243/213)
+Secondary arm (descriptive): CFP gain probe
+    [CFP probe] ALD3: corr(baselineCFP, size)=+0.052 (n=324)
+    [CFP probe] DCS2: corr(baselineCFP, size)=+0.215 (n=252)
+    [CFP probe] DDR2: corr(baselineCFP, size)=+0.051 (n=339)
+    [CFP probe] HXK1: corr(baselineCFP, size)=+0.082 (n=516)
+    [CFP probe] RTN2: corr(baselineCFP, size)=+0.086 (n=591)
+    [CFP probe] SIP18: corr(baselineCFP, size)=+0.014 (n=1125)
+    [CFP probe] TKL2: corr(baselineCFP, size)=-0.118 (n=388)
+
+unit table → D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code44_unit_table.csv
+ruling     → D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code44_ruling.json
+log        → D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\results\code44_judgment_log.txt
+total elapsed 2 s
+
+--- stderr (tail) ---
+

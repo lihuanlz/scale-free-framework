@@ -29,9 +29,9 @@ from scipy.stats import rankdata
 
 # ---------------- user config area ----------------
 _EXT = os.environ.get("CELL_EXTERNAL_DATA",
-               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+               os.path.join(os.path.dirname(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')),
                             "data_external", "external"))
-ROOT = os.path.join(_EXT, "HansenZechner2021")
+ROOT = os.path.join(_EXT, "HansenZechner2021", "2018_DataForPaper")
 if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
     ROOT = sys.argv[1]
 # ---------------------------------------------
@@ -143,7 +143,7 @@ def boot_delta(v_lo, v_hi, l_lo, l_hi, rng):
 def main():
     t_start = _time.time()
     global _log_fh
-    outdir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
+    outdir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results') if "__file__" in globals() else os.getcwd()
     _log_fh = open(os.path.join(outdir, "code44b_log.txt"), "w", encoding="utf-8")
 
     rng = np.random.default_rng(SEED)

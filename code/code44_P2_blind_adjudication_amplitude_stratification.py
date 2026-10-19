@@ -43,7 +43,7 @@ from scipy.stats import rankdata
 
 # ---------------- user configuration ----------------
 _EXT = os.environ.get("CELL_EXTERNAL_DATA",
-               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+               os.path.join(os.path.dirname(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')),
                             "data_external", "external"))
 ROOT = os.path.join(_EXT, "HansenZechner2021", "2018_DataForPaper")
 if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
@@ -295,7 +295,7 @@ def cfp_probe(prom):
 def main():
     t_start = _time.time()
     global LOG_PATH, _log_fh
-    outdir = os.path.dirname(os.path.abspath(__file__)) if "__file__" in globals() else os.getcwd()
+    outdir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results') if "__file__" in globals() else os.getcwd()
     LOG_PATH = os.path.join(outdir, "code44_judgment_log.txt")
     _log_fh = open(LOG_PATH, "w", encoding="utf-8")
 

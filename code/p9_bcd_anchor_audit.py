@@ -8,7 +8,9 @@ import json, os
 SEED = 20260927
 rng = np.random.default_rng(SEED)
 HERE = os.path.dirname(os.path.abspath(__file__))
-D = os.path.join(HERE, 'data_nikolic2024', 'Scale-invariance-in-early-embryonic-development-main')
+_EXT = os.environ.get("CELL_EXTERNAL_DATA",
+                      os.path.join(os.path.dirname(HERE), "data_external", "external"))
+D = os.path.join(_EXT, "Nikolic2024")
 
 def bootstrap_ci(x, y, n=2000):
     slopes = []
@@ -120,6 +122,6 @@ except Exception as e:
     res['P9_2'] = dict(error=str(e))
     print('P9-2 failed:', e)
 
-out = os.path.join(HERE, 'p9_bcd_anchor_results.json')
+out = os.path.join(os.path.dirname(HERE), 'results', 'p9_bcd_anchor_results.json')
 json.dump(res, open(out, 'w'), indent=2)
 print('saved', out)

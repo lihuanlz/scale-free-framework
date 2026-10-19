@@ -1,0 +1,55 @@
+$ python code08_msn2_excitable_frequency_encoding.py
+# exit 0  wall 69.6s
+
+========================================================================
+code 8: excitable frequency encoding (Msn2/Crz1 type) - acceptance checklist
+========================================================================
+
+[1] oscillation window (sustained constant drive, oscillation from rest)
+    firing window = [0.324, 1.426] au (width 1.102) 
+    lower bound = superthreshold onset; upper bound = depolarization block
+    symmetry-centre check: (I_low+I_high)/2 = 0.875(FHN symmetry prediction 0.875)
+
+[2] onset-type determination (continuation up-sweep along the equilibrium branch, dI=5e-4)
+    continuous growth of the small cycle near Hopf: A from ~0 (I≈0.328 onwards) grows continuously to 0.0212 (I=0.3335) 
+    then jumps via a canard explosion within dI <= 5e-4 to full size A~3.74 (explosion point I_expl=0.3340)
+    hysteresis test: up-sweep explosion I_on=0.3340, down-sweep large-cycle extinction I_off=0.3245
+    hysteresis width = 0.0095 (nonzero, i.e. 0.9% of the window width - FHN subcritical/canard-type narrow hysteresis)
+    classification (three-signature table): onset is mathematically continuous (Hopf sqrt-type small-cycle growth),
+    but the canard explosion makes the amplitude appear as a 'finite-size onset' at any practical resolution, and hysteresis != 0;
+    -> per the table this is the 'subcritical exception' (captured by the third signature), still assigned to the EXC-family digital-encoding side.
+
+[3] digital signatures (rising branch 0.34–0.84, 10 points, effective window 60 au)
+        I₀    N        A   f(au⁻¹)
+      0.34   26    3.767    0.4274
+      0.38   27    3.794    0.4605
+      0.42   28    3.807    0.4802
+      0.48   30    3.819    0.5011
+      0.54   31    3.828    0.5163
+      0.60   31    3.834    0.5278
+      0.66   32    3.839    0.5364
+      0.72   32    3.842    0.5427
+      0.78   33    3.844    0.5468
+      0.84   33    3.845    0.5488
+    ────────────────────────────────────────────
+    (a) amplitude all-or-none: A range 3.767–3.845, relative change 2.06% (+/-1.01% << +/-10%)
+        alpha = dlnA/dlnI0 = 0.0203 (target |alpha|<~0.05)
+    (b) frequency monotone rising: True, 0.427→0.549 au⁻¹ (1.28×) 
+        ν_f = ∂f/∂lnI₀ = 0.1277 au⁻¹ > 0 ✓
+    (c) equivalent count: N vs ln I0 slope = 7.838 pulses/ln-unit, R^2 = 0.9573
+    full-window shape: f is an inverted U (forced by symmetry), peak 0.549 au⁻¹ @ I₀≈0.90; the upper half-branch is the rising segment (encoding region),falling back near the depolarization-block end.
+
+[4] literature-point comparison
+    · Hao & O'Shea 2012 (NSMB 19:31): yeast Msn2 under glucose starvation
+      nuclear-localization pulses - amplitude nearly constant, pulse frequency/number increase with starvation (dose);
+      this model: A varies by +/-1.0%, f rises 1.28x - qualitatively consistent. 
+    · Cai, Dalal & Elowitz 2008 (Nature 455:485): Crz1 calcium-response FM bursts -
+      frequency rises with Ca2+ while amplitude/duration stay constant; i.e. frequency modulation (FM), not amplitude modulation (AM).
+    - this is exactly the 'frequency = counts per unit time' digital channel: same family as p53 pulse counting (code 1,
+      Lahav 2004/Batchelor 2008) same family - encoding signature = f(bifurcation type x observable)
+      the dual instance (manuscript section 6 outlook): excitable (EXC) bifurcation x frequency/count readout -> digital side.
+
+saved D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\..\results\code08_msn2_frequency_fig.png
+
+--- stderr ---
+

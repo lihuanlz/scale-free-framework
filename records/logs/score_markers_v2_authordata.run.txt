@@ -1,0 +1,41 @@
+$ python score_markers_v2_authordata.py
+# exit 0  wall 0.9s
+
+========================================================================
+M1  (author data, Figure2A + Figure2B, 0.4 M NaCl step)
+========================================================================
+Hog1: baseline=-0.0013 peak=0.4611@4.00min  thr10%=0.0449
+      t_off=22.00 min   late(>45min)=0.0104 (2.55% of peak)
+Vol : baseline=0.0039 min=-0.2432  90%band=-0.0208
+      t_rec90=28.00 min
+      |t_off - t_rec| = 6.00 min   (line <5)  -> FAIL
+      Hog1 adaptation (<10% of peak late) -> PASS
+
+Dose generality (Figure3A/3B, author data):
+  0.2M: Hog1 peak=0.354 late50-60=0.0070 adapted=Y | vol min=-0.102 t_rec90=11.00 final55-60=0.1543
+  0.4M: Hog1 peak=0.465 late50-60=0.0095 adapted=Y | vol min=-0.202 t_rec90=23.00 final55-60=0.0835
+  0.6M: Hog1 peak=0.452 late50-60=0.0115 adapted=Y | vol min=-0.325 t_rec90=59.00 final55-60=-0.0245
+  0M control Hog1: min=-0.0077 max=0.0218 (flat)
+
+========================================================================
+P-1 registration (Figure5B author data, 0.4 M, hog1-as +/- PP1)
+========================================================================
+  -PP1: dip(5-12min)=-0.2154 late(>30min)=-0.0766 recovery_fraction=0.644
+  +PP1: dip(5-12min)=-0.2290 late(>30min)=-0.2129 recovery_fraction=0.070
+  frozen reading: -PP1 frac>0.5 recovers, +PP1 frac<0.5 fails -> P-1 verdict above
+
+========================================================================
+M2 headline (0.4 M, the moderate shock)
+========================================================================
+  Fig2B author data: t_rec90=28.00 min  (line <=30) -> PASS
+  Fig3B author data 0.4M: t_rec90=23.00 min -> PASS
+
+========================================================================
+EXPLORATORY (post-hoc, labelled): alternative coincidence operationalisations
+========================================================================
+  t50(Hog1 decline)=17.00  t50(volume recovery)=14.00  |dt|=3.00 min
+  volume slope pre-shock=0.00853/min, post-35min=0.00147/min
+  corr(Hog1, volume) over 4-30min window: r=-0.960 (strong anticorrelation expected)
+
+--- stderr ---
+

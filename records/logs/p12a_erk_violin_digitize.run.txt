@@ -1,0 +1,13 @@
+$ python p12a_erk_violin_digitize.py
+# exit 1  wall 0.2s
+
+
+--- stderr ---
+Traceback (most recent call last):
+  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12a_erk_violin_digitize.py", line 8, in <module>
+    img = np.array(Image.open(os.path.join(HERE, 'data', 'erk_fig1.jpg')).convert('L')).astype(float)
+                   ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\lihua\anaconda3\Lib\site-packages\PIL\Image.py", line 3635, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\erk_fig1.jpg'
+

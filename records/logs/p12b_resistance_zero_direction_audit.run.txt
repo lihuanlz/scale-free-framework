@@ -1,0 +1,35 @@
+$ python p12b_resistance_zero_direction_audit.py
+# exit 1  wall 0.1s
+
+catalytic efficacy kcat/KM (WT=495.4 s-1 mM-1)
+  Y253H  eff=  1217.7  fold=  2.46  |dlog10|=0.391
+  E255V  eff=   855.2  fold=  1.73  |dlog10|=0.237
+  T315I  eff=  2521.5  fold=  5.09  |dlog10|=0.707
+  T315V  eff=  1320.7  fold=  2.67  |dlog10|=0.426
+  L248R  eff=    24.6  fold=  0.05  |dlog10|=1.304
+  Y253C  eff=  1963.9  fold=  3.96  |dlog10|=0.598
+  V299M  eff=  3216.2  fold=  6.49  |dlog10|=0.812
+  I314V  eff=   373.4  fold=  0.75  |dlog10|=0.123
+  F382Y  eff=  8296.3  fold= 16.75  |dlog10|=1.224
+  M318I  eff= 11879.2  fold= 23.98  |dlog10|=1.380
+  Y320D  eff=  1563.7  fold=  3.16  |dlog10|=0.499
+  L248M  eff=  5807.4  fold= 11.72  |dlog10|=1.069
+  V299L  eff=  1752.3  fold=  3.54  |dlog10|=0.549
+
+MAIN TEST (card rule 1): p-c median |dlog|=0.314  p-nc median=0.705  fold ratio=2.46 (criterion >2)
+  one-sided Mann-Whitney U=2  exact p=0.0889 (criterion p<0.05)
+  => joint criterion: FAIL
+
+SENSITIVITY A (T315I included in clinical, n=3): medians 0.391 vs 0.705, fold=2.06, U=6, p=0.1394
+SENSITIVITY B (+T315V, n=4): medians 0.408 vs 0.705, fold=1.98, U=7, p=0.0768
+
+p-nc mutants with >6-fold efficacy change: ['V299M', 'F382Y', 'M318I', 'L248M'] (paper claims 4 of 8)
+clinical group max fold change: 2.46 (paper claims <4 for Y253H/E255V/T315I; T315I measured here = 5.09)
+
+--- stderr ---
+Traceback (most recent call last):
+  File "D:\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\_github\scale-free-framework\code\p12b_resistance_zero_direction_audit.py", line 124, in <module>
+    with open(os.path.join(HERE, 'data', 'P12b_abl_catalytic_efficacy.csv'), 'w', newline='') as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'D:\\Kimi_Agent_细胞仿真工具包扩展以及具身智能20260911\\_github\\scale-free-framework\\code\\data\\P12b_abl_catalytic_efficacy.csv'
+

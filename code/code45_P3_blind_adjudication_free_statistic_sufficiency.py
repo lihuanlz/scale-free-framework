@@ -66,7 +66,7 @@ except ImportError:
 
 # ----------------------------- config section --------------------------------------
 _EXT = os.environ.get("CELL_EXTERNAL_DATA",
-               os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+               os.path.join(os.path.dirname(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')),
                             "data_external", "external"))
 ROOT = os.path.join(_EXT, "Sung2022")   # the four .mat files (subdirectories allowed)
 if len(sys.argv) > 1 and os.path.isdir(sys.argv[1]):
@@ -104,7 +104,7 @@ DUR_GROUPS = {"15min": [2, 3, 4], "30min": [5, 6, 7, 8], "60min": [9, 10, 11, 12
 ADJ_DUR = -42.0                      # duration-series global offset (authors' script adj=-42)
 
 try:
-    OUT_DIR = os.path.dirname(os.path.abspath(__file__))
+    OUT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'results')
 except NameError:
     OUT_DIR = os.getcwd()
 
