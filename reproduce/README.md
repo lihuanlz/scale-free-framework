@@ -47,8 +47,6 @@ Exit code is 0 only if every check passes. Default run: **131 checks, 131 pass, 
   `p15_tcga_decoupling_audit`, `score_markers_v2_authordata`
 - 11 (`--slow`): `code09`, `code12`
 
-`code/legacy/` holds one script that is deliberately outside the chain: `p12a_gerosa_a375_digitize.py` never produced an archived result, no manuscript number depends on it, and its tick detector does not match the published JPEG (five grey inward ticks versus four dark outward ones). `code/legacy/README.md` says so.
-
 ## Data
 
 Two directories of inputs are not in git, because together they are about
