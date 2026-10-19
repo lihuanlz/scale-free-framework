@@ -33,7 +33,7 @@ Exit code is 0 only if every check passes. Default run: **131 checks, 131 pass, 
 
 ## Coverage
 
-**30 of the 31 scripts in `code/` are executed**, 28 of them in the default run:
+**All 30 scripts in `code/` are executed**, 28 of them in the default run:
 
 - 01–02: `code10`, `code04`
 - 03: `audit_bergmann2010_axis12`
@@ -47,11 +47,7 @@ Exit code is 0 only if every check passes. Default run: **131 checks, 131 pass, 
   `p15_tcga_decoupling_audit`, `score_markers_v2_authordata`
 - 11 (`--slow`): `code09`, `code12`
 
-One does not run:
-
-| script | why |
-|---|---|
-| `p12a_gerosa_a375_digitize` | fails on the current image ("unexpected tick count"); its digitised output is archived, not regenerated |
+`code/legacy/` holds one script that is deliberately outside the chain: `p12a_gerosa_a375_digitize.py` never produced an archived result, no manuscript number depends on it, and its tick detector does not match the published JPEG (five grey inward ticks versus four dark outward ones). `code/legacy/README.md` says so.
 
 ## Data
 

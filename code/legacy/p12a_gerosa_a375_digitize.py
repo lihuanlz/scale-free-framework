@@ -1,3 +1,16 @@
+# LEGACY - kept for provenance, not part of the reproduction chain.
+#
+# Written to digitise the DMSO violin of Gerosa et al. 2020 Fig. 1H as a
+# fourth cell line. It has never produced an archived result: there is no
+# run log for it in any of the project archives, and no number in the
+# manuscript depends on it - the SI lists the p12a scripts in the pipeline
+# table but cites no A375 value.
+#
+# It cannot run against the published JPEG that ships with the data: the
+# panel's y axis has five inward-facing ticks (0, 0.5, 1, 1.5, 2) drawn in
+# grey (levels 130-180), while the detector below assumes four outward ticks
+# darker than 100. See reproduce/README.md.
+#
 # P12a extension (Amendment A3): digitize Gerosa 2020 Fig 1H DMSO violin (A375, BRAF-V600E)
 # as 4th cell line. Same method as p12a_erk_violin_digitize.py.
 import numpy as np
